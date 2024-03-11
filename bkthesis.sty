@@ -1,3 +1,5 @@
+% Modified bkthesis package without paragraph indentation
+
 \ProvidesPackage{bkthesis}
 
 \RequirePackage{graphicx}
@@ -6,9 +8,12 @@
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
-\usepackage{indentfirst}
 
-% \usepackage{geometry}
+% Suppress paragraph indentation
+\setlength{\parindent}{0pt}
+% Set a space between paragraphs
+\setlength{\parskip}{6pt}
+
 \def\thesislayout{	% A4: 210 × 297
 	\geometry{
 		a4paper,
@@ -18,7 +23,7 @@
 	}
 }
 
-\newcommand{\@sdeptname}{KHOA KHOA HỌC \& KỸ THUẬT MÁY TÍNH}
+\newcommand{\@sdeptname}{FACULTY OF COMPUTER SCIENCE AND ENGINEERING}
 \newcommand{\csdeptname}[1]{\renewcommand{\@sdeptname}{#1}}
 
 \newcommand{\@tname}{TÊN ĐỀ TÀI LUẬN VĂN TỐT NGHIỆP}
@@ -32,7 +37,7 @@
 
 \newcommand{\@sReviewer}{TS. A}
 \newcommand{\csReviewer}[1]{\renewcommand{\@sReviewer}{#1}}
-	
+
 \newcommand{\@sSupervise}{TS. Nguyễn Văn A}
 \newcommand{\csSupervise}[1]{\renewcommand{\@sSupervise}{#1}}
 
@@ -44,59 +49,59 @@
 
 \newsavebox\thesmashminipage
 \newenvironment{smashminipage}
-  {\begin{lrbox}{\thesmashminipage}\begin{minipage}[t]{\textwidth}}
-  {\end{minipage}\end{lrbox}\smash{\usebox{\thesmashminipage}}\clearpage}
-  
+{\begin{lrbox}{\thesmashminipage}\begin{minipage}[t]{\textwidth}}
+			{\end{minipage}\end{lrbox}\smash{\usebox{\thesmashminipage}}\clearpage}
+
 \def\coverpage{
 
-\pagestyle{empty}
-% \setlength{\oddsidemargin}{0cm}
-% \addtolength{\voffset}{-2.5cm}
-% \addtolength{\textwidth}{-2cm}
+	\pagestyle{empty}
+	% \setlength{\oddsidemargin}{0cm}
+	% \addtolength{\voffset}{-2.5cm}
+	% \addtolength{\textwidth}{-2cm}
 
-\begin{smashminipage} %[b][25.5cm][t]{15cm}
-\begin{tikzpicture}[remember picture, overlay]
-%   \draw[line width = 4pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-1in,1in)$);
-\draw [line width=1pt]
-    ($ (current page.north west) + (3.0cm,-2.0cm) $)
-    rectangle
-    ($ (current page.south east) + (-1.5cm,1.5cm) $);
-\draw [line width=3pt]
-    ($ (current page.north west) + (3.15cm,-2.15cm) $)
-    rectangle
-    ($ (current page.south east) + (-1.65cm,1.65cm) $); 
-\end{tikzpicture}
+	\begin{smashminipage} %[b][25.5cm][t]{15cm}
+		\begin{tikzpicture}[remember picture, overlay]
+			%   \draw[line width = 4pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-1in,1in)$);
+			\draw [line width=1pt]
+			($ (current page.north west) + (3.0cm,-2.0cm) $)
+			rectangle
+			($ (current page.south east) + (-1.5cm,1.5cm) $);
+			\draw [line width=3pt]
+			($ (current page.north west) + (3.15cm,-2.15cm) $)
+			rectangle
+			($ (current page.south east) + (-1.65cm,1.65cm) $);
+		\end{tikzpicture}
 
-\begin{center}
-\begin{large}
-ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH\\
-TRƯỜNG ĐẠI HỌC BÁCH KHOA\\
-\@sdeptname
-\end{large} \\
-\textbf{--------------------  *  ---------------------}\\[2cm]
-\includegraphics[scale=0.4]{LogoBK.jpg}\\[1.5cm]
-    {\fontsize{15}{1}\selectfont \@rname }\\[2cm]
-    {\fontsize{20}{1}\selectfont \textbf{\parbox[c][3cm]{14cm}{\centering \@title}} }\\[3.2cm]
-\end{center}
+		\begin{center}
+			\begin{large}
+				VIETNAM NATIONAL UNIVERSITY HO CHI MINH CITY\\
+				HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY\\
+				\@sdeptname
+			\end{large} \\
+			\textbf{--------------------  *  ---------------------}\\[2cm]
+			\includegraphics[scale=0.4]{LogoBK.jpg}\\[1.5cm]
+			{\fontsize{15}{1}\selectfont \@rname }\\[2cm]
+			{\fontsize{20}{1}\selectfont \textbf{\parbox[c][3cm]{14cm}{\centering \@title}} }\\[3.2cm]
+		\end{center}
 
-{\fontsize{15}{1}\selectfont 
-\hspace{5cm}\parbox[t][4cm]{10cm}{
-	HỘI ĐỒNG: \@sCouncil \\[3pt]
-	GVHD: \parbox[t]{8cm}{\@sSupervise} \\[3pt]
-	GVPB: \@sReviewer
+		{\fontsize{15}{1}\selectfont
+		\hspace{5cm}\parbox[t][4cm]{10cm}{
+			HỘI ĐỒNG: \@sCouncil \\[3pt]
+			GVHD: \parbox[t]{8cm}{\@sSupervise} \\[3pt]
+			GVPB: \@sReviewer
 
-	\hspace{2.2cm}	---o0o---
-		
-	\parbox[t][1.5cm]{10cm}{\@stuname}
-}
-}
-\vspace{2.2cm}
-\begin{center}
- {\fontsize{14}{1}\selectfont TP. HỒ CHÍ MINH, \@ttime }\\
+			\hspace{2.2cm}	---o0o---
 
-\end{center}
+			\parbox[t][1.5cm]{10cm}{\@stuname}
+		}
+		}
+		\vspace{2.2cm}
+		\begin{center}
+			{\fontsize{14}{1}\selectfont Ho Chi Minh City, \@ttime }\\
 
-\end{smashminipage}
+		\end{center}
+
+	\end{smashminipage}
 }
 % }
 
@@ -105,37 +110,32 @@ TRƯỜNG ĐẠI HỌC BÁCH KHOA\\
 %% Remember to load babel before loading this package or define the command \abstractname!
 \makeatletter
 \newenvironment{abstract}{
-  \titlepage
-  \null\vfil
-  \@beginparpenalty\@lowpenalty
-  \begin{center}
-	\bfseries Tóm tắt nội dung
-	\@endparpenalty\@M
-  \end{center}}
- {\par\vfil\null\endtitlepage}
+	% \titlepage
+	% \null\vfil
+	% \@beginparpenalty\@lowpenalty
+	\begin{center}
+		\bfseries ABSTRACT
+		\@endparpenalty\@M
+	\end{center}}
+{\par\vfil\null\endtitlepage}
 \makeatother
 
 \makeatletter
-\newenvironment{acknowledgments}{
-	\titlepage \null\vfil
-	\small
+\newenvironment{acknowledgment}{
 	\begin{center}
-	  {\bfseries Lời cảm ơn / Lời ngỏ\vspace{-.5em}\vspace{\z@}}
+		{\bfseries ACKNOWLEDGEMENT\vspace{-.5em}\vspace{\z@}}
 	\end{center}
-	\quotation
-  }{}
+}{\par\vfil\null\endtitlepage}
 \makeatother
 
 % Declaration
 \makeatletter
-\newenvironment{declaration}{
-	\small
+\newenvironment{commitment}{
 	\begin{center}
-	  {\bfseries Lời cam đoan\vspace{-.5em}\vspace{\z@}}
+		{\bfseries COMMITMENT\vspace{-.5em}\vspace{\z@}}
 	\end{center}
-	\quotation
-  }{}
-\makeatother	  
+}{\par\vfil\null\endtitlepage}
+\makeatother
 
 % \renewcommand\lstlistingname{Algorithm}
 % \renewcommand\lstlistlistingname{Algorithms}
