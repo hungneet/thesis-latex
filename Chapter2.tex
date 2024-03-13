@@ -8,10 +8,10 @@ The Hanoi Pet Adoption (HPA) system, a web application based in Hanoi, Vietnam, 
 
 HPA has the following main features:
 \begin{itemize}
-    \item \textit{Pet profiles:} The system showcases profiles of animals ready for adoption. These profiles include details such as photos, names, genders, ages, colors, and sterilization statuses.
-    \item \textit{User Preferences:} Users can filter animals based on their preferences, including gender, age, color, and sterilization status.
-    \item \textit{Volunteer Contact Information:} The system provides the contact information of volunteers responsible for each animal, enabling users to inquire further about their animal of interest.
-    \item \textit{Adoption Process Guidance:} The system guides users through the adoption process, which includes an interview, a contract, and a fee.
+        \item \textit{Pet profiles:} The system showcases profiles of animals ready for adoption. These profiles include details such as photos, names, genders, ages, colors, and sterilization statuses.
+        \item \textit{User Preferences:} Users can filter animals based on their preferences, including gender, age, color, and sterilization status.
+        \item \textit{Volunteer Contact Information:} The system provides the contact information of volunteers responsible for each animal, enabling users to inquire further about their animal of interest.
+        \item \textit{Adoption Process Guidance:} The system guides users through the adoption process, which includes an interview, a contract, and a fee.
 \end{itemize}
 
 \subsection{Evaluation}
@@ -41,14 +41,14 @@ In conclusion, these enhancements aim to make the system more user-friendly, eff
 \section{Stakeholders}
 Stakeholders for a project focused on creating a pet adoption platform in Vietnam would include a diverse range of individuals, organizations, and groups with an interest in or influence over the project. Here are some key stakeholders:
 \begin{itemize}
-    \item \textit{Administrator:} The administrator is responsible for managing and overseeing the platform's operations. They have control over user accounts, content moderation, and the overall functionality of the website.
-    \item \textit{Pet Adopter:} Pet adopters are individuals looking to provide a loving home to pets available for adoption. They may already own pets or be first-time pet owners. Pet adopters interact with pet owners and adoption agencies through messaging and inquiries about available pets. They can also share their adoption stories and experiences with the platform's community.
-    \item \textit{Pet Owner:} Pet owners are individuals who currently own and care for pets, including dogs, cats, or other animals. Or those, for various reasons, have decided to give their pets to new homes. Reasons may include relocation, financial constraints, allergies, or changes in life circumstances.
-    \item \textit{Guest:} Guests are individuals who visit the platform without creating an account or logging in. They have limited access to platform features and content. Guests can browse public content, view pet listings, read provided blogs, and explore the platform's resources. They can also choose to create an account to access more features.
-    \item \textit{Pet Adoption Agencies and Shelters:} Organizations involved in pet adoption, rescue, and rehoming would benefit from the platform as it could help them find suitable homes for abandoned or rescued animals. They might also contribute content and listings.
-    \item \textit{Pet-Related Businesses:} Pet stores, pet food suppliers, grooming salons, veterinary clinics, and other businesses in the pet industry have a stake in the project. They could use the platform to advertise their products and services to a targeted audience.
-    \item \textit{Veterinarians:} Veterinarians play a crucial role in pet healthcare. They might use the platform to provide information, answer questions, and offer telehealth services. Their expertise can be valuable to pet owners.
-    \item \textit{Investors and Funders:} Individuals or organizations providing funding or investment for the development and scaling of the platform are stakeholders with a financial interest.
+        \item \textit{Administrator:} The administrator is responsible for managing and overseeing the platform's operations. They have control over user accounts, content moderation, and the overall functionality of the website.
+        \item \textit{Pet Adopter:} Pet adopters are individuals looking to provide a loving home to pets available for adoption. They may already own pets or be first-time pet owners. Pet adopters interact with pet owners and adoption agencies through messaging and inquiries about available pets. They can also share their adoption stories and experiences with the platform's community.
+        \item \textit{Pet Owner:} Pet owners are individuals who currently own and care for pets, including dogs, cats, or other animals. Or those, for various reasons, have decided to give their pets to new homes. Reasons may include relocation, financial constraints, allergies, or changes in life circumstances.
+        \item \textit{Guest:} Guests are individuals who visit the platform without creating an account or logging in. They have limited access to platform features and content. Guests can browse public content, view pet listings, read provided blogs, and explore the platform's resources. They can also choose to create an account to access more features.
+        \item \textit{Pet Adoption Agencies and Shelters:} Organizations involved in pet adoption, rescue, and rehoming would benefit from the platform as it could help them find suitable homes for abandoned or rescued animals. They might also contribute content and listings.
+        \item \textit{Pet-Related Businesses:} Pet stores, pet food suppliers, grooming salons, veterinary clinics, and other businesses in the pet industry have a stake in the project. They could use the platform to advertise their products and services to a targeted audience.
+        \item \textit{Veterinarians:} Veterinarians play a crucial role in pet healthcare. They might use the platform to provide information, answer questions, and offer telehealth services. Their expertise can be valuable to pet owners.
+        \item \textit{Investors and Funders:} Individuals or organizations providing funding or investment for the development and scaling of the platform are stakeholders with a financial interest.
 \end{itemize}
 
 Understanding and engaging with these stakeholders will be important for the success and sustainability of the project. Each stakeholder group may have different needs, interests, and concerns that should be addressed during the project's planning and execution.
@@ -57,114 +57,117 @@ Understanding and engaging with these stakeholders will be important for the suc
 \subsection{Functional Requirements}
 
 
-\begin{table}
-    \centering
-    \begin{tblr}{
-            vline{1-3} = {-}{},
-            hline{-} = {1-2}{},
-        }
-        \textbf{Group}                                    & \textbf{Requirements} &   & \\
-        \textbf{Authentication and authorization}         & {
-                -~~~~~~~
-                Users can create new accounts by providing personal information.
+
+% \usepackage{tabularray}
+
+\begin{longtblr}[
+        label = none,
+        entry = none,
+      ]{
+        vline{1-3} = {-}{},
+        hline{-} = {1-2}{},
+        colspec={X[2,l] X[5, l]},
+      }
+      \textbf{Group}                                & \textbf{Requirements}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      &  &  \\
+      \textbf{Authentication and authorization}     & {
+        -~~~~~~~
+        Users can create new accounts by providing personal information.
         \\-~~~~~~~
-                Users can log into the system using Google accounts.
+        Users can log into the system using Google accounts.
         \\-~~~~~~~
-                Users can log into the~ system by
-                providing a registered email and password.
+        Users can log into the system by
+        providing a registered email and password.
         \\-~~~~~~~
-                Users can send applications to the system to update their accounts to
-                Organization accounts.
+        Users can send applications to the system to update their accounts to
+        Organization accounts.
         \\-~~~~~~~
-                Admins can verify Organizations’ registration and upgrade users’
-                accounts.
+        Admins can verify Organizations’ registration and upgrade users’
+        accounts.
         \\-~~~~~~~
-                Users can reset or recover their account passwords.
-        }                                                 &                       &     \\
-        \textbf{Pet profile management}                   & {
-                -~~~~~~~
-                Users can create pet profiles by giving details such as name, species,
-                breed, age, color, health status, sterilization status, pictures, and videos
-                of pets.
+        Users can reset or recover their account passwords.
+        }                                                          &  &  \\
+      \textbf{Pet profile management}               & {
+        -~~~~~~~
+        Users can create pet profiles by giving details such as name, species,
+        breed, age, color, health status, sterilization status, pictures, and videos
+        of pets.
         \\-~~~~~~~
-                Users can provide information about breed, species, and color by
-                uploading pets’ pictures.
+        Users can provide information about breed, species, and color by
+        uploading pets’ pictures.
         \\-~~~~~~~
-                Pet photos and text inputs must be sensitive-validated before
-                uploading.
+        Pet photos and text inputs must be sensitive-validated before
+        uploading.
         \\-~~~~~~~
-                Users can edit their pet profiles.
+        Users can edit their pet profiles.
         \\-~~~~~~~
-                Users can publish, hide, or remove their pet profiles.
+        Users can publish, hide, or remove their pet profiles.
         \\-~~~~~~~
-                Admins can remove or hide any pet profiles of the system.
-        }                                                 &                       &     \\
-        \textbf{Pet profile filter and view}              & {
-                -~~~~~~~
-                Users can search for pets by providing filtering options such as name,
-                species, breed, age, color, health status, and sterilization status.
+        Admins can remove or hide any pet profiles of the system.
+        } &  &  \\
+      \textbf{Pet profile filter and view}          & {
+        -~~~~~~~
+        Users can search for pets by providing filtering options such as name,
+        species, breed, age, color, health status, and sterilization status.
         \\-~~~~~~~
-                Users can search for pets by providing pets’ pictures.
+        Users can search for pets by providing pets’ pictures.
         \\-~~~~~~~
-                Users can view pet profiles with detailed information such as name,
-                species, breed, age, color, health status, sterilization status, pictures,
-                and videos of pets
-        }                                                 &                       &     \\
-        \textbf{Pet adoption}                             & {
-                -~~~~~~~
-                Users can submit applications to adopt pets on the system.
+        Users can view pet profiles with detailed information such as name,
+        species, breed, age, color, health status, sterilization status, pictures,
+        and videos of pets
+        }                                                                                                                                                                &  &  \\
+      \textbf{Pet adoption}                         & {
+        -~~~~~~~
+        Users can submit applications to adopt pets on the system.
         \\-~~~~~~~
-                Users can view, decline, or accept adoption applications sent to their
-                pets.
-        }                                                 &                       &     \\
-        \textbf{User interaction and engagement}          & {-~~~~~~~
-                Pet
-                Adopters can send messages to Pet Owners, Organizations, and Admins.
-        \\-~~~~~~~PetAdopters have to update their pets’ status every seven days[1]~ from the date they received the petsby uploading posts in the adopt status section of the pet profile.\\-~~~~~~~
-                Pet
-                Adopters can set their posts public for all users or just Admins, and Pet
-                Owners.
+        Users can view, decline, or accept adoption applications sent to their
+        pets.
+        }                                                                                                                                                                                                                                                                                                                                                                                                                &  &  \\
+      \textbf{User interaction and engagement}      & {-~~~~~~~
+      Pet
+      Adopters can send messages to Pet Owners, Organizations, and Admins.
+      \\-~~~~~~~PetAdopters have to update their pets’ status every seven days[1]~ from the date they received the petsby uploading posts in the adopt status section of the pet profile.\\-~~~~~~~
+      Pet
+      Adopters can set their posts public for all users or just Admins, and Pet
+      Owners.
+      \\-~~~~~~~
+      Admins
+      and Pet Owners can view and interact with posts from Pet Adopters.
+      \\-~ ~ ~ ~ All users of the system can view and interact
+      with posts from Pet Adopters if the posts are public.~ ~ ~~}        &  &  \\
+      \textbf{Blog management}                      & {
+        -~~~~~~~
+        Admins and Organizations can create and publish blogs.
         \\-~~~~~~~
-                Admins
-                and Pet Owners can view and interact with posts from Pet Adopters.
-                All users of the system can view and interact
-                with posts from Pet Adopters if the posts are public.
-        \\~ ~ ~ ~ ~ ~~}       &                       &     \\
-        \textbf{Blog management}                          & {
-                -~~~~~~~
-                Admins and Organizations can create and publish blogs.
+        Organizations can apply advertisements on their blogs.
         \\-~~~~~~~
-                Organizations can apply advertisements on their blogs.
+        Organizations can edit or remove their blogs.
         \\-~~~~~~~
-                Organizations can edit or remove their blogs.
+        Admins can hide or remove any blogs of the system.
+        }                                                                                                                                                                                                                                                                                                             &  &  \\
+      \textbf{Advertisement and payment}            & {
+        -~~~~~~~
+        Organizations can choose advertisement duration with different prices.
         \\-~~~~~~~
-                Admins can hide or remove any blogs of the system.
-        }                                                 &                       &     \\
-        \textbf{Advertisement and payment}                & {
-                -~~~~~~~
-                Organizations can choose advertisement duration with different prices.
+        Organizations can pay advertisement fees through an online banking
+        service.
         \\-~~~~~~~
-                Organizations can pay advertisement fees through an online banking
-                service.
+        Admins can receive advertisement fees through an online banking
+        service.
         \\-~~~~~~~
-                Admins can receive advertisement fees through an online banking
-                service.
+        System provides admins and organizations information like payment
+        status and invoices.
+        }                                                                                                                                                                                                   &  &  \\
+      \textbf{Notifications}                        & {
+        -~~~~~~~
+        Users can receive notifications on new pet adoption applications.
         \\-~~~~~~~
-                System provides admins and organizations information like payment
-                status and invoices.
-        }                                                 &                       &     \\
-        \textbf{Notifications}                            & {
-                -~~~~~~~
-                Users can receive notifications on new pet adoption applications.
+        Users can receive notifications on new pets’ status posts uploaded.
         \\-~~~~~~~
-                Users can receive notifications on new pets’ status posts uploaded.
-        \\-~~~~~~~
-                Users can receive notifications on new pet profiles matching their
-                criteria.
-        }                                                 &                       &     \\
-        \textbf{System statistics for administrators}     & -~~~~~~~
+        Users can receive notifications on new pet profiles matching their
+        criteria.
+        }                                                                                                                                                                                                                                                                                                                      &  &  \\
+      \textbf{System statistics for administrators} & -~~~~~~~
         Admins can get statistics about systems usages, such as the number of
         pet profiles, adopted pets; number of users and Organizations; number of
-        blogs, and the total amount of advertisement fee. &                       &
-    \end{tblr}
-\end{table}
+        blogs, and the total amount of advertisement fee.                                                                                                                                                                                                                                                                                                                                                                            &  &  
+\end{longtblr}
