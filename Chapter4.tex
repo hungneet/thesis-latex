@@ -1,0 +1,155 @@
+\chapter{DEVELOPMENT TECH STACK}
+
+\section{Front-end}
+
+
+In this section, we will dive into Next.js and Tailwind CSS. Next.js is
+a React framework with features like server-side rendering, while
+Tailwind CSS is a utility-first framework for streamlined styling
+through pre-designed classes. These tools play a key role in creating
+efficient and scalable front-end experiences.
+
+
+\subsection{NextJS}
+
+Next.js, a robust React framework, tackles challenges in traditional
+client-side rendering. It utilizes server-side rendering and static site
+generation to address accessibility, security, page loading times, and
+Search engine optimization (SEO) concerns. Popular in the React
+ecosystem, Next.js optimizes the user experience by pre-rendering pages
+on the server. Advantages include enhanced performance with server-side
+rendering, seamless React integration for dynamic interfaces, static
+site generation for optimal website performance, intuitive file
+system-based routing, automatic code splitting, flexible styling
+approaches, and compatibility with TypeScript for improved code quality.
+
+
+\subsection{Tailwind CSS}
+
+Tailwind CSS, a utility-first framework, transforms web styling by
+providing an extensive set of classes directly within HTML. This
+accelerates development by offering granular control over layout, color,
+spacing, and more. Unlike traditional CSS, Tailwind\textquotesingle s
+unique approach eliminates the need for external files, enabling
+seamless customization and efficient creation of visually appealing and
+responsive interfaces. Its utility-first approach minimizes unused CSS,
+optimizing performance, and its low learning curve, active community,
+and integration flexibility make it an efficient choice for building
+well-styled and maintainable web applications.
+
+
+\section{Back-end}
+\subsection{ASP.NET core platform}
+
+ASP.NET Core, an open-source framework, excels in developing modern,
+cloud-enabled, and Internet-connected applications with cross-platform
+compatibility. It supports various applications, including web apps,
+IoT, and mobile backends, allowing developers to use preferred tools
+across Windows, macOS, and Linux. Offering seamless deployment to both
+cloud and on-premises environments, ASP.NET Core operates on the .NET
+Core runtime, empowering developers to create robust, scalable
+applications. It represents a leaner and more modular evolution from
+ASP.NET 4.0, unifying web UI and APIs, emphasizing testability, and
+introducing innovations like Blazor for C\# usage in the browser.
+ASP.NET Core is versatile, open-source, supports gRPC, and offers
+flexible hosting options, showcasing its adaptability and
+community-driven focus.
+
+\subsection{Entity Framework}
+
+Entity Framework is an open-source Object-Relational Mapping (ORM)
+framework by Microsoft for .NET applications, abstracting database
+complexities through domain-specific classes. Operating at a higher
+level of abstraction, it simplifies data-oriented application creation,
+resulting in concise and productive code. Features include Entity Data
+Model, LINQ queries, raw SQL execution, change tracking, transaction
+management, built-in caching, concurrency control, and asynchronous
+saving. It adheres to conventions-over-configuration programming and
+provides migration commands for seamless database schema management,
+making Entity Framework a robust tool for efficient database development
+in .NET applications.
+
+
+\subsection{MS SQL Server}
+
+Microsoft SQL Server stands as a formidable relational database
+management system (RDBMS) catering to a diverse range of applications in
+corporate IT environments, including transaction processing, business
+intelligence, and analytics. It holds a prominent position among the top
+three database technologies, alongside Oracle Database and
+IBM\textquotesingle s DB2. Operating on the standardized SQL programming
+language, SQL Server empowers database administrators and IT
+professionals to efficiently manage databases and query their data. The
+system is intricately connected to Transact-SQL (T-SQL), a Microsoft
+implementation of SQL that introduces proprietary programming
+extensions, enhancing the functionality of the standard language. This
+combination of robust features and integration with the widely-used SQL
+language makes Microsoft SQL Server a key player in the database
+technology landscape.
+
+
+\subsection{Redis Cache}
+
+Redis, an open-source in-memory data structure store, serves multiple
+roles as a database, cache, message broker, and streaming engine. Its
+versatility lies in supporting various data structures like strings,
+hashes, lists, sets, sorted sets with range queries, bitmaps, hyperlogs,
+geospatial indexes, and streams. Redis boasts built-in features such as
+replication, Lua scripting, LRU (Least Recently Used) eviction,
+transactions, and diverse levels of on-disk persistence. Additionally,
+it ensures high availability through Redis Sentinel and automatic
+partitioning with Redis Cluster. This makes Redis a robust and flexible
+solution for handling real-time data storage, retrieval, and processing
+in a wide range of applications.
+
+
+\subsection{Elastic-search}
+
+Elasticsearch is a key component in the Elastic Stack ecosystem, serving
+as a distributed search and analytics engine. Alongside Logstash and
+Beats, it collects, aggregates, and enriches data, while Kibana enables
+interactive exploration and visualization. Elasticsearch excels in near
+real-time search and analytics for diverse data types, offering
+scalability and flexibility. Its applications range from adding search
+functionality to apps and storing logs to employing machine learning and
+processing genetic data for various research purposes.
+
+\subsection{Azure Storage}
+
+Azure Storage, Microsoft\textquotesingle s cloud storage platform,
+offers highly available, massively scalable, and secure storage for
+diverse data objects worldwide through HTTP or HTTPS. Client libraries
+for popular languages, including .NET, Java, Python, JavaScript, C++,
+and Go, facilitate application development. Azure Storage provides
+user-friendly interfaces through the Azure portal and Storage Explorer.
+It ensures data durability, high availability, and security through
+redundancy, encryption, and access controls. With global accessibility,
+scalability, and managed services, Azure Storage caters to modern
+cloud-based storage needs, making it a robust and flexible solution for
+various scenarios.
+
+
+\subsection{Docker}
+
+Docker, an open platform, revolutionizes software development by
+decoupling applications from infrastructure and expediting delivery. It
+aligns shipping, testing, and deployment methodologies, bridging the gap
+between code creation and production. Docker\textquotesingle s
+standardized environments in local containers ensure consistency,
+particularly beneficial for CI/CD workflows. With highly portable
+workloads, Docker supports dynamic workload management across various
+environments, optimizing efficiency and scalability. Its fast,
+lightweight design offers a cost-effective alternative to virtual
+machines, making it ideal for high-density environments and
+resource-efficient deployments.
+
+
+\subsection{Nginx Load Balancer}
+
+Nginx is a web server that can also function as a load balancer. Nginx
+offers several load-balancing methods, including round-robin,
+least-connected, and ip-hash. The round-robin method distributes
+requests to the application servers in a circular fashion, while the
+least-connected method assigns the next request to the server with the
+least number of active connections. In this context of the project, we
+will use the round-robin load-balancing method.
