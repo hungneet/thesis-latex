@@ -1,9 +1,75 @@
-\begin{thebibliography}{1}
 
-\bibitem{ma2016}
-J.~{Ma}, Y.~{Zhang}, J.~{Liu}, K.~{Yu}, and X.~{Wang}.
-\newblock Intelligent sms spam filtering using topic model.
-\newblock In {\em 2016 International Conference on Intelligent Networking and
-  Collaborative Systems (INCoS)}, pages 380--383, Sep. 2016.
+\begin{thebibliography}{30}
+
+\bibitem{braude2016}
+E.~J. {Braude} and M.~E. {Bernstein}.
+\newblock {\em Software Engineering: Modern Approaches (2nd ed.)}.
+\newblock Waveland Press, 2016, pages 440.
+
+\bibitem{vercel2023}
+Vercel.
+\newblock What is Next.js.
+\newblock \url{https://nextjs.org/learn-pages-router/foundations/about-nextjs/what-is-nextjs}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{fitzgerald2022}
+Anna Fitzgerald.
+\newblock Tailwind CSS: What It Is, Why Use It and Examples.
+\newblock \url{https://blog.hubspot.com/website/what-is-tailwind-css}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{microsoft2023a}
+Microsoft.
+\newblock Overview of ASP.NET Core.
+\newblock \url{https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{microsoft2023b}
+Microsoft.
+\newblock What is Entity Framework?.
+\newblock \url{https://www.entityframeworktutorial.net/entityframework6}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{hughes2019}
+Adam Hughes.
+\newblock Microsoft SQL Server.
+\newblock \url{https://www.techtarget.com/searchdatamanagement/definition/SQL-Server}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{redis2023}
+Redis.
+\newblock Introduction to Redis.
+\newblock \url{https://redis.io/docs/about}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{elasticsearch2023}
+Elasticsearch.
+\newblock What is Elasticsearch?.
+\newblock \url{https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{microsoft2023c}
+Microsoft.
+\newblock Introduction to Azure Storage.
+\newblock \url{https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{docker2023}
+Docker.
+\newblock Docker overview.
+\newblock \url{https://docs.docker.com/get-started/overview}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{nginx2023a}
+Nginx.
+\newblock Understanding Load Balancing.
+\newblock \url{https://www.nginx.com/learn/load-balancing}.
+\newblock Accessed on 18/11/2023.
+
+\bibitem{nginx2023b}
+Nginx.
+\newblock Using nginx as HTTP load balancer.
+\newblock \url{https://nginx.org/en/docs/http/load_balancing.html}.
+\newblock Accessed on 18/11/2023.
 
 \end{thebibliography}

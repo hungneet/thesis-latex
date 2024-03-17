@@ -75,7 +75,7 @@ Understanding and engaging with these stakeholders will be important for the suc
 \section{Workflow analysis}
 \subsection{Activity Diagrams}
 
-\textbf{Self Registration}
+\subsubsection{Self Registration}
 
 The use case starts when a user accesses the register page (or clicks the register button on the login form), and then a register form will be displayed. The user provided some information (including email, password, and name). Then,  the provided information is verified. If it is valid, a confirmation email will be sent to the user. After accessing the link in the email, a new account is created and the user can log into the system.
 
@@ -87,7 +87,7 @@ The use case starts when a user accesses the register page (or clicks the regist
 \end{figure}
 
 
-\textbf{Login}
+\subsubsection{Login}
 
 The use case starts when an unauthorized user tries to access internal features or goes to the login page. The user at the login can provide an email and password and send them to the system. If the credential information is valid, the user will be granted access permission and navigated to an internal page. Otherwise, an error alert will be displayed.
 
@@ -98,7 +98,7 @@ The use case starts when an unauthorized user tries to access internal features 
   \label{fig:login}
 \end{figure}
 
-\textbf{Login with a Google account}
+\subsubsection{Login with a Google account}
 
 The use case starts when a user chooses the option of logging in with a Google account, then a Google login form will be displayed. Users provide Google authentication information. Google Auth service verifies the authentication information and generates an access token. Finally, the system validates the access token and grants access permission to the user.
 
@@ -109,7 +109,7 @@ The use case starts when a user chooses the option of logging in with a Google a
   \label{fig:login-google}
 \end{figure}
 
-\textbf{Update to Organization account}
+\subsubsection{Update to Organization account}
 
 The use case starts when an individual user chooses to update to organization accounts, then a form will be displayed. Then, users provide some information for verification and submit them. After the update-account application is verified by admins, the system updates the account and notifies the user of the results.
 
@@ -120,7 +120,7 @@ The use case starts when an individual user chooses to update to organization ac
   \label{fig:update-org}
 \end{figure}
 
-\textbf{Manage pet profile}
+\subsubsection{Manage pet profile}
 
 The use case starts when a user accesses the pet profile management page. The user chooses to edit or create a new profile and a form will be displayed. Note that the form would be filled if the user chose to edit an available profile. In that case, the user can modify the fields or rather delete the profile. Otherwise, the user can input the pet information and submit it. The user can also fill in pet breeds and colors by providing images. Finally, the content of the form will be verified, and the result will be displayed.
 
@@ -131,7 +131,7 @@ The use case starts when a user accesses the pet profile management page. The us
   \label{fig:manage-pet}
 \end{figure}
 
-\textbf{Access pet profile}
+\subsubsection{Access pet profile}
 
 In the pet profile page, a user has options to find pets by filtering by categories or providing pet images. In case the user filters by images, those images will be processed by the Pet Recognition Service. Then, the filtered pet profiles will be displayed to the user. The user can click on pet profiles for further information or continue finding other pet profiles.
 
@@ -142,7 +142,7 @@ In the pet profile page, a user has options to find pets by filtering by categor
   \label{fig:access-pet}
 \end{figure}
 
-\textbf{Adopt pets}
+\subsubsection{Adopt pets}
 
 After finding a pet profile successfully, if the pet is still available, a user can choose to adopt the pet by filling in the required information in the adoption form and sending it. The application form will be reviewed by the pet owner. The result will be sent to the user then. Note that, the user can still contact directly to the pet owner during the pet adoption process.
 
@@ -153,7 +153,7 @@ After finding a pet profile successfully, if the pet is still available, a user 
   \label{fig:adopt-pet}
 \end{figure}
 
-\textbf{Interact with posts}
+\subsubsection{Interact with posts}
 
 After accessing a pet profile successfully, a user can also see public posts of the pet. The user can choose a post for further information and leave their comments or likes on the post. Note that the private posts can only be seen by the pet owner and admins.
 
@@ -165,7 +165,7 @@ After accessing a pet profile successfully, a user can also see public posts of 
 \end{figure}
 
 
-\textbf{Update pet status}
+\subsubsection{Update pet status}
 
 Updating the status of a pet is uploading posts about it. The use case starts when an owner can select a pet profile and choose the option of updating the pet status. After filling information, the owner can set visibility for the post. Finally, the user can send the form and a new post is created.
 
@@ -176,7 +176,7 @@ Updating the status of a pet is uploading posts about it. The use case starts wh
   \label{fig:update-pet-status}
 \end{figure}
 
-\textbf{Manage blogs for Organizations}
+\subsubsection{Manage blogs for Organizations}
 
 The use case starts when a user with an Organization account accesses the blog management page. The user chooses to edit or create a new blog, then a form will be displayed. Note that the form would be filled if the user chose to edit an available blog. In that case, the user can modify the fields or rather delete the blog. If the user wants to create a new blog, the user can input and submit it. Finally, admins will verify the blog and the result will be sent to the user.
 
@@ -187,7 +187,7 @@ The use case starts when a user with an Organization account accesses the blog m
 \label{fig:manage-blog}
 \end{figure}
 
-\textbf{Manage blogs for Administrator}
+\subsubsection{Manage blogs for Administrator}
 
 The use case starts when a user with an Organization account accesses the blog management page. The flow is almost the same as for Organization users except that the blog is created without any verification.
 
@@ -198,7 +198,7 @@ The use case starts when a user with an Organization account accesses the blog m
 \label{fig:manage-blog-admin}
 \end{figure}
 
-\textbf{Make payment}
+\subsubsection{Make payment}
 
 When a user applies an advertisement on a log, the system shows all advertisement types with their periods. Then, users choose a type of advertisement and the system shows the payment invoice. If the user confirms the payment, the Payment service will process the transaction and the result will be displayed to admins and the user.
 
@@ -273,7 +273,7 @@ maintainability and scalability in the system design.
 
 After completing the class diagrams and activity diagrams of the system, we will  demonstrate how the system's classes interact with each other according to the system's business flow using sequence diagrams.
 
-\textbf{Self Registration}
+\subsubsection{Self Registration}
 
 \begin{figure}[H]
   \centering
@@ -283,7 +283,7 @@ After completing the class diagrams and activity diagrams of the system, we will
 \end{figure}
 
 
-\textbf{Login}
+\subsubsection{Login}
 
 \begin{figure}[H]
   \centering
@@ -292,7 +292,7 @@ After completing the class diagrams and activity diagrams of the system, we will
   \label{fig:login-seq}
 \end{figure}
 \clearpage
-\textbf{Login with a Google account}
+\subsubsection{Login with a Google account}
 
 \begin{figure}[H]
   \centering
@@ -301,7 +301,7 @@ After completing the class diagrams and activity diagrams of the system, we will
   \label{fig:login-google-seq}
 \end{figure}
 
-\textbf{Update to Organization account}
+\subsubsection{Update to Organization account}
 
 \begin{figure}[H]
   \centering
@@ -310,7 +310,7 @@ After completing the class diagrams and activity diagrams of the system, we will
   \label{fig:update-org-seq}
 \end{figure}
 
-\textbf{Manage pet profile}
+\subsubsection{Manage pet profile}
 
 \begin{figure}[H]
   \centering
@@ -327,7 +327,7 @@ After completing the class diagrams and activity diagrams of the system, we will
 \end{figure}
 \clearpage
 
-\textbf{Manage blogs}
+\subsubsection{Manage blogs}
 
 \begin{figure}[H]
   \centering
@@ -343,7 +343,7 @@ After completing the class diagrams and activity diagrams of the system, we will
   \label{fig:update-blog-seq}
 \end{figure}
 \clearpage
-\textbf{Make payment}
+\subsubsection{Make payment}
 
 \begin{figure}[H]
   \centering

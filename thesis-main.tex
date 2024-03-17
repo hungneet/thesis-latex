@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper,oneside]{book} % twoside for draft
 
+\usepackage{hyperref}
 %\usepackage{babel}
 \usepackage[utf8]{vietnam}
 \usepackage[english]{babel}
@@ -17,7 +18,7 @@
 \usepackage{bkthesis}
 
 
-%\csdeptname{KHOA ĐIỆN ĐIỆN TỬ}
+% \csdeptname{KHOA ĐIỆN ĐIỆN TỬ}
 \crname{CAPSTONE PROJECT REPORT}
 % \crname{BÁO CÁO TIỂU LUẬN}
 \title{PETOPIA - A PET ADOPTION PLATFORM}
@@ -93,15 +94,16 @@
 \input{Chapter3.tex}
 \input{Chapter4.tex}
 
+\input{Conclusion.tex}
+
 %-	Danh mục TL tham khảo
 %-	Phụ lục (nếu có)
 
 % comment two lines and use manually.bbl bellow if manually
 
-\bibliographystyle{plain} % ieeetr
-\bibliography{refs}
+% \bibliographystyle{plain} % ieeetr
+% \bibliography{refs}
 
-% un-comment this line to use manually
-% \input{manually.bbl}
+\input{manually.bbl}
 
 \end{document}
