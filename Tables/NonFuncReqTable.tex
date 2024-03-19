@@ -1,0 +1,68 @@
+\begin{longtblr}[
+    caption = {Non-Functional Requirements},
+    label = {tblr:non_func_req},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5, l]},
+  }
+  \textbf{Group} & \textbf{Requirements} \\
+  \textbf{Performance} & {
+    -~~~~~~~
+    The system should respond to pages loading in under 2 seconds.
+    \\-~~~~~~~
+    The period for payment transaction (from starting the transaction to receiving the result notification) period is at most 10 seconds.
+    \\-~~~~~~~
+    The period for pet profiles filtering is at most 2 seconds.
+    \\-~~~~~~~
+    The delay time for real-time messages is at most 0.5 seconds.
+  } \\
+  \textbf{Localization} & {
+    -~~~~~~~
+    All the system data and user inputs of time are in the format of "dd/mm/yyyy”.
+    \\-~~~~~~~
+    All the system data and user inputs of address are in the format of “street, ward, district, city”.
+    \\-~~~~~~~
+    The language used in the system is Vietnamese.
+  } \\
+  \textbf{Security} & {
+    -~~~~~~~
+    The system data (such as email, password, and personal information) must be encrypted before being stored in the database.
+    \\-~~~~~~~
+    User unauthorized access to system features and data must be prevented using authorization with JWT tokens.
+    \\-~~~~~~~
+    System uses secured data transmission over the internet (TLS, HTTPS).
+    \\-~~~~~~~
+    System components (API servers, database servers, file storage,..) must be protected from external accesses.
+    \\-~~~~~~~
+    System must have at least one backup database that is kept synchronized for potential problems with the main database.
+    \\-~~~~~~~
+    User register requests must be challenged by a reCAPTCHA service.
+  } \\
+  \textbf{Compatibility} & {
+    -~~~~~~~
+    The web application of the system functions correctly on popular web browsers, such as Chrome, Firefox, Safari, and Edge.
+    \\-~~~~~~~
+    The web application of the system supports responsiveness and works well on various devices and screen sizes (smartphones, tablets, desktops).
+  } \\
+  \textbf{Reliability} & {
+    -~~~~~~~
+    The system must perform without failure in 95 percent of use cases during a month.
+    \\-~~~~~~~
+    Run smoothly when 1000 users access at the same time.
+  } \\
+  \textbf{Usability} & {
+    -~~~~~~~
+    The maximum amount of time for new users to get familiar with the web application of the system is 15 minutes.
+    \\-~~~~~~~
+    The steps to give and adopt a pet must be short and straightforward.
+  } \\
+  \textbf{Scalability} & {
+    -~~~~~~~
+    The backend components of the system can be reused to build a mobile application in the future.
+    \\-~~~~~~~
+    The system supports horizontal scaling to add more servers to accommodate increased user activity.
+    \\-~~~~~~~
+    The design patterns of the systems must be able to further implement new features in the future.
+  } \\
+\end{longtblr}
