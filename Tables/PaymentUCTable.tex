@@ -1,0 +1,43 @@
+\begin{longtblr}[
+    caption = {Use Case: Make payment},
+    label = {tblr:make_payment_use_case},
+  ]{
+    vline{1-10} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Make payment} \\
+  \textbf{Actors} & {
+    Organization, Admin, Payment service
+  } \\
+  \textbf{Preconditions} & {
+    Organizations create a blog successfully.
+  } \\
+  \textbf{Postconditions} & {
+    1. Organizations have blogs that have the correct advertisement duration.
+    \\2. Admins receive payment from organizations.
+  } \\
+  \textbf{Triggers} & {
+    Organizations apply advertisements on their blogs.
+  } \\
+  \textbf{Normal flow} & {
+    1. The system shows all advertisement types with their periods.
+    \\2. Users choose a type of advertisement. The system shows the payment invoice.
+    \\3. Users confirm all the payment policies and finish the payments.
+    \\4. Payment service processes the transactions.
+    \\5. Admins receive the payments from the organizations.
+    \\6. System notifies organizations and admins of successful payments.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow 1, at step 3:
+    \\3. Users can refuse the payment policies and stop the payments.
+    \\Alternative flow 2, from step 4:
+    \\4. Payment service processes the transactions and gets errors.
+    \\5. System notifies organizations of failed payments.
+  } \\
+  \textbf{Exceptions} & {
+    1. Organizations do not use the supported payment service.
+    \\2. The balances in the accounts of organizations are not enough.
+    \\3. Internal errors in the payment service occur.
+  } \\
+\end{longtblr}

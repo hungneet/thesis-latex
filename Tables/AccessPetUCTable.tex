@@ -1,0 +1,39 @@
+\begin{longtblr}[
+    caption = {Use Case: Access pet profiles},
+    label = {tblr:access_pet_profiles_use_case},
+  ]{
+    vline{1-11} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Access pet profiles} \\
+  \textbf{Actors} & {
+    General User
+  } \\
+  \textbf{Preconditions} & {
+    User at search page.
+  } \\
+  \textbf{Postconditions} & {
+    Users view their desired pets.
+  } \\
+  \textbf{Triggers} & {
+    Users access the system and want to find pets.
+  } \\
+  \textbf{Normal flow} & {
+    1. Users access the pet section. The system displays the pet section screen.
+    \\2. Users select categories to filter. System filter and display list of pets.
+    \\3. Users choose a pet profile. The system shows the pet profile details.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow 1, from step 2:
+    \\2. Users select a pet profile displayed in the pet section. The system shows the pet profile details.
+    \\Alternative flow 2, from step 3:
+    \\3. Users choose to filter by an image. The system sends the image to the pet recognition service.
+    \\4. The service extracts information from images. System filter and display list of pets.
+    \\5. Users choose a pet profile. The system shows the pet profile details.
+  } \\
+  \textbf{Exceptions} & {
+    1. The system does not have the user’s desired pet.
+    \\2. The pet recognition service cannot extract information from the provided image.
+  } \\
+\end{longtblr}

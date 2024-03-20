@@ -1,0 +1,40 @@
+\begin{longtblr}[
+    caption = {Use Case: Adopt pets},
+    label = {tblr:adopt_pets_use_case},
+  ]{
+    vline{1-12} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Adopt pets} \\
+  \textbf{Actors} & {
+    General User
+  } \\
+  \textbf{Preconditions} & {
+    1. Users logged successfully into the system.
+    \\2. Pet Adopters find pet profiles successfully.
+  } \\
+  \textbf{Postconditions} & {
+    Pet owners receive and handle the submitted application successfully.
+  } \\
+  \textbf{Triggers} & {
+    The adopters choose a pet profile and want to adopt.
+  } \\
+  \textbf{Normal flow} & {
+    1. Pet adopters click the adopt button on a pet profile. The system displays a form screen of required information.
+    \\2. Pet adopters fill required information and apply.
+    \\3. Pet Owners receive and view the applications.
+    \\4. Pet Owners accept the applications.
+    \\5. The system updates the pet profile status and notifies the pet adopter of the results of the applications.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow 1, from step 3:
+    \\3. Pet adopters cancel their applications before Pet Owners accept them.
+    \\Alternative flow 2, from steps 4 to 5:
+    \\4. Pet Owners decline the applications.
+    \\5. The system notifies pet adopters of the results of the applications.
+  } \\
+  \textbf{Exceptions} & {
+    The pets already have new owners during the adoption process.
+  } \\
+\end{longtblr}

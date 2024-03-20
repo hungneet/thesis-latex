@@ -1,0 +1,38 @@
+\begin{longtblr}[
+    caption = {Use Case: Manage blogs},
+    label = {tblr:manage_blogs_use_case},
+  ]{
+    vline{1-8} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Manage blogs} \\
+  \textbf{Actors} & {
+    Organization, Admin
+  } \\
+  \textbf{Preconditions} & {
+    Actors logged successfully into the system.
+  } \\
+  \textbf{Postconditions} & {
+    1. Actors can create and edit their blogs.
+    \\2. The administrator can manage all blogs of the system.
+  } \\
+  \textbf{Triggers} & {
+    Actors access the blog management section of the system.
+  } \\
+  \textbf{Normal flow} & {
+    1. Actors click on the add blogs button of the system. The system displays a blog form screen.
+    \\2. Actors provide and submit blog creation forms.
+    \\3. The system verifies submitted information using the content moderation service.
+    \\4. The system creates new pet profiles and notifies the Actors.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow: as an administrator
+    \\1. The administrator chooses a blog from the submitted blog list to review.
+    \\2. The administrator declines or accepts blogs.
+    \\3. The administrator can delete other users’ blogs.
+  } \\
+  \textbf{Exceptions} & {
+    (No exceptions provided)
+  } \\
+\end{longtblr}

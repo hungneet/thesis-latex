@@ -1,0 +1,43 @@
+\begin{longtblr}[
+    caption = {Use Case: Log in},
+    label = {tblr:login_use_case},
+  ]{
+    vline{1-16} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Log in} \\
+  \textbf{Actors} & {
+    General User, Google OAuth Service
+  } \\
+  \textbf{Preconditions} & {
+    User at login page
+  } \\
+  \textbf{Postconditions} & {
+    Users log in successfully and can access authorized features.
+  } \\
+  \textbf{Triggers} & {
+    1. Users access any authorized features of the system without being authorized.
+    \\2. Users want to log in to the system.
+  } \\
+  \textbf{Normal flow} & {
+    1. Users click on the login button of the system. The system displays a login form screen.
+    \\2. User provides authentication information including email and password.
+    \\3. The system verifies the authentication information.
+    \\4. System grants access permission to users.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow 1, at step 1:
+    \\1. Users access any authorized features of the system without being authorized.
+    \\Alternative flow 2:
+    \\1. Users choose the option of login with a Google account. The system displays a Google login form screen.
+    \\2. Users provide Google authentication information.
+    \\3. Google Auth service verifies the authentication information and generates access tokens.
+    \\4. System validates access token and grants access permission to users.
+  } \\
+  \textbf{Exceptions} & {
+    1. Users input the wrong authentication information.
+    \\2. Users do not have an account.
+    \\3. Users do not have a Google account.
+  } \\
+\end{longtblr}

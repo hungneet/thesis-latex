@@ -1,0 +1,37 @@
+\begin{longtblr}[
+    caption = {Use Case: Update to organization account},
+    label = {tblr:update_organization_use_case},
+  ]{
+    vline{1-11} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Update to organization account} \\
+  \textbf{Actors} & {
+    Individual User, Admin.
+  } \\
+  \textbf{Preconditions} & {
+    1. Admins have logged into the system.
+    \\2. Organizations had an individual user account.
+  } \\
+  \textbf{Postconditions} & {
+    Organizations update their account successfully.
+  } \\
+  \textbf{Triggers} & {
+    Organizations want to update accounts.
+  } \\
+  \textbf{Normal flow} & {
+    1. Individual Users choose to update to organization accounts.
+    \\2. Users provide some information for verification and submit them.
+    \\3. Admins verify the update-account application.
+    \\4. The system updates the accounts and notifies the user of the results.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow, from step 3:
+    \\3. Admins decline the update applications.
+    \\4. The system notifies the organizations of the results.
+  } \\
+  \textbf{Exceptions} & {
+    
+  } \\
+\end{longtblr}

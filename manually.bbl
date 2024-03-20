@@ -21,7 +21,9 @@ Anna Fitzgerald.
 \bibitem{microsoft2023a}
 Microsoft.
 \newblock Overview of ASP.NET Core.
+\begin{sloppy}
 \newblock \url{https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core}.
+\end{sloppy}
 \newblock Accessed on 18/11/2023.
 
 \bibitem{microsoft2023b}

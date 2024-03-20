@@ -1,0 +1,37 @@
+\begin{longtblr}[
+    caption = {Use Case: Interact with pet posts},
+    label = {tblr:interact_with_pet_posts_use_case},
+  ]{
+    vline{1-9} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name} & \textbf{Interact with pet posts} \\
+  \textbf{Actors} & {
+    General User
+  } \\
+  \textbf{Preconditions} & {
+    1. Users logged successfully into the system.
+    \\2. Users access a pet profile successfully.
+    \\3. The pet is adopted and has at least one status-update blog uploaded.
+  } \\
+  \textbf{Postconditions} & {
+    Users can interact with pet posts.
+  } \\
+  \textbf{Triggers} & {
+    Users choose to view an adopted pet profile.
+  } \\
+  \textbf{Normal flow} & {
+    1. Users access update-status posts. The system displays an update-status posts screen.
+    \\2. Users view the content of the post.
+    \\3. Users like the post by using the like option.
+    \\4. System updates the update-status posts.
+  } \\
+  \textbf{Alternative flows} & {
+    Alternative flow 1, at step 3:
+    \\3. Users leave comments in the comment section of the blog.
+  } \\
+  \textbf{Exceptions} & {
+    Pet posts will not appear if they are private and the users do not have an appropriate role to view them.
+  } \\
+\end{longtblr}
