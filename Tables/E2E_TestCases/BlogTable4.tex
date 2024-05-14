@@ -1,0 +1,31 @@
+\begin{longtblr}[
+    caption = {Blog Update Test},
+    label = {tblr:blog_update},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Blog Update} \\
+  \textbf{Purpose} & {
+    Test whether the user can update a created blog.
+  } \\
+  \textbf{Precondition} & {
+    User is logged in using an organization account.
+    \\ User is at the user profile page.
+    \\ Have done the previous Blog Create Test case.
+  } \\
+  \textbf{Steps} & {
+    1. Click the blog tab. System displays the blog tab content.
+    \\2. Click the edit button on the created blog.
+    \\3. System opens the blog update form.
+    \\4. Change the blog title, content, excerpt, image.
+    \\5. Click the submit button.
+  } \\
+  \textbf{Expected result} & {
+    User updates the blog successfully.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}

@@ -1,1 +1,99 @@
 \chapter{SYSTEM TESTING}
+
+With the completion of system implementation, our focus now shifts towards ensuring the robustness and functionality of the system through testing. This section presents the systematic approach taken for system testing, including end-to-end testing and API testing, to validate the functionality and performance of the implemented system
+
+\section{End-to-End Testing}
+
+End-to-end testing is a software testing method that validates the system as a whole, ensuring that all components work together as expected. This type of testing is essential to ensure that the system meets the requirements and performs as intended. In this section, we present the end-to-end testing process for the implemented system.
+
+\subsection{Automation tool - Cypress}
+
+To automate the end-to-end testing process, we choose Cypress, which is a modern JavaScript-based end-to-end testing framework designed for web applications. It provides a fast, reliable, and easy-to-use testing solution for developers and QA engineers. Cypress comes with a rich set of features such as real-time reloading, automatic waiting, and built-in assertions,  allowing for efficient and effective testing of web applications.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/cypress_script.png}
+    \caption{Automation Script}
+    \label{fig:cypress-script}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/cypress_auto.png}
+    \caption{Automation tests done by Cypress}
+    \label{fig:cypress-test}
+\end{figure}
+
+\subsection{Test Cases}
+With Cypress, we tested our system features to make sure the system ran as expected and satisfied requirements. Below are some test cases of the key features and test data for them, these test cases were tested on multiple browser and environments.
+
+\subsubsection*{Test data}
+
+Normal User account:
+
+\quad Email: vejox62251@facais.com - Password: 123456789
+
+Organization User account:
+
+\quad Email:  jayoki3306@facais.com - Password: 123456789
+
+Owned-pet-id: baf3745f-d0d7-40c7-8084-5b55cb2f2ce3
+
+\subsubsection*{Authentication}
+
+\input{Tables/E2E_TestCases/AuthTable1.tex}
+
+\input{Tables/E2E_TestCases/AuthTable2.tex}
+
+\input{Tables/E2E_TestCases/AuthTable3.tex}
+
+\input{Tables/E2E_TestCases/AuthTable4.tex}
+
+\subsubsection*{Filter pet}
+
+\input{Tables/E2E_TestCases/FilterPetTable1.tex}
+
+The same test was done with other options: breed, age, color, sex, size, vaccinated, and spayed; which also yielded the same results. But there is a special case where breeds should be displayed according to the chosen species, so it is a separate case.
+
+\input{Tables/E2E_TestCases/FilterPetTable2.tex}
+
+\subsubsection*{Account Configuration}
+
+\input{Tables/E2E_TestCases/UserConfigTable1.tex}
+
+\input{Tables/E2E_TestCases/UserConfigTable2.tex}
+
+The same test was done with other fields: last name, email, phone number, address; which also yielded the same results.
+
+\subsubsection*{Give away pet}
+
+\input{Tables/E2E_TestCases/GiveAwayPetTable1.tex}
+
+\input{Tables/E2E_TestCases/GiveAwayPetTable2.tex}
+
+\input{ Tables/E2E_TestCases/GiveAwayPetTable3.tex}
+
+\input{Tables/E2E_TestCases/GiveAwayPetTable4.tex}
+
+\subsubsection*{Adopt Pet}
+
+\input{Tables/E2E_TestCases/AdoptPetTable1.tex}
+
+\input{Tables/E2E_TestCases/AdoptPetTable2.tex}
+
+\input{Tables/E2E_TestCases/AdoptPetTable3.tex}
+
+\subsubsection*{Blog}
+
+\input{Tables/E2E_TestCases/BlogTable1.tex}
+
+\input{Tables/E2E_TestCases/BlogTable2.tex}
+
+The same test was done with other categories: art, training, and product; which also yielded the same results.
+
+\input{Tables/E2E_TestCases/BlogTable3.tex}
+
+\input{Tables/E2E_TestCases/BlogTable4.tex}
+
+\section{API Testing}
+
