@@ -1,0 +1,29 @@
+\begin{longtblr}[
+    caption = {Submit Adopt Pet on Already Submitted Pet Test},
+    label = {tblr:submit_adopt_pet_again},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Submit adopt pet on already submitted pet} \\
+  \textbf{Purpose} & {
+    Test whether the user can submit an adopt application again on the same pet.
+  } \\
+  \textbf{Precondition} & {
+    User at the search pet page.
+    \\ User is authenticated.
+    \\ Already done the Adopt pet test case.
+  } \\
+  \textbf{Steps} & {
+    1. Click the first pet card on the pet list.
+    \\2. System directs to the pet detail page.
+    \\3. Click the “Nhận nuôi” button.
+  } \\
+  \textbf{Expected result} & {
+    System alerts the user that they already sent the adopt application for this pet.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}

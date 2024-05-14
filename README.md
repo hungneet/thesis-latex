@@ -1,7 +1,9 @@
 # HCMUT Thesis/Dissertation Template
 
 ## How to run
-Youtube: https://www.youtube.com/watch?v=4lyHIQl4VM8&t=648s&ab_channel=FedericoTartarini
+Windows: https://www.youtube.com/watch?v=4lyHIQl4VM8&t=648s
+
+MAC: https://www.youtube.com/watch?v=CmagZthwhaY
 
 ## Một số gợi ý về sử dụng
 

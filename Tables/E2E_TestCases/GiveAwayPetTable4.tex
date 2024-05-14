@@ -1,0 +1,29 @@
+\begin{longtblr}[
+    caption = {Submit Give Away Pet Form Without Reading Give Away Terms Test},
+    label = {tblr:submit_give_away_pet_without_terms},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Submit give away pet form without reading give away terms} \\
+  \textbf{Purpose} & {
+    Test whether the user can submit the give away pet form without reading the terms.
+  } \\
+  \textbf{Precondition} & {
+    User at the give pet page.
+    \\ User is authenticated.
+  } \\
+  \textbf{Steps} & {
+    1. System shows the give pet form. The first page is the pet image upload.
+    \\2. Click the “Tiếp tục” button. System shows the pet information page.
+    \\3. Click the “Tiếp tục” button. System shows pet giveaway terms.
+    \\4. Try to tick the accept checkbox.
+  } \\
+  \textbf{Expected result} & {
+    Cannot tick the accept checkbox. System alerts the user.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}

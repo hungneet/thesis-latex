@@ -1,0 +1,28 @@
+\begin{longtblr}[
+    caption = {Organization Account Accessibility Test},
+    label = {tblr:organization_account_accessibility},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Organization account accessibility} \\
+  \textbf{Purpose} & {
+    Test whether the authenticated user with an organization account can access the pages that require authentication at the organization account level.
+  } \\
+  \textbf{Precondition} & {
+    User logged in using an organization account.
+  } \\
+  \textbf{Steps} & {
+    1. Click the User avatar at top right.
+    \\2. Click the User profile option.
+    \\3. System directs to User profile page.
+  } \\
+  \textbf{Expected result} & {
+    System shows the profile of the organization with the create blog option.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}
+

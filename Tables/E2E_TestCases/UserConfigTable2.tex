@@ -1,0 +1,28 @@
+\begin{longtblr}[
+    caption = {Update User Information with Missing Last Name Test},
+    label = {tblr:update_user_information_missing_last_name},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Update user information with missing field Last Name} \\
+  \textbf{Purpose} & {
+    Test whether the user can update information with a missing field.
+  } \\
+  \textbf{Precondition} & {
+    User at the user profile page.
+  } \\
+  \textbf{Steps} & {
+    1. Click the “Cập nhật thông tin” button.
+    \\2. System shows the update information form.
+    \\3. Fill in the fields: Last Name, Email, Phone Number, Address. Leave the field First Name empty.
+    \\4. Click the submit button.
+  } \\
+  \textbf{Expected result} & {
+    Submit form failed, system alerted user.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}
