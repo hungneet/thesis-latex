@@ -1,0 +1,31 @@
+\begin{longtblr}[
+    caption = {Adopt Pet Test},
+    label = {tblr:adopt_pet},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Adopt pet} \\
+  \textbf{Purpose} & {
+    Test whether the user can submit an adopt application successfully.
+  } \\
+  \textbf{Precondition} & {
+    User at the search pet page.
+    \\ User is authenticated.
+  } \\
+  \textbf{Steps} & {
+    1. Click the first pet card on the pet list.
+    \\2. System directs to the pet detail page.
+    \\3. Click the “Nhận nuôi” button.
+    \\4. System shows the adopt application form.
+    \\5. Fill in all required information: name, email, phone number, address, home type, adopt time, note, pets owned.
+    \\6. Click the submit button.
+  } \\
+  \textbf{Expected result} & {
+    User submits adopt application successfully.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}

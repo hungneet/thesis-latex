@@ -1,0 +1,30 @@
+\begin{longtblr}[
+    caption = {Blog Create Test},
+    label = {tblr:blog_create},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Blog create} \\
+  \textbf{Purpose} & {
+    Test whether the user can create a blog.
+  } \\
+  \textbf{Precondition} & {
+    User is logged in using an organization account.
+    \\ User is at the user profile page.
+  } \\
+  \textbf{Steps} & {
+    1. Click the blog tab. System displays the blog tab content.
+    \\2. Click the create blog card.
+    \\3. System directs to the blog create page.
+    \\4. Fill in the required fields: title, excerpt, blog image, blog content.
+    \\5. Click the submit button.
+  } \\
+  \textbf{Expected result} & {
+    User creates the blog successfully.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}
