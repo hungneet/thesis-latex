@@ -1,0 +1,25 @@
+\begin{longtblr}[
+    caption = {Normal Account Accessibility Test},
+    label = {tblr:normal_account_accessibility},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Normal account accessibility} \\
+  \textbf{Purpose} & {
+    Test whether the authenticated user with a normal account can access the pages that require authentication at the normal account level.
+  } \\
+  \textbf{Precondition} & {
+    User logged in using a normal account.
+  } \\
+  \textbf{Steps} & {
+    1. Click the “Cho thú cưng” button on the Nav bar.
+  } \\
+  \textbf{Expected result} & {
+    System shows the restricted page content to the authenticated user.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}
