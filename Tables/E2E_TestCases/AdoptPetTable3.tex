@@ -1,0 +1,27 @@
+\begin{longtblr}[
+    caption = {Adopt Owned Pet Test},
+    label = {tblr:adopt_owned_pet},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Adopt owned pet} \\
+  \textbf{Purpose} & {
+    Test whether the user can submit an adopt application for a pet that has already been adopted.
+  } \\
+  \textbf{Precondition} & {
+    User is authenticated.
+    \\ System has owned pet.
+  } \\
+  \textbf{Steps} & {
+    1. Use the owned pet ID in the test data to visit the pet detail page by adding “/pet/[pet-id]” to the website URL.
+    \\2. System directs to the pet detail page.
+  } \\
+  \textbf{Expected result} & {
+    The “Nhận nuôi” button is not available.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}
