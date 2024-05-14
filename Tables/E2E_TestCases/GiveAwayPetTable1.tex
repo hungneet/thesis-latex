@@ -1,0 +1,33 @@
+\begin{longtblr}[
+    caption = {Give Away Pet Test},
+    label = {tblr:give_away_pet},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5,l]},
+  }
+  \textbf{Description} & \textbf{Give away pet} \\
+  \textbf{Purpose} & {
+    Test whether the user can give away a pet successfully.
+  } \\
+  \textbf{Precondition} & {
+    User at the give pet page.
+    \\ User is authenticated.
+  } \\
+  \textbf{Steps} & {
+    1. System shows the give pet form. The first page is the pet image upload.
+    \\2. Click the image upload zone. The system shows the upload window.
+    \\3. Choose a .jpg image and click OK. The system shows the uploaded picture in the preview row.
+    \\4. Click the “Tiếp tục” button. The system shows the pet information page.
+    \\5. Fill in the pet information fields.
+    \\6. Click the “Tiếp tục” button. The system shows pet giveaway terms.
+    \\7. Tick the accept checkbox.
+    \\8. Click the submit form button.
+  } \\
+  \textbf{Expected result} & {
+    Submit pet giveaway form successfully.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}

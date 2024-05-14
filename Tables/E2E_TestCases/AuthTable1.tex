@@ -1,0 +1,34 @@
+\begin{longtblr}[
+    caption = {Non-restricted Page Accessibility Test},
+    label = {tblr:non_restricted_page_accessibility},
+  ]{
+    vline{1-3} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[2,l] X[5, l]},
+  }
+  \textbf{Description} & \textbf{Non-restricted page accessibility} \\
+  \textbf{Purpose} & {
+    Test whether the guest user can access the pages that do not require authentication.
+  } \\
+  \textbf{Precondition} & {
+
+  } \\
+  \textbf{Steps} & {
+    1. Click the “Nhận nuôi” button on the Nav bar.
+    \\2. System shows the page content.
+    \\3. Click the first pet card on the pet list.
+    \\4. System shows the page content.
+    \\5. Click the “Tin tức” button on the Nav bar.
+    \\6. System shows the page content.
+    \\7. Click the first blog card on the blog list.
+    \\8. System shows the page content.
+  } \\
+  \textbf{Expected result} & {
+    System does not direct the user to the login page.
+  } \\
+  \textbf{Execution results} & {
+    PASSED
+  } \\
+\end{longtblr}
+
+

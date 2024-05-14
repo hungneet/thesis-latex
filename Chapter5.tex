@@ -1,0 +1,64 @@
+\chapter{SYSTEM IMPLEMENTATION}
+
+With all the system design and system analysis completed in the previous semester, we now embark on the implementation phase of our project. This chapter details the process of bringing our design to life, outlining the key features of our system and the methodologies employed to implement them. Through careful planning and execution, we aim to translate our theoretical framework into a functional and efficient system. Below are some of the critical features of our system and the approaches we used to implement them.
+
+
+\section{Caching Mechanism}
+
+To reduce the amount of time it takes to access frequently accessed data
+and increase the general system performance, we will apply caching data
+in our system. The applied caching strategy is called \emph{aside
+    caching} \emph{(Figure 34).} The detailed caching process is as follows:
+
+- Step 1: The application will check whether the cache has the data it
+needs or not.
+
+- Step 2: If the cache has the data the application needs, the process
+will end. If the cache has no data, we will go to the next step.
+
+- Step 3: When the cache does not contain the data that the application
+needs, the application will go to the database to get the data
+
+- Step 4: The application will save the data retrieved from the database
+to the cache, then it will continue its work.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/caching_strat.png}
+    \caption{Caching Mechanism}
+\end{figure}
+
+\section{Advanced search strategy}
+
+Querying data that requires applying many filters (pet profiles, etc)
+from the SQL database is extremely time-consuming. Note that only data
+that is used repeatedly and is not too large in size can be stored
+temporarily in the cache server. Therefore, applying a search strategy
+to optimize querying the above type of data is necessary.
+
+\emph{Figure 35} shows the steps of syncing data from the SQL database
+to the Elastic-search database.
+
+\begin{itemize}
+    \item
+          Whenever the application does an action on a record of the SQL
+          database (create, update, delete), a new record (which includes the ID
+          of the record taken the action, and the action), from now we call the
+          async record, is created.
+    \item
+          At the end of the application process, a background job is triggered
+          to query all the async records and send all the records that they
+          point to onto the Elastic-search database. Therefore the data of the
+          Elastic-search database is always synchronized with the SQL database.
+    \item
+          Note that the application only queries data from the Elastic-search
+          database for tables that were defined before.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/search_strat.png}
+    \caption{Search strategy}
+\end{figure}
+
+\section{Online payment}
