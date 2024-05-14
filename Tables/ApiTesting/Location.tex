@@ -1,0 +1,18 @@
+\begin{longtblr}[
+    caption = {API Testing for Location Function},
+    label = {tblr:api_location},
+  ]{
+    hlines, vlines,
+    colspec = {X[0.6,l] X[2.3,l] X[3.3,l] X[4.5,l] X[0.8,l] X[1.7,l]},
+    row{1} = {font=\bfseries},
+  }
+    Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
+    \SetCell[r=8]{c}1 & \SetCell[r=8]{c}GET - /Location & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=8]{c}707ms \\
+    & & 2. Empty level and code & Status 200 with empty data & Pass & \\
+    & & 3. Level = 1 & Return all provinces & Pass & \\
+    & & 4. Level = 2 & Status 200 with empty data & Pass & \\
+    & & 5. Code = 1 & Status 200 with empty data & Pass & \\
+    & & 6. Level = 2, Code = 79 & Return all districts corresponding to level & Pass & \\
+    & & 7. Level = 3, Code = 775 & Return all wards corresponding to level & Pass & \\
+    & & 8. Level = wrong, Code = wrong & Status 400 with message "The value 'wrong' is not valid for level" & Pass & \\
+  \end{longtblr}
