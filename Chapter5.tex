@@ -8,7 +8,7 @@ With all the system design and system analysis completed in the previous semeste
 To reduce the amount of time it takes to access frequently accessed data
 and increase the general system performance, we will apply caching data
 in our system. The applied caching strategy is called \emph{aside
-    caching} \emph{(Figure 34).} The detailed caching process is as follows:
+    caching} \emph{(Figure 5.1).} The detailed caching process is as follows:
 
 - Step 1: The application will check whether the cache has the data it
 needs or not.
@@ -36,7 +36,7 @@ that is used repeatedly and is not too large in size can be stored
 temporarily in the cache server. Therefore, applying a search strategy
 to optimize querying the above type of data is necessary.
 
-\emph{Figure 35} shows the steps of syncing data from the SQL database
+\emph{Figure 5.2} shows the steps of syncing data from the SQL database
 to the Elastic-search database.
 
 \begin{itemize}
@@ -62,3 +62,30 @@ to the Elastic-search database.
 \end{figure}
 
 \section{Online payment}
+
+In our system, we have integrated the PayPal Braintree Gateway to handle online payments securely and efficiently. Braintree is a full-stack payment platform that offers a seamless payment experience, supporting various payment methods, including credit cards, PayPal, and other digital wallets. Its robust infrastructure and comprehensive SDKs for both client and server sides make it an ideal choice for our system's payment processing needs.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/payment-strat.png}
+    \caption{Payment process}
+\end{figure}
+
+\emph{Figure 5.3} breaks down how the payment process is implemented:
+
+- Step 1:
+The front-end requests a client token from our server and initializes the Braintree client. This token is essential for securely communicating between the client and the Braintree server.
+
+- Step 2:
+Our server generates a client token using Braintree's tools and sends it back to the client. This token allows the front-end to securely handle customer payment information.
+
+- Step 3:
+The customer enters their payment information on the front-end. The Braintree client communicates this information to Braintree and returns a payment method nonce, a secure reference representing the payment details.
+
+- Step 4:
+The front-end sends the payment method nonce to our server. This nonce is a secure way to pass payment information without exposing sensitive data.
+
+- Step 5:
+The server receives the payment method nonce and uses Braintree's tools to process the payment. The server then communicates with Braintree to complete the transaction securely.
+
+By utilizing PayPal Braintree Gateway, we ensure a secure and streamlined payment process, enhancing the user experience and maintaining high security standards in handling sensitive payment information.
