@@ -37,15 +37,19 @@
 % \csdeptname{KHOA ĐIỆN ĐIỆN TỬ}
 \crname{CAPSTONE PROJECT REPORT}
 % \crname{BÁO CÁO TIỂU LUẬN}
-\title{PETOPIA - A PET ADOPTION PLATFORM}
+\title{DEVELPOP AN ONLINE PET ADOPTION PLATFORM}
+
 \cstuname{STUDENT 1: BUI NGOC DUC ANH (2052832)
 \\STUDENT 2:	NGUYEN MINH HUNG	(2052504)
 \\STUDENT 3:	HUYNH VO TUAN	(2053558)}
 
 
 \csCouncil{COMPUTER SCIENCE}
+
 \csSupervise{TRUONG TUAN ANH, Ph.D.}
+
 \csReviewer{MAI DUC TRUNG, M.Eng.}
+
 \cttime{6/2024}
 
 \thesislayout
@@ -71,28 +75,33 @@
 % add content here
 %-	Lời cảm ơn/ Lời ngỏ
 \begin{acknowledgment}
-	\input{acknowledgement.tex}
+  \input{acknowledgement.tex}
 \end{acknowledgment}
 
 
 %-	Lời cam đoan
 \begin{commitment}
-	\input{commitment.tex}
+  \input{commitment.tex}
 \end{commitment}
 
 
 %-	Tóm tắt LV
 \begin{abstract}
-	\input{abstract.tex}
+  \input{abstract.tex}
 \end{abstract}
 
 \tableofcontents
-%\listofsymbols
+
 \listoftables
 
-
 \listoffigures
-%\listofalgorithms
+
+\newpage
+
+\begin{abbreviations}
+  \input{Abbreviation.tex}
+\end{abbreviations}
+
 
 
 \mainmatter
@@ -106,7 +115,7 @@
 \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
 \input{Chapter1.tex}
-\input{Chapter2.tex}
+\input{Chapter2/Chapter2.tex}
 \input{Chapter3.tex}
 \input{Chapter4.tex}
 
@@ -114,16 +123,6 @@
 \input{Chapter6.tex}
 
 \input{Conclusion.tex}
-
-
-
-%-	Danh mục TL tham khảo
-%-	Phụ lục (nếu có)
-
-% comment two lines and use manually.bbl bellow if manually
-
-% \bibliographystyle{plain} % ieeetr
-% \bibliography{refs}
 
 \input{manually.bbl}
 
