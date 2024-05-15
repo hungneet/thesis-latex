@@ -121,6 +121,27 @@ create test cases, execute requests, and analyze responses efficiently.
 By defining test scripts and assertions, we could validate the API
 endpoints' functionality and performance, ensuring that they met the
 specified requirements.
+In this section, we focus on the response data, status code, and response
+time of the API endpoints, evaluating their accuracy and reliability.
+For status, we have this code on Postman
+\begin{lstlisting}[caption=Code to test status code, label={lst:status-code}]
+    pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+    });
+\end{lstlisting}
+To test the status code, we used the following code in Postman:
+\begin{lstlisting}[caption=Code to test response time, label={lst:response-time}]
+    pm.test("Response time is less than 200ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(200);
+    });
+\end{lstlisting}
+To test the response data, we used this code in Postman:
+\begin{lstlisting}[caption=Code to test response data, label={lst:response-data}]
+    pm.test("Response contains errorCode: 10006 and errorMessage: Wrong login type", function () {
+    var responseData = pm.response.json();
+    pm.expect(responseData).to.eql({ errorCode: 10006, errorMessage: "Wrong login type" });
+});
+\end{lstlisting}
 
 \subsection{API testing scenarios}
 Various testing scenarios were explored to evaluate the website's API
@@ -167,4 +188,7 @@ devices, ensuring a consistent and seamless user experience. By
 identifying and addressing any responsiveness issues, we could enhance
 the website's usability and accessibility, catering to a broader audience
 and improving user satisfaction.
+
+Here is the checklist for responsive testing:
+\input{Tables/ResponsiveTesting/ResponsiveTable.tex}
 
