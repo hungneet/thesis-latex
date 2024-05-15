@@ -50,28 +50,6 @@ Elasticsearch.
 \newblock \url{https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html}.
 \newblock Accessed on 18/11/2023.
 
-\bibitem{microsoft2023c}
-Microsoft.
-\newblock Introduction to Azure Storage.
-\newblock \url{https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction}.
-\newblock Accessed on 18/11/2023.
 
-\bibitem{docker2023}
-Docker.
-\newblock Docker overview.
-\newblock \url{https://docs.docker.com/get-started/overview}.
-\newblock Accessed on 18/11/2023.
-
-\bibitem{nginx2023a}
-Nginx.
-\newblock Understanding Load Balancing.
-\newblock \url{https://www.nginx.com/learn/load-balancing}.
-\newblock Accessed on 18/11/2023.
-
-\bibitem{nginx2023b}
-Nginx.
-\newblock Using nginx as HTTP load balancer.
-\newblock \url{https://nginx.org/en/docs/http/load_balancing.html}.
-\newblock Accessed on 18/11/2023.
 
 \end{thebibliography}
