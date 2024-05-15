@@ -4,37 +4,77 @@
 To comprehend the scope and orientation of the system, it’s essential to conduct a market survey of similar systems. Pet adoption systems, each with its unique features and benefits, come in various forms. In Vietnam, however, most organizations in this field operate through social network pages like Facebook and Instagram, rather than standalone software systems. Notably, the only pet adoption system that stands out from the rest is Hanoi Pet Adoption, which warrants further analysis and evaluation.
 
 \subsection{Overview}
-The Hanoi Pet Adoption (HPA) system, a web application based in Hanoi, Vietnam, serves as a platform for individuals to find and adopt rescued animals. The primary objective of this system is to aid the HPA group in rescuing and caring for animals, and subsequently finding them loving and responsible homes.
+\subsubsection*{Hanoi Pet Adoption}
+To comprehend the scope and orientation of the system, it’s essential to conduct a market survey of similar systems. We decided to choose the three below websites as our main targets for analysis and evaluation:
+\textbf{Hanoi Pet Adoption}, \textbf{PetRescue}, and \textbf{PetFinder}, each representing Vietnam, Australia, and the United States.
 
 HPA has the following main features:
 \begin{itemize}
   \item \textit{Pet profiles:} The system showcases profiles of animals ready for adoption. These profiles include details such as photos, names, genders, ages, colors, and sterilization statuses.
-  \item \textit{User Preferences:} Users can filter animals based on their preferences, including gender, age, color, and sterilization status.
-  \item \textit{Volunteer Contact Information:} The system provides the contact information of volunteers responsible for each animal, enabling users to inquire further about their animal of interest.
-  \item \textit{Adoption Process Guidance:} The system guides users through the adoption process, which includes an interview, a contract, and a fee.
+  \item \textit{Dual languages support:} The site has both English and Vietnamese languages available.
+  \item \textit{Blogs:}  The system provides blogs about training tips, news, pet health care,...
 \end{itemize}
 
-\subsection{Evaluation}
-HPA provides a comprehensive and effective pet adoption support process. However, its limitation lies in its exclusivity - only system administrators of the organization are permitted to post pet profiles onto the system.
+\subsubsection*{PetRescue}
 
-The absence of a messaging system in the current platform can create challenges in the pet adoption process. This lack of direct communication makes it difficult for system administrators and users to contact each other, particularly when issues arise. A messaging system would facilitate smoother interactions and problem resolution, enhancing the overall user experience.
+Based in Australia, PetRescue is a widely recognized non-profit organization dedicated to finding homes for rescued pets. The platform connects thousands of rescue groups, shelters, and pounds across Australia, offering a central repository for adoptable animals.
+
+PetRescue's key features include:
+
+\begin{itemize}
+  \item \textit{Comprehensive Pet Listings}: The platform provides detailed profiles for each animal, including photos, descriptions, ages, breeds, and health statuses.
+  \item \textit{Adoption Stories}: PetRescue features success stories of adopted animals, which helps to promote adoption and provide reassurance to potential adopters.
+  \item \textit{Educational Resources}: The site offers extensive resources on pet care, behavior, and training, helping new pet owners to integrate their pets into their homes successfully.
+  \item \textit{Support for Rescue Organizations}: PetRescue supports rescue groups by offering them tools to manage their pet listings and connect with potential adopters, enhancing their ability to find homes for rescued animals.
+\end{itemize}
+
+
+\subsubsection*{PetFinder}
+
+PetFinder, a prominent online resource in the United States, is dedicated to promoting pet adoption by connecting potential adopters with a vast network of animal shelters and rescue organizations. The platform's goal is to reduce the number of homeless pets and to advocate for responsible pet ownership.
+
+Here are some of PetFinder's key features:
+
+\begin{itemize}
+  \item \textit{Extensive Pet Database}: PetFinder hosts an extensive database of adoptable pets, featuring detailed profiles with photos, descriptions, breed information, and adoption requirements.
+  \item \textit{Mobile Application}: The platform offers a mobile app, allowing users to browse and inquire about adoptable pets on-the-go.
+  \item \textit{Adoption Resources}: PetFinder provides a wealth of information on the adoption process, pet care tips, and training advice.
+  \item \textit{Shelter and Rescue Support}: PetFinder offers tools and resources for shelters and rescue groups to manage their listings and reach a broader audience, increasing their chances of finding homes for their animals.
+\end{itemize}
+
+By analyzing these systems, we gain valuable insights into the functionalities, strengths, and areas for improvement that can guide the development of our own platform, ensuring it meets the needs of both the animals and the adopters effectively.
+
+\subsection{Evaluation}
+\subsubsection*{Hanoi Pet Adoption}
+
+HPA provides a comprehensive and effective pet adoption support process. However, its limitation lies in its exclusivity - only system administrators of the organization are permitted to post pet profiles onto the system.
 
 Currently, the system requires manual input for posting, filtering, and searching functions. This can pose challenges for individual users, potentially reducing the efficiency of posting and searching, and negatively impacting the user experience.
 
 Lastly, a significant feature that is absent in the system is a notification system. Such a system would alert users when pets that meet their criteria are posted, ensuring that users are promptly informed about potential matches. This feature could greatly enhance the user experience and effectiveness of the pet adoption process.
 
-\subsection{Potential Improvements}
+\subsubsection*{PetFinder}
+
+With extensive database and mobile app, PetFinder provides a highly accessible and efficient platform for pet adoption. The detailed pet profiles and extensive adoption resources help users make informed decisions. The mobile application adds convenience, allowing users to browse adoptable pets on the go. However, PetFinder encounters a crucial problem which is the long loading time, it took over 10-15 seconds to load the application. This problem may severely affect the user experience.
+
+\subsubsection*{PetRescue}
+
+PetRescue may be the one closest to perfection in terms of pet adoption application. Its extensive pet listings and success stories not only promote pet adoption but also build trust and engagement with users. The educational resources and support for rescue organizations further enhance their effectiveness. The only downside of this application is that it has been around for a long time so the UI/UX is quite outdated.
+
+
+\subsection{Improvements and Adaptions}
+
 After a thorough review of the strengths and weaknesses of existing systems, we have identified several potential enhancements that could significantly improve the user experience and functionality of the system.
 
 Firstly, we propose to \textbf{expand the HPA system}. Currently, the pets are only posted by system administrators. However, SGT aims to allow individuals wishing to surrender their pets to proactively post about their pets for adoption. This expansion would not only increase the number of pets available for adoption but also provide a platform for pet owners and organizations to share valuable information and updates about their pets.
 
-Secondly, we suggest the implementation of \textbf{interactive pet profiles}. This feature would allow users to visit and interact with pet profiles and posts. This interaction could include liking, commenting, or sharing a pet’s profile.
+Secondly, we suggest the implementation of \textbf{interactive pet profiles} with user friendly UI/UX. This feature would allow users to visit and interact with pet profiles and posts. This interaction could include liking, commenting, or sharing a pet’s profile.
 
 Next, we recommend \textbf{applying Artificial Intelligence (AI) technology to enhance the posting and searching} functionality of the system. With this feature, users could simply upload a pet image, and the AI would automatically populate most of the input fields, such as breed, and color. This would not only simplify the process of posting a pet profile but also increase the accuracy and consistency of the pet information in the system.
 
-In addition, we propose the implementation of a \textbf{notification system}. This system would alert users when a pet that matches their preferences becomes available on the system. User criteria for filtering pet profiles(such as breed, age, or size) will be referenced, and then users can receive notifications when a matching pet is posted. This would ensure that users don’t miss out on potential matches and can act quickly to adopt their desired pet.
+In addition, we also want to adapt the \textbf{management tools for organizations} like PetRescue and PetFinder, offering tools and resources for rescue groups to manage their pet listings and interact with potential adopters will streamline the adoption process and support the efforts of these organizations.
 
-Lastly, we suggest establishing a \textbf{messaging system} that facilitates communication among pet adopters, pet owners, and system administrators. This system would allow users to ask questions, clarify information, or arrange meetings, enhancing the overall user experience and streamlining the adoption process. By providing a platform for direct communication, we can foster a sense of community among users and promote open and transparent discussions about pet adoption.
+Lastly, we propose the implementation of a \textbf{notification system}. This system would alert users when a pet that matches their preferences becomes available on the system. User criteria for filtering pet profiles (such as breed, age, or size) will be referenced, and then users can receive notifications when a matching pet is posted. This would ensure that users don’t miss out on potential matches and can act quickly to adopt their desired pet.
 
 In conclusion, these enhancements aim to make the system more user-friendly, efficient, and effective in connecting pets with potential adopters. We believe that by implementing these changes, we can take a significant step toward our goal of finding a loving and suitable home for every pet.
 
