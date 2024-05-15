@@ -1,0 +1,25 @@
+\begin{longtblr}[
+    caption = {Use Case: Create Posts},
+    label = {tblr:create_posts},
+  ]{
+    vline{1-14} = {-}{},
+    hline{-} = {1-2}{},
+    colspec={X[3,l] X[7, l]},
+  }
+  \textbf{Use-case name}     & \textbf{Create posts}                  \\
+  \textbf{Actors}            & User                                   \\
+  \textbf{Preconditions}     & {
+      User successfully adopted at least one pet.
+  \\User has created a pet profile.
+  }                                                                   \\
+  \textbf{Postconditions}    & User creates pet posts successfully.   \\
+  \textbf{Triggers}          & Users update their adopted pet status. \\
+  \textbf{Normal flow}       & {
+      1. Users choose a profile of an adopted pet.
+  \\2. Users click on the update status button of the pet profile. The system displays a form screen of update-status posts.
+  \\3. Users input content for the post (including text and images) and submit.
+  \\4. The system creates a new post and notifies pet adopters, pet owners, and admins.
+  }                                                                   \\
+  \textbf{Alternative flows} &                                        \\
+  \textbf{Exceptions}        &                                        \\
+\end{longtblr}
