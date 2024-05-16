@@ -90,3 +90,23 @@ The server receives the payment method nonce and uses Braintree's tools to proce
 
 By utilizing PayPal Braintree Gateway, we ensure a secure and streamlined payment process, enhancing the user experience and maintaining high security standards in handling sensitive payment information.
 
+\section{Google Login}
+Our website provides users with the option to log in using their Google account, 
+offering a convenient and secure authentication method. By integrating Google Sign-In, 
+we simplify the login process for users and enhance the overall user experience. 
+
+The Google Login process is illustrated in \emph{Figure 5.4}:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Implementation/GoogleLogin.png}
+    \caption{Google Login Process}
+\end{figure}
+
+The implementation steps are as follows:
+\begin{itemize}
+    \item Step 1: The web client obtains the client ID from the web server.
+    \item Step 2: When the user clicks the Google login button, the web client displays the Google Login form. The user logs in using their Google account, and Google generates a token, which is sent back to the web client.
+    \item Step 3: The web client sends the token to the web server.
+    \item Step 4: The web server verifies the token with Google. If the token is valid, Google confirms this to the web server.
+    \item Step 5: The web server creates an access token and sends it back to the web client. The user can now access the website using this access token.
+\end{itemize}
