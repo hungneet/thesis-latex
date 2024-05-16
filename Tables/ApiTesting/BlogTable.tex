@@ -3,25 +3,25 @@
     label = {tblr:api_Blog},
   ]{
     hlines, vlines,
-    colspec = {X[0.6,l] X[2.3,l] X[3.3,l] X[4.5,l] X[0.8,l] X[1.7,l]},
+    colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-    Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=4]{c}1 & \SetCell[r=4]{c}POST - /Blog & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=4]{c}693ms \\
-    & & 2. Wrong role & Error code 400 with message "Forbidden". & Pass & \\
-    & & 3. Correct body & Status 200. & Pass & \\
-    & & 4. Empty body & Error code 400 with corresponding empty fields. & Pass & \\
-    \SetCell[r=4]{c}2 & \SetCell[r=4]{c}PUT - /Blog & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=4]{c}700ms \\
-    & & 2. Wrong role & Error code 400 with message "Forbidden". & Pass & \\
-    & & 3. Correct body & Status 200. & Pass & \\
-    & & 4. Empty body & Error code 400 with corresponding empty fields. & Pass & \\
-    \SetCell[r=2]{c}3 & \SetCell[r=2]{c}POST - /Blog/Get & 1. Empty body & Response with status 500. & Pass & \SetCell[r=2]{c}681ms \\
-    & & 3. Correct body & Status 200. & Pass & \\
-    \SetCell[r=4]{c}4 & \SetCell[r=4]{c}DELETE- /Blog/\{blog\_id\} & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=4]{c}677ms \\
-    & & 2. Delete existed blog & Success with status 200. & Pass & \\
-    & & 3. Delete non-existed blog & Error code 400 with message "Forbidden". & Pass & \\
-    & & 4. Delete empty blog\_id & Error with status 405. & Pass & \\
-    \SetCell[r=3]{c}5 & \SetCell[r=3]{c}POST - /Blog/User & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}667ms \\
-    & & 2. Empty body & Response with status 500. & Pass & \\
-    & & 3. Correct body & Status 200. & Pass & \\
-  \end{longtblr}
+  Id                & Api                                         & Testcase                   & Expected result                                 & Result & Response time         \\
+  \SetCell[r=4]{c}1 & \SetCell[r=4]{c}POST - /Blog                & 1. Unauthorized            & Error code 401 with message "Unauthorized".     & Pass   & \SetCell[r=4]{c}693ms \\
+                    &                                             & 2. Wrong role              & Error code 400 with message "Forbidden".        & Pass   &                       \\
+                    &                                             & 3. Correct body            & Status 200.                                     & Pass   &                       \\
+                    &                                             & 4. Empty body              & Error code 400 with corresponding empty fields. & Pass   &                       \\
+  \SetCell[r=4]{c}2 & \SetCell[r=4]{c}PUT - /Blog                 & 1. Unauthorized            & Error code 401 with message "Unauthorized".     & Pass   & \SetCell[r=4]{c}700ms \\
+                    &                                             & 2. Wrong role              & Error code 400 with message "Forbidden".        & Pass   &                       \\
+                    &                                             & 3. Correct body            & Status 200.                                     & Pass   &                       \\
+                    &                                             & 4. Empty body              & Error code 400 with corresponding empty fields. & Pass   &                       \\
+  \SetCell[r=2]{c}3 & \SetCell[r=2]{c}POST - /Blog/Get            & 1. Empty body              & Response with status 500.                       & Pass   & \SetCell[r=2]{c}681ms \\
+                    &                                             & 2. Correct body            & Status 200.                                     & Pass   &                       \\
+  \SetCell[r=4]{c}4 & \SetCell[r=4]{c}DELETE - /Blog/\{blog\_id\} & 1. Unauthorized            & Error code 401 with message "Unauthorized".     & Pass   & \SetCell[r=4]{c}677ms \\
+                    &                                             & 2. Delete existed blog     & Success with status 200.                        & Pass   &                       \\
+                    &                                             & 3. Delete non-existed blog & Error code 400 with message "Forbidden".        & Pass   &                       \\
+                    &                                             & 4. Delete empty blog\_id   & Error with status 405.                          & Pass   &                       \\
+  \SetCell[r=3]{c}5 & \SetCell[r=3]{c}POST - /Blog/User           & 1. Unauthorized            & Error code 401 with message "Unauthorized".     & Pass   & \SetCell[r=3]{c}667ms \\
+                    &                                             & 2. Empty body              & Response with status 500.                       & Pass   &                       \\
+                    &                                             & 3. Correct body            & Status 200.                                     & Pass   &                       \\
+\end{longtblr}
