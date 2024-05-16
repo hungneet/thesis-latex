@@ -15,8 +15,8 @@
                       &                                                 & 3. Correct account   & Status 200.                                           & Pass   &                               \\
                       &                                                 & 4. Wrong login type  & Error code 10006 with message "Wrong login type".     & Pass   &                               \\
                       &                                                 & 5. Empty body        & Error code 400 with corresponding empty fields        & Pass   &                               \\
-    \SetCell[r=2]{c}3 & GET - /Authentication/-                          & 1. Unauthorized      & Error code 401 with message "Unauthorized".           & Pass   & \SetCell[r=2]{c}838ms        \\*
-                      & Logout                                          & 2. Authorized        & Status 200.                                           & Pass   &                               \\
+    \SetCell[r=2]{c}3 & GET - /Authentication/Logout                         & 1. Unauthorized      & Error code 401 with message "Unauthorized".           & Pass   & \SetCell[r=2]{c}838ms        \\*
+                      &                                           & 2. Authorized        & Status 200.                                           & Pass   &                               \\
     \SetCell[r=2]{c}4 & \SetCell[r=2]{c}GET - /Authentication/Refresh   & 1. Unauthorized      & Error code 401 with message "Invalid security token". & Pass   & \SetCell[r=2]{c}750ms         \\*
                       &                                                 & 2. Authorized        & Status 200.                                           & Pass   &                               \\
 \end{longtblr}
