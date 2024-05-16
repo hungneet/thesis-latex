@@ -1,9 +1,5 @@
 \chapter{SYSTEM DESIGN}
 
-
-
-\section{System architecture}
-
 \section{UI/UX design}
 
 In this section, we delve into the UI/UX design for our pet adoption website. Each page has been crafted to enhance user engagement and streamline the adoption process. Begins on the homepage, where users are welcomed with an intuitive interface that serves as the gateway to the platform. The login and register pages provide a seamless onboarding experience, ensuring a secure and personalized environment. The pet search page facilitates effortless exploration, allowing users to discover potential companions with ease. Detailed pet profiles showcase comprehensive information, fostering informed decision-making. The user profile page ensures a tailored experience, while the blog homepage and pages provide valuable insights and updates. To navigate this cohesive ecosystem, a diagram illustrates the interconnectedness of each page, illuminating the user's journey from entry to adoption. To enhance clarity, we've included a comprehensive diagram illustrating the intricate connections between these pages
@@ -66,7 +62,7 @@ The pet page is a comprehensive showcase, providing detailed insights into each 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/UI/pet_detail_ui.png}
+    \includegraphics[width=0.6\textwidth]{Figures/UI/pet_detail_ui.png}
     \caption{Pet profile page}
 \end{figure}
 
@@ -74,19 +70,19 @@ The pet page is a comprehensive showcase, providing detailed insights into each 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/UI/image_upload_ui.png}
+    \includegraphics[width=0.6\textwidth]{Figures/UI/image_upload_ui.png}
     \caption{Image upload form}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/UI/pet_input_ui.png}
+    \includegraphics[width=0.6\textwidth]{Figures/UI/pet_input_ui.png}
     \caption{Form for taking user's pet detail}
 \end{figure}
 
 \begin {figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{Figures/UI/term_ui.png}
+\includegraphics[width=0.6\textwidth]{Figures/UI/term_ui.png}
 \caption{Pet profile page}
 \end{figure}
 
@@ -151,6 +147,7 @@ related blogs, encouraging users to explore aligned topics for an enhanced and c
 \end{figure}
 On the payment page, users have the option to advertise their blog by selecting from one of four subscription plans: 1 month, 3 months, 6 months, or 12 months. Each plan offers varying levels of exposure and cost, allowing users to choose the duration that best fits their needs and budget. Once a plan is selected, users can proceed by entering their card information in the provided fields. The system ensures secure processing of the payment, after which the advertising plan will be activated. This streamlined process makes it easy for users to promote their blogs effectively.
 
+\newpage
 \subsection{Back office}
 
 \begin{figure}[H]
@@ -175,7 +172,7 @@ Upon correct input, administrators are directed to the dashboard.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/UI/dashboard_bo_ui.png}
+    \includegraphics[width=0.7\textwidth]{Figures/UI/dashboard_bo_ui.png}
     \caption{Dashboard to show reports and statistics}
 \end{figure}
 
@@ -187,30 +184,22 @@ The control page empowers administrators to manage specific data types, includin
 
 \begin {figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/UI/control_bo_ui.png}
+\includegraphics[width=0.7\textwidth]{Figures/UI/control_bo_ui.png}
 \caption{Control page for managing data records}
 \end{figure}
 
+\newpage
 \section{Database design}
 
 \subsection{Conceptual design}
 
 The conceptual design phase of the project is a pivotal stage in the development lifecycle, focused on establishing a comprehensive understanding of the system's structure and relationships.
-
-
-In \emph{Figure 54}, the main entities and attributes are presented, and
-some non-key attributes and entities are excluded to enhance
-visualization and maintain a clear focus on the primary components
-shaping the system. There are several 3-way relationships presented in
-the figure, involving two optional entities linked to a mandatory one,
-the presence of the mandatory entity is contingent upon the existence
-and participation of the other two entities. Simply put, the mandatory
-entity only comes into existence when the other two entities are present
-and actively engaged in the relationship.
+\\
+In \textit{Figure 3.19}, all entities and relationships are presented. Note that all attributes are excluded to enhance visualization and maintain a clear focus on the primary components shaping the system. These attributes will be shown in the physical design section.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/DatabaseDesign/Entities-ERD.png}
+    \includegraphics[angle=-90,width=0.4\textwidth]{Figures/DatabaseDesign/Entities-ERD.png}
     \caption{Entity-Relationship diagram}
 \end{figure}
 \clearpage
@@ -222,24 +211,19 @@ to translate the abstract concepts from the Entity-Relationship Diagram
 (ERD) into a concrete relational schema. Through the mapping process,
 each entity, along with its attributes and relationships, is
 systematically transformed into tables with defined fields and
-corresponding constraints in \emph{Figure 55}.
+corresponding constraints in \emph{Figure 3.20}.
 
 \begin {figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/DatabaseDesign/Entities-Mapping.png}
+\includegraphics[width=0.9\textwidth]{Figures/DatabaseDesign/Entities-Mapping.png}
 \caption{Relational schema}
 \end{figure}
 
-In \emph{Figure 55}, the excluded attributes are presented fully to
-ensure the integrity of the database. In the relational mapping process,
-we implement a simplified technique for the 3-way relationship where the
-mandatory entity will take the primary key of the two optional entities
-as its foreign key, avoiding creating another table causes the schema to
-become unnecessarily complicated
+\emph{Figure 3.20}, the attributes are not presented fully to ensure a clear visualization of the diagram. In the relational mapping process, we implement a simplified technique for the 3-way relationship where the mandatory entity will take the primary key of the two optional entities as its foreign key, avoiding creating another table causes the schema to become unnecessarily complicated.
 
 \subsection{Physical Design}
 
-In this phase, the conceptual transforms into the tangible, as we build the actual blueprint that mirrors the intricacies of the adoption process in real life. The Relational Schema serves as our guidepost, detailing the tables, attributes, and relationships that will form the foundation of the physical database. \textit{Figure 56} below translates abstract entities and relationships into concrete data types and optimizes storage structures.
+In this phase, the conceptual transforms into the tangible, as we build the actual blueprint that mirrors the intricacies of the adoption process in real life. The Relational Schema serves as our guidepost, detailing the tables, and relationships that will form the foundation of the physical database. \textit{Figure 3.21 and 3.22} below translates abstract entities and relationships into concrete data types and optimizes storage structures.
 
 \begin {figure}[H]
 \centering
@@ -250,7 +234,7 @@ In this phase, the conceptual transforms into the tangible, as we build the actu
 \begin {figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/DatabaseDesign/Entities-Physical_2.png}
-\caption{Physical design}
+\caption{Physical design (cont)}
 \end{figure}
 
 
