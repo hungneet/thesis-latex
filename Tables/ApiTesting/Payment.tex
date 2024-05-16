@@ -3,16 +3,16 @@
     label = {tblr:api_payment},
   ]{
     hlines, vlines,
-    colspec = {X[0.6,l] X[2.3,l] X[3.3,l] X[4.5,l] X[0.8,l] X[1.7,l]},
+    colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
     Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}GET - /Payment/Token & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}617ms \\
+    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}GET - /Payment/Token & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}617ms \\*
     & & 2. Wrong role & Status 400 with message "Forbidden" & Pass & \\
     & & 3. Correct role & Status 200 & Pass & \\
-    \SetCell[r=2]{c}2 & \SetCell[r=2]{c}POST - /Payment & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=2]{c}648ms \\
+    \SetCell[r=2]{c}2 & \SetCell[r=2]{c}POST - /Payment & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=2]{c}648ms \\*
     & & 2. Wrong role & Status 400 with message "Forbidden" & Pass & \\
-    \SetCell[r=3]{c}3 & \SetCell[r=3]{c}GET - /Payment/AdvertisementType & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}666ms \\
+    \SetCell[r=3]{c}3 & \SetCell[r=3]{c}GET - /Payment/AdvertisementType & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}666ms \\*
     & & 2. Wrong role & Status 400 with message "Forbidden" & Pass & \\
     & & 3. Correct role & Status 200 & Pass & \\
   \end{longtblr} 

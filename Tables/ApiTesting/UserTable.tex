@@ -3,26 +3,26 @@
     label = {tblr:api_user},
   ]{
     hlines, vlines,
-    colspec = {X[0.6,l] X[2.5,l] X[3,l] X[4,l] X[0.8,l] X[1.5,l]},
+    colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-    Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=2]{c}1 & \SetCell[r=2]{c}GET - /User/CurrentUser & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=2]{c}694ms \\
-    & & 2. Authorized & Status 200. & Pass & \\
-    \SetCell[r=2]{c}2 & \SetCell[r=2]{c}GET - /User/CurrentUserCore & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=2]{c}884ms \\
-    & & 2. Authorized & Status 200. & Pass & \\
-    \SetCell[r=2]{c}3 & \SetCell[r=2]{c}GET - /User/OtherUser & 1. Unauthorized & Status 200. & Pass & \SetCell[r=2]{c}664ms \\
-    & & 2. Authorized & Status 200. & Pass & \\
-    \SetCell[r=3]{c}4 & \SetCell[r=3]{c}POST - /User/ForgotPassword & 1. Wrong login type & Error code 10006 with message "Wrong login type". & Pass & \SetCell[r=3]{c} \\
-    & & 2. Wrong email & Error code 10000 with message "Provided email is not correct" & Pass & \\
-    & & 3. Correct email & Status 200. & Pass & \\
-    \SetCell[r=3]{c}5 & \SetCell[r=3]{c}PUT - /User & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}654ms \\
-    & & 2. Empty body & Error code 400 with corresponding empty fields & Pass & \\
-    & & 3. Correct body & Status 200 & Pass & \\
-    \SetCell[r=3]{c}6 & \SetCell[r=3]{c}PUT - /User/UpdateAvatar & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}670ms \\
-    & & 2. Correct body & Status 200 & Pass & \\
-    & & 3. Empty image & Error code 400 with message "Image cannot be empty" & Pass & \\
-    \SetCell[r=3]{c}7 & \SetCell[r=3]{c}POST - /User/UpgradeAccount & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}593ms \\
-    & & 2. Has not applied & Status 200 & Pass & \\
-    & & 3. Has applied & Status 200 with message False & Pass & \\
-  \end{longtblr}
+  Id                & Api                                         & Testcase            & Expected result                                               & Result & \SetCell[c=1]{c}Response time \\
+  \SetCell[r=2]{c}1 & \SetCell[r=2]{c}GET - /User/CurrentUser     & 1. Unauthorized     & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=2]{c}694ms         \\*
+                    &                                             & 2. Authorized       & Status 200.                                                   & Pass   &                               \\
+  \SetCell[r=2]{c}2 & \SetCell[r=2]{c}GET - /User/CurrentUserCore & 1. Unauthorized     & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=2]{c}884ms         \\*
+                    &                                             & 2. Authorized       & Status 200.                                                   & Pass   &                               \\
+  \SetCell[r=2]{c}3 & \SetCell[r=2]{c}GET - /User/ OtherUser       & 1. Unauthorized     & Status 200.                                                   & Pass   & \SetCell[r=2]{c}664ms         \\*
+                    &                                             & 2. Authorized       & Status 200.                                                   & Pass   &                               \\
+  \SetCell[r=3]{c}4 & \SetCell[r=3]{c}POST - /User/ForgotPassword & 1. Wrong login type & Error code 10006 with message "Wrong login type".             & Pass   & \SetCell[r=3]{c}              \\*
+                    &                                             & 2. Wrong email      & Error code 10000 with message "Provided email is not correct" & Pass   &                               \\
+                    &                                             & 3. Correct email    & Status 200.                                                   & Pass   &                               \\
+  \SetCell[r=3]{c}5 & \SetCell[r=3]{c}PUT - /User                 & 1. Unauthorized     & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=3]{c}654ms         \\*
+                    &                                             & 2. Empty body       & Error code 400 with corresponding empty fields                & Pass   &                               \\
+                    &                                             & 3. Correct body     & Status 200                                                    & Pass   &                               \\
+  \SetCell[r=3]{c}6 & \SetCell[r=3]{c}PUT - /User/UpdateAvatar    & 1. Unauthorized     & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=3]{c}670ms         \\*
+                    &                                             & 2. Correct body     & Status 200                                                    & Pass   &                               \\
+                    &                                             & 3. Empty image      & Error code 400 with message "Image cannot be empty"           & Pass   &                               \\
+  \SetCell[r=3]{c}7 & \SetCell[r=3]{c}POST - /User/UpgradeAccount & 1. Unauthorized     & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=3]{c}593ms         \\*
+                    &                                             & 2. Has not applied  & Status 200                                                    & Pass   &                               \\
+                    &                                             & 3. Has applied      & Status 200 with message False                                 & Pass   &                               \\
+\end{longtblr}
