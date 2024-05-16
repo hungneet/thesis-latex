@@ -2,11 +2,92 @@
 
 With the completion of system implementation, our focus now shifts towards ensuring the robustness and functionality of the system through testing. This section presents the systematic approach taken for system testing, including end-to-end testing and API testing, to validate the functionality and performance of the implemented system
 
+\section{API testing}
+This section delves into testing the website's API for functionality using 
+Postman. Postman's versatile features were utilized to conduct thorough 
+assessments of the API endpoints, ensuring data integrity and performance 
+across diverse scenarios. Through rigorous experimentation and analysis, 
+Postman facilitated the establishment of a robust validation framework, 
+affirming the reliability of the website's API under different conditions.
+
+\subsection{API endpoints}
+The website's API endpoints were meticulously tested to ensure their
+functionality and performance across various scenarios. The API endpoints
+were designed to handle different types of requests, including GET, POST,
+PUT, and DELETE, to interact with the database and retrieve or modify
+data. By testing these endpoints, we could verify the accuracy and
+reliability of the API, ensuring that it could handle different types of
+requests and return the expected results.
+
+\subsection{Automation API Testing with Postman}
+Postman was used to test the website's API endpoints, leveraging its
+versatile features to conduct comprehensive assessments. Postman's
+user-friendly interface and powerful testing capabilities enabled us to
+create test cases, execute requests, and analyze responses efficiently.
+By defining test scripts and assertions, we could validate the API
+endpoints' functionality and performance, ensuring that they met the
+specified requirements.
+In this section, we focus on the response data, status code, and response
+time of the API endpoints, evaluating their accuracy and reliability.
+For status, we have this code on Postman
+\begin{lstlisting}[caption=Code to test status code, label={lst:status-code}]
+    pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+    });
+\end{lstlisting}
+To test the status code, we used the following code in Postman:
+\begin{lstlisting}[caption=Code to test response time, label={lst:response-time}]
+    pm.test("Response time is less than 200ms", function () {
+        pm.expect(pm.response.responseTime).to.be.below(200);
+    });
+\end{lstlisting}
+To test the response data, we used this code in Postman:
+\begin{lstlisting}[caption=Code to test response data, label={lst:response-data}]
+    pm.test("Response contains errorCode: 10006 and errorMessage: Wrong login type", function () {
+    var responseData = pm.response.json();
+    pm.expect(responseData).to.eql({ errorCode: 10006, errorMessage: "Wrong login type" });
+});
+\end{lstlisting}
+
+\subsection{API testing scenarios}
+Various testing scenarios were explored to evaluate the website's API
+endpoints thoroughly. These scenarios included testing different types of
+requests, handling error conditions, and assessing the API's performance
+under load. By simulating real-world usage scenarios and edge cases, we
+could identify potential issues and validate the API's behavior in
+different situations. This comprehensive testing approach helped ensure
+the reliability and robustness of the website's API, enhancing its overall
+quality and performance. 
+
+Here is all the test cases for the API endpoints. All the API endpoints
+here have average response time of 734ms. The test cases are divided into:
+
+
+\input{Tables/ApiTesting/AdoptionTable.tex}
+
+\input{Tables/ApiTesting/AuthenticationTable.tex}
+
+\input{Tables/ApiTesting/BlogTable.tex}
+
+\input{Tables/ApiTesting/CommentTable.tex}
+
+\input{Tables/ApiTesting/Location.tex}
+
+\input{Tables/ApiTesting/Notification.tex}
+
+\input{Tables/ApiTesting/Payment.tex}
+
+\input{Tables/ApiTesting/PetTable.tex}
+
+\input{Tables/ApiTesting/ReportTable.tex}
+
+\input{Tables/ApiTesting/UserTable.tex}
+
 \section{End-to-End Testing}
 
 End-to-end testing is a software testing method that validates the system as a whole, ensuring that all components work together as expected. This type of testing is essential to ensure that the system meets the requirements and performs as intended. In this section, we present the end-to-end testing process for the implemented system.
 
-\subsection{Automation tool - Cypress}
+\subsection{Automation End-to-End Testing with Cypress}
 
 To automate the end-to-end testing process, we choose Cypress, which is a modern JavaScript-based end-to-end testing framework designed for web applications. It provides a fast, reliable, and easy-to-use testing solution for developers and QA engineers. Cypress comes with a rich set of features such as real-time reloading, automatic waiting, and built-in assertions,  allowing for efficient and effective testing of web applications.
 
@@ -95,88 +176,6 @@ The same test was done with other categories: art, training, and product; which 
 
 \input{Tables/E2E_TestCases/BlogTable4.tex}
 
-
-\section{API testing}
-This chapter delves into testing the website's API for functionality using 
-Postman. Postman's versatile features were utilized to conduct thorough 
-assessments of the API endpoints, ensuring data integrity and performance 
-across diverse scenarios. Through rigorous experimentation and analysis, 
-Postman facilitated the establishment of a robust validation framework, 
-affirming the reliability of the website's API under different conditions.
-
-\subsection{API endpoints}
-The website's API endpoints were meticulously tested to ensure their
-functionality and performance across various scenarios. The API endpoints
-were designed to handle different types of requests, including GET, POST,
-PUT, and DELETE, to interact with the database and retrieve or modify
-data. By testing these endpoints, we could verify the accuracy and
-reliability of the API, ensuring that it could handle different types of
-requests and return the expected results.
-
-\subsection{API testing with Postman}
-Postman was used to test the website's API endpoints, leveraging its
-versatile features to conduct comprehensive assessments. Postman's
-user-friendly interface and powerful testing capabilities enabled us to
-create test cases, execute requests, and analyze responses efficiently.
-By defining test scripts and assertions, we could validate the API
-endpoints' functionality and performance, ensuring that they met the
-specified requirements.
-In this section, we focus on the response data, status code, and response
-time of the API endpoints, evaluating their accuracy and reliability.
-For status, we have this code on Postman
-\begin{lstlisting}[caption=Code to test status code, label={lst:status-code}]
-    pm.test("Status code is 200", function () {
-        pm.response.to.have.status(200);
-    });
-\end{lstlisting}
-To test the status code, we used the following code in Postman:
-\begin{lstlisting}[caption=Code to test response time, label={lst:response-time}]
-    pm.test("Response time is less than 200ms", function () {
-        pm.expect(pm.response.responseTime).to.be.below(200);
-    });
-\end{lstlisting}
-To test the response data, we used this code in Postman:
-\begin{lstlisting}[caption=Code to test response data, label={lst:response-data}]
-    pm.test("Response contains errorCode: 10006 and errorMessage: Wrong login type", function () {
-    var responseData = pm.response.json();
-    pm.expect(responseData).to.eql({ errorCode: 10006, errorMessage: "Wrong login type" });
-});
-\end{lstlisting}
-
-\subsection{API testing scenarios}
-Various testing scenarios were explored to evaluate the website's API
-endpoints thoroughly. These scenarios included testing different types of
-requests, handling error conditions, and assessing the API's performance
-under load. By simulating real-world usage scenarios and edge cases, we
-could identify potential issues and validate the API's behavior in
-different situations. This comprehensive testing approach helped ensure
-the reliability and robustness of the website's API, enhancing its overall
-quality and performance. 
-
-Here is all the test cases for the API endpoints. All the API endpoints
-here have average response time of 734ms. The test cases are divided into:
-
-
-\input{Tables/ApiTesting/AdoptionTable.tex}
-
-\input{Tables/ApiTesting/AuthenticationTable.tex}
-
-\input{Tables/ApiTesting/BlogTable.tex}
-
-\input{Tables/ApiTesting/CommentTable.tex}
-
-\input{Tables/ApiTesting/Location.tex}
-
-\input{Tables/ApiTesting/Notification.tex}
-
-\input{Tables/ApiTesting/Payment.tex}
-
-\input{Tables/ApiTesting/PetTable.tex}
-
-\input{Tables/ApiTesting/ReportTable.tex}
-
-\input{Tables/ApiTesting/UserTable.tex}
-
 \section{Responsive testing}
 Responsive testing is a crucial aspect of web development, ensuring that
 websites are accessible and user-friendly across different devices and
@@ -192,3 +191,6 @@ and improving user satisfaction.
 Here is the checklist for responsive testing:
 \input{Tables/ResponsiveTesting/ResponsiveTable.tex}
 
+\section{Performance testing}
+
+\section{Load testing}
