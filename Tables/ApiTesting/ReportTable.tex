@@ -7,7 +7,7 @@
     row{1} = {font=\bfseries},
   }
     Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=8]{c}1 & \SetCell[r=8]{c}{POST - /Report/PreReport} & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=8]{c}679ms \\
+    \SetCell[r=8]{c}1 & \SetCell[r=8]{c}{POST - /Report/PreReport} & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=8]{c}679ms \\*
     & & 2. Report yourself & Status 200 with message "false" & Pass & \\
     & & 3. Report other user & Status 200 with message "true" & Pass & \\
     & & 4. Report other user with wrong entity & Status 200 with message "false" & Pass & \\
@@ -15,7 +15,7 @@
     & & 6. Report others' blog & Status 200 with message "true" & Pass & \\
     & & 7. Report your pet & Status 200 with message "false" & Pass & \\
     & & 8. Report others' pet & Status 200 with message "true" & Pass & \\
-    \SetCell[r=8]{c}2 & \SetCell[r=8]{c}{POST - /Report/Report} & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=8]{c}733ms \\
+    \SetCell[r=8]{c}2 & \SetCell[r=8]{c}{POST - /Report/Report} & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=8]{c}733ms \\*
     & & 2. Report yourself & Status 200 with message "false" & Pass & \\
     & & 3. Report other user & Status 200 with message "true" & Pass & \\
     & & 4. Report other user with wrong entity & Status 200 with message "false" & Pass & \\

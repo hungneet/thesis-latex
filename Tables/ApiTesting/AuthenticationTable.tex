@@ -7,16 +7,16 @@
         row{1} = {font=\bfseries},
     }
     Id                & Api                                             & Testcase             & Expected result                                       & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}POST - /Authentication/Register & 1. Empty body        &                                                       & Pass   & \SetCell[r=3]{c}637ms         \\
+    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}POST - /Authentication/Register & 1. Empty body        &                                                       & Pass   & \SetCell[r=3]{c}637ms         \\*
                       &                                                 & 2. Email is used     &                                                       & Pass   &                               \\
                       &                                                 & 3. Email is not used &                                                       & Pass   &                               \\
-    \SetCell[r=5]{c}2 & \SetCell[r=5]{c}POST - /Authentication/Login    & 1. Wrong email       & Error code 10001 with message "Invalid credential".   & Pass   & \SetCell[r=5]{c}669ms         \\
+    \SetCell[r=5]{c}2 & \SetCell[r=5]{c}POST - /Authentication/Login    & 1. Wrong email       & Error code 10001 with message "Invalid credential".   & Pass   & \SetCell[r=5]{c}669ms         \\*
                       &                                                 & 2. Wrong password    & Error code 10001 with message "Invalid credential".   & Pass   &                               \\
                       &                                                 & 3. Correct account   & Status 200.                                           & Pass   &                               \\
                       &                                                 & 4. Wrong login type  & Error code 10006 with message "Wrong login type".     & Pass   &                               \\
                       &                                                 & 5. Empty body        & Error code 400 with corresponding empty fields        & Pass   &                               \\
-    \SetCell[r=2]{c}3 & GET - /Authentication/-                          & 1. Unauthorized      & Error code 401 with message "Unauthorized".           & Pass   & \SetCell[r=2]{c}838ms         \\
+    \SetCell[r=2]{c}3 & GET - /Authentication/-                          & 1. Unauthorized      & Error code 401 with message "Unauthorized".           & Pass   & \SetCell[r=2]{c}838ms        \\*
                       & Logout                                          & 2. Authorized        & Status 200.                                           & Pass   &                               \\
-    \SetCell[r=2]{c}4 & \SetCell[r=2]{c}GET - /Authentication/Refresh   & 1. Unauthorized      & Error code 401 with message "Invalid security token". & Pass   & \SetCell[r=2]{c}750ms         \\
+    \SetCell[r=2]{c}4 & \SetCell[r=2]{c}GET - /Authentication/Refresh   & 1. Unauthorized      & Error code 401 with message "Invalid security token". & Pass   & \SetCell[r=2]{c}750ms         \\*
                       &                                                 & 2. Authorized        & Status 200.                                           & Pass   &                               \\
 \end{longtblr}
