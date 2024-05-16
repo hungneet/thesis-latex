@@ -68,4 +68,34 @@ PayPal Braintree.
 \newblock \url{https://developer.paypal.com/braintree/docs/start/hello-client/javascript/v3/}.
 \newblock Accessed on 03/05/2024.
 
+\bibitem{train model}
+Microsoft.
+\newblock What is deep learning?
+\newblock \url{https://learn.microsoft.com/en-gb/dotnet/machine-learning/deep-learning-overview}.
+\newblock Accessed on 16/05/2024.
+
+\bibitem{train model}
+Microsoft.
+\newblock What is ML.NET?
+\newblock \url{https://dotnet.microsoft.com/en-us/learn/ml-dotnet/what-is-mldotnet}.
+\newblock Accessed on 16/05/2024.
+
+\bibitem{train model}
+Microsoft.
+\newblock Train your model with ML.NET
+\newblock \url{https://learn.microsoft.com/en-us/windows/ai/windows-ml/tutorials/mlnet-train-model}.
+\newblock Accessed on 16/05/2024.
+
+\bibitem{train model}
+Microsoft.
+\newblock Evaluate your ML.NET model with metrics
+\newblock \url{https://learn.microsoft.com/en-gb/dotnet/machine-learning/resources/metrics}.
+\newblock Accessed on 16/05/2024.
+
+\bibitem{train model}
+Microsoft.
+\newblock Improve your ML.NET model
+\newblock \url{https://learn.microsoft.com/en-gb/dotnet/machine-learning/resources/improve-machine-learning-model-ml-net}.
+\newblock Accessed on 16/05/2024.
+
 \end{thebibliography}
