@@ -110,3 +110,44 @@ The implementation steps are as follows:
     \item Step 4: The web server verifies the token with Google. If the token is valid, Google confirms this to the web server.
     \item Step 5: The web server creates an access token and sends it back to the web client. The user can now access the website using this access token.
 \end{itemize}
+
+\section{Breeds Recognition}
+Breed recognition is a valuable feature for our users, who often don't know their pet's breed. To address this, we utilized ML.NET 
+to train an image classification model. This advanced technology enables our platform to accurately identify a pet's breed from a photo, 
+simplifying the process for users and enhancing their experience.
+
+The first step is preparing the dataset. We have chosen the Stanford Dogs dataset\footnote{Stanford Dogs dataset: https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset}, which contains images of 120 dog breeds from around 
+the world. This dataset, built using images and annotations from ImageNet, is ideal for the task of fine-grained image categorization. 
+The challenging nature of this problem stems from the fact that certain dog breeds have nearly identical features or differ only in color and age.
+
+For cat breed classification, we use the Cat Breeds Dataset (Cleared)\footnote{Cat Breeds Dataset (Cleared): https://www.kaggle.com/datasets/denispotapov/cat-breeds-dataset-cleared}, which contains images of 67 different cat breeds, labeled by advertisers for 
+adoption. This dataset is a refined version of the original Cat Breeds Dataset from Kaggle \footnote{Stanford Dogs dataset:https://www.kaggle.com/ma7555/cat-breeds-dataset}. 
+The cleared version has been meticulously cleaned to remove non-cat images, indistinguishable cat photos, duplicates, and very small images 
+(height or width less than 150 pixels). This ensures that the dataset is of high quality, facilitating accurate training and performance of our 
+machine learning model.
+
+The images in the dataset are organized into separate folders for each dog breed, simplifying the model training process. This organization 
+makes it more convenient to manage and feed the data into our machine learning model. Using this well-structured dataset, we can effectively 
+train our image classification model with ML.NET to recognize and categorize various dog breeds accurately.
+
+The next step involves using ML.NET Model Builder to transform our image set into an image classification model. Here's how we proceed:
+\begin{enumerate}
+    \item Load the Data: Import the cleaned datasets for dog and cat breeds into the ML.NET Model Builder. These datasets include images 
+    categorized into folders based on their respective breeds.
+    \item Set Up the Environment: Configure the Model Builder environment on our local machine, ensuring that all necessary tools and dependencies are installed.
+    \item Select the Scenario: Choose the 'Image Classification' scenario in ML.NET Model Builder, which is specifically designed for tasks like breed recognition.
+    \item Train the Model:
+    \begin{itemize}
+        \item Data Preprocessing: The Model Builder automatically preprocesses the images, resizing and normalizing them as required.
+        \item Model Selection and Training: The tool selects a suitable pre-trained model and fine-tunes it using our dataset. This involves 
+        splitting the data into training and validation sets to ensure the model learns effectively and generalizes well.
+        \item Local Training: The model is trained on our local machine, leveraging available computational resources to iterate through 
+        the dataset and optimize the classification accuracy.
+    \end{itemize}
+    \item Evaluate the Model: Once training is complete, the Model Builder evaluates the model's performance, 
+    providing metrics such as accuracy, precision, recall, and F1 score. This helps in understanding how well 
+    the model distinguishes between different breeds.
+    \item Export the Model: Finally, the trained model is exported for integration into our application. 
+    The Model Builder generates the necessary code and files, making it straightforward to deploy the model.
+    In our case, we export the model as an API, allowing seamless integration with our platform for real-time breed recognition.
+\end{enumerate}
