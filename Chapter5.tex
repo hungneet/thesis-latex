@@ -147,6 +147,24 @@ The next step involves using ML.NET Model Builder to transform our image set int
     \item Evaluate the Model: Once training is complete, the Model Builder evaluates the model's performance, 
     providing metrics such as accuracy, precision, recall, and F1 score. This helps in understanding how well 
     the model distinguishes between different breeds.
+
+    After training the model for dog breed recognition, we evaluated its performance using various algorithms. 
+    The micro-accuracy algorithm identified the best model, achieving a micro-accuracy score of 0.8345. This 
+    high accuracy indicates that the model can reliably recognize and classify different dog breeds, providing 
+    users with accurate breed identification based on their pet's images.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{Figures/AI/ai_result.png}
+        \caption{Results of Dog Breed Recognition}
+    \end{figure}
+
+    For cat breed recognition, we followed a similar process, training the model on the Cat Breeds Dataset (Cleared)
+    and evaluating its performance. The micro-accuracy algorithm identified the best model, achieving a micro-accuracy
+    score of 0.4321. This indicates that the dataset is more challenging for cat breed recognition, as the model's accuracy
+    is lower compared to dog breed recognition. Despite this, the model can still classify cat breeds with reasonable accuracy,
+    providing users with valuable insights into their pet's breed based on images. 
+
     \item Export the Model: Finally, the trained model is exported for integration into our application. 
     The Model Builder generates the necessary code and files, making it straightforward to deploy the model.
     In our case, we export the model as an API, allowing seamless integration with our platform for real-time breed recognition.
