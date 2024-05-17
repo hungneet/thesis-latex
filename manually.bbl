@@ -2,24 +2,24 @@
 \begin{thebibliography}{30}
 
 \bibitem{braude2016}
-E.~J. {Braude} and M.~E. {Bernstein}.
+E.~J. {Braude} and M.~E. {Bernstein} (2016).
 \newblock {\em Software Engineering: Modern Approaches (2nd ed.)}.
-\newblock Waveland Press, 2016, pages 440.
+\newblock Waveland Press, pages 440.
 
 \bibitem{vercel2023}
-Vercel.
-\newblock What is Next.js.
+Vercel (2023).
+\newblock What is Next.js?
 \newblock \url{https://nextjs.org/learn-pages-router/foundations/about-nextjs/what-is-nextjs}.
 \newblock Accessed on 18/11/2023.
 
 \bibitem{fitzgerald2022}
-Anna Fitzgerald.
+Anna Fitzgerald (2022).
 \newblock Tailwind CSS: What It Is, Why Use It and Examples.
 \newblock \url{https://blog.hubspot.com/website/what-is-tailwind-css}.
 \newblock Accessed on 18/11/2023.
 
 \bibitem{microsoft2023a}
-Microsoft.
+Microsoft (2023).
 \newblock Overview of ASP.NET Core.
 \begin{sloppy}
 \newblock \url{https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core}.
@@ -27,110 +27,122 @@ Microsoft.
 \newblock Accessed on 18/11/2023.
 
 \bibitem{microsoft2023b}
-Microsoft.
+Microsoft (2023).
 \newblock What is Entity Framework?.
 \newblock \url{https://www.entityframeworktutorial.net/entityframework6}.
 \newblock Accessed on 18/11/2023.
 
 \bibitem{hughes2019}
-Adam Hughes.
+Adam Hughes (2019).
 \newblock Microsoft SQL Server.
 \newblock \url{https://www.techtarget.com/searchdatamanagement/definition/SQL-Server}.
 \newblock Accessed on 18/11/2023.
 
 \bibitem{redis2023}
-Redis.
+Redis (2023).
 \newblock Introduction to Redis.
 \newblock \url{https://redis.io/docs/about}.
 \newblock Accessed on 18/11/2023.
 
 \bibitem{elasticsearch2023}
-Elasticsearch.
+Elasticsearch (2023).
 \newblock What is Elasticsearch?.
 \newblock \url{https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html}.
 \newblock Accessed on 18/11/2023.
 
-\bibitem{paypal}
-ImgBB.
+\bibitem{imgbb}
+ImgBB (2024).
 \newblock API version 1.
 \newblock \url{https://api.imgbb.com/}.
 \newblock Accessed on 08/04/2024.
 
 \bibitem{retool}
-Retool Docs.
+Retool (2024).
 \newblock Build business software using your data.
 \newblock \url{https://docs.retool.com/}.
 \newblock Accessed on 20/04/2024.
 
 \bibitem{paypal}
-PayPal Braintree.
+PayPal Braintree (2024).
 \newblock Set Up Your Client.
 \newblock \url{https://developer.paypal.com/braintree/docs/start/hello-client/javascript/v3/}.
 \newblock Accessed on 03/05/2024.
 
-\bibitem{train model}
-Amritanshu Mukherjee.
-\newblock Sig in with Google: What is it, how does it work? And why you should use it
+\bibitem{gglogin}
+Amritanshu Mukherjee (2023).
+\newblock Sign in with Google: What is it, how does it work? And why you should use it?
 \newblock \url{https://tech.hindustantimes.com/tech/news/sign-in-with-google-what-is-it-how-does-it-work-and-why-you-should-use-it-71664528946960.html}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{train model}
-Microsoft.
+Microsoft (2022).
 \newblock What is deep learning?
 \newblock \url{https://learn.microsoft.com/en-gb/dotnet/machine-learning/deep-learning-overview}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{train model}
-Microsoft.
+Microsoft (2024).
 \newblock What is ML.NET?
 \newblock \url{https://dotnet.microsoft.com/en-us/learn/ml-dotnet/what-is-mldotnet}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{train model}
-Microsoft.
-\newblock Train your model with ML.NET
+Microsoft (2022).
+\newblock Train your model with ML.NET.
 \newblock \url{https://learn.microsoft.com/en-us/windows/ai/windows-ml/tutorials/mlnet-train-model}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{train model}
-Microsoft.
-\newblock Evaluate your ML.NET model with metrics
+Microsoft (2023).
+\newblock Evaluate your ML.NET model with metrics.
 \newblock \url{https://learn.microsoft.com/en-gb/dotnet/machine-learning/resources/metrics}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{train model}
-Microsoft.
-\newblock Improve your ML.NET model
+Microsoft (2022).
+\newblock Improve your ML.NET model.
 \newblock \url{https://learn.microsoft.com/en-gb/dotnet/machine-learning/resources/improve-machine-learning-model-ml-net}.
 \newblock Accessed on 16/05/2024.
 
+\bibitem{tokens}
+Sandip Roy (2024).
+\newblock What Are Access and Refresh Tokens?
+\newblock \url{https://www.baeldung.com/cs/access-refresh-tokens}.
+\newblock Accessed on 16/05/2024.
+
 \bibitem{api testing}
-Postman.
-\newblock API testing
+Postman (2024).
+\newblock API testing.
 \newblock \url{https://www.postman.com/api-platform/api-testing/}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{responsive testing}
-lambdatest.
-\newblock Responsive Testing: With Examples and Best Practices
+lambdatest (2024).
+\newblock Responsive Testing: With Examples and Best Practices.
 \newblock \url{https://www.lambdatest.com/learning-hub/responsive-testing}.
 \newblock Accessed on 16/05/2024.
 
+\bibitem{load test}
+Postman (2024).
+\newblock API test automation.
+\newblock \url{https://blog.postman.com/postman-api-performance-testing}.
+\newblock Accessed on 16/05/2024.
+
 \bibitem{api testing}
-Postman.
-\newblock API test automation
+Malvika Chaudhary (2023).
+\newblock Test your API’s performance by simulating real-world traffic with Postman.
 \newblock \url{https://www.postman.com/api-platform/api-test-automation/}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{term and service}
-Osman Husain.
-\newblock How to Write Terms and Conditions in 14 Simple Steps
+Osman Husain (2023).
+\newblock How to Write Terms and Conditions in 14 Simple Steps?
 \newblock \url{https://www.enzuzo.com/blog/write-terms-and-conditions}.
 \newblock Accessed on 16/05/2024.
 
 \bibitem{pet aoption}
-fosterpetoutreach.org
-\newblock PET ADOPTION FORM
+fosterpetoutreach.org (2019).
+\newblock PET ADOPTION FORM.
 \newblock \url{https://fosterpetoutreach.org/pet-adoption-form/}.
 \newblock Accessed on 16/05/2024.
 

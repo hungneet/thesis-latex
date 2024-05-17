@@ -2,7 +2,6 @@
 
 With all the system design and system analysis completed in the previous semester, we now embark on the implementation phase of our project. This chapter details the process of bringing our design to life, outlining the key features of our system and the methodologies employed to implement them. Through careful planning and execution, we aim to translate our theoretical framework into a functional and efficient system. Below are some of the critical features of our system and the approaches we used to implement them.
 
-
 \section{Caching Mechanism}
 
 To reduce the amount of time it takes to access frequently accessed data
@@ -74,18 +73,16 @@ In our system, we have integrated the PayPal Braintree Gateway to handle online 
 \emph{Figure 5.3} breaks down how the payment process is implemented:
 
 - Step 1:
-The front-end requests a client token from our server and initializes the Braintree client. This token is essential for securely communicating between the client and the Braintree server.
-
-- Step 2:
+The front-end requests a client token from our server and initializes the Braintree client. This token is essential for securely communicating between the client and the Braintree server.\\
 Our server generates a client token using Braintree's tools and sends it back to the client. This token allows the front-end to securely handle customer payment information.
 
-- Step 3:
+- Step 2:
 The customer enters their payment information on the front-end. The Braintree client communicates this information to Braintree and returns a payment method nonce, a secure reference representing the payment details.
 
-- Step 4:
+- Step 3:
 The front-end sends the payment method nonce to our server. This nonce is a secure way to pass payment information without exposing sensitive data.
 
-- Step 5:
+- Step 4:
 The server receives the payment method nonce and uses Braintree's tools to process the payment. The server then communicates with Braintree to complete the transaction securely.
 
 By utilizing PayPal Braintree Gateway, we ensure a secure and streamlined payment process, enhancing the user experience and maintaining high security standards in handling sensitive payment information.
@@ -169,3 +166,26 @@ The next step involves using ML.NET Model Builder to transform our image set int
     The Model Builder generates the necessary code and files, making it straightforward to deploy the model.
     In our case, we export the model as an API, allowing seamless integration with our platform for real-time breed recognition.
 \end{enumerate}
+
+\section{Protect System APIs with Access/Refresh Tokens}
+To authenticate users and authorize requests without keeping session data on the server, we use \textit{tokens}, which are data confirming a user’s identity and are analogous to digital signatures.
+
+A careful balance between security and user experience is essential for authentication and authorization. A user may become irritated if protocols are overly strict. On the other hand, a security breach is imminent if permission systems are too loose. Access and refresh tokens provide a solution that meets both requirements.
+
+\textbf{An access token} allows temporary access to restricted resources such as APIs or websites. The chance of the access token being compromised or stolen increases the longer it’s valid. Therefore, access tokens are valid for only \textit{a few minutes or hours}.
+
+\textbf{An refresh token} allow developers to manage users’ sessions across the application. Additionally, they allow users to log in and stay connected without providing their passwords for long periods. Therefore, refresh tokens can last \textit{from a few days to a few months}.
+
+Let’s now discuss how to set up the tokens in \textit{Figure 5.6}:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/Implementation/Tokens.png}
+  \caption{Set up the tokens.}
+\end{figure}
+
+Let’s say a client requests an access token by authenticating with the authorization server and delivering a credential that proves the resource owner is authorized to use the resource.
+
+The API server verifies the authorization and confirms the identity of the authorized client. An access token and a refresh token are issued if it’s legitimate. The client must securely store this refresh token.
+
+The client can now request the API server for secured resource access, and the resource server validates the access token. If it’s valid, it returns the desired resource.

@@ -194,3 +194,30 @@ Here is the checklist for responsive testing:
 \section{Performance testing}
 
 \section{Load testing}
+API load testing involves simulating real-world traffic and observing API’s resulting behavior. It is conducted to evaluate how well an API meets performance expectations for response time, throughput, and availability under the simulated load.
+
+For this type of testing, we use Postman with the pre-conditions:
+\begin{itemize}
+  \item \textit{Set of APIs: Create a pet -> Get pets -> Update a pet -> Get pets again}
+  \item Duration: \textit{30 seconds}
+  \item Number of vitual users: \textit{50}
+  \item Ramp up: \textit{from 5 users at the begining to 50 users at the end of the duration}
+\end{itemize}
+
+Base on the non-functional requirements of the system, the expected outputs are:
+\begin{itemize}
+  \item Error rate: \textit{less than 5\% for at least 1000 requests}
+  \item Average response time: \textit{less than 1000ms for 1000 requests}
+\end{itemize}
+
+After doing the test, the final result is shown in \textit{Figure 6.3}. All the expected outputs are passed with the the outputs are:
+\begin{itemize}
+  \item Error rate: \textit{0\% for 1704 requests}
+  \item Average response time: \textit{17ms for 1704 requests}
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/load_test.png}
+  \caption{Load test outputs}
+\end{figure}
