@@ -192,13 +192,30 @@ Here is the checklist for responsive testing:
 \input{Tables/ResponsiveTesting/ResponsiveTable.tex}
 
 \section{Performance testing}
+For performance testing, we use Google Lighthouse to help us evaluate general performance, accessibility, best practice and SEO parameters of our website:
+\begin{itemize}
+  \item Performance: Measures how quickly a page loads and becomes interactive.
+  \item Accessibility: Assesses how well a page can be used by people with disabilities.
+  \item Best Practices: Checks adherence to best practices for web development.
+  \item SEO: Evaluates how well a page is optimized for search engines.
+\end{itemize}
+Google Lighthouse uses a 0 to 100 scale to evaluate web page performance and other metrics. Here’s a breakdown:
+\begin{itemize}
+  \item 90 - 100: Excellent performance.
+  \item 50 - 89: Average performance.
+  \item 0 - 49: Poor performance.
+\end{itemize}
+
+\input{Tables/PerformanceTest.tex}
+
+From \textit{Table 6.31}, It can be said that the website passed the performance test with all measured parameters being greater than 50, especially SEO with most of the measured values being greater than 90.
 
 \section{Load testing}
 API load testing involves simulating real-world traffic and observing API’s resulting behavior. It is conducted to evaluate how well an API meets performance expectations for response time, throughput, and availability under the simulated load.
 
 For this type of testing, we use Postman with the pre-conditions:
 \begin{itemize}
-  \item \textit{Set of APIs: Create a pet -> Get pets -> Update a pet -> Get pets again}
+  \item Set of APIs: \textit{ Create a pet -> Get pets -> Update a pet -> Get pets again}
   \item Duration: \textit{30 seconds}
   \item Number of vitual users: \textit{50}
   \item Ramp up: \textit{from 5 users at the begining to 50 users at the end of the duration}
