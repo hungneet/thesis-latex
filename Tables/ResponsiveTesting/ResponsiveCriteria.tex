@@ -1,26 +1,18 @@
 \begin{longtblr}[
-    caption = {Responsive Testing Checklist},
-    label = {tblr:responsive_testing},
+    caption = {Responsive Testing Criteria},
+    label = {tblr:responsive_criteria},
   ]{
     hlines, vlines,
     colspec = {X[2,l] X[4,l] X[4,l]},
     row{1} = {font=\bfseries},
   }
-  Category & Checklist Item & Notes \\
-  \SetCell[r=3]{c}Devices & Test on mobile phones & Common devices: iPhone, Android, etc. \\*
-  & Test on tablets & Common devices: iPad, Android tablets, etc. \\
-  & Test on laptops and desktops & Different screen resolutions \\
+  Criteria & Checklist Item & Notes \\
   \SetCell[r=4]{c}Screen Sizes & Test on small screens (e.g., 320px width) & Minimum screen width \\*
   & Test on medium screens (e.g., 768px width) & Common tablet screen width \\
   & Test on large screens (e.g., 1024px width and above) & Common laptop/desktop screen widths \\
   & Test on extra-large screens (e.g., 1920px width) & Large desktop/monitor screen widths \\
   \SetCell[r=2]{c}Orientation & Test in portrait mode & Vertical screen orientation \\*
   & Test in landscape mode & Horizontal screen orientation \\
-  \SetCell[r=3]{c}Browsers & Test on Chrome & Most widely used browser \\*
-  & Test on Safari & Default browser on iOS devices \\
-  & Test on Edge & Default browser on Windows devices \\
-  \SetCell[r=2]{c}Performance & Check page load speed & Tools: Google PageSpeed Insights, GTmetrix \\*
-  & Check image optimization & Ensure images are responsive and compressed \\
   \SetCell[r=5]{c}Functionality & Test navigation menus & Ensure menus work and are accessible \\*
   & Test forms (input fields, buttons, etc.) & Ensure all forms are functional \\
   & Test buttons and links & Ensure they are easily clickable \\
@@ -29,9 +21,6 @@
   \SetCell[r=3]{c}Content & Check text readability & Ensure text is readable at all sizes \\*
   & Check image and video scaling & Ensure media scales properly \\
   & Check layout consistency & Ensure layout remains consistent \\
-  \SetCell[r=3]{c}Accessibility & Test keyboard navigation & Ensure site can be navigated with a keyboard \\*
-  & Check for screen reader compatibility & Ensure compatibility with screen readers \\
-  & Check color contrast and text size & Ensure sufficient contrast and readability \\
   \SetCell[r=5]{c, valign=t}Miscellaneous & Test touch gestures & Ensure touch gestures work (e.g., swiping) \\*
   & Check for any horizontal scrolling & Avoid horizontal scrolling \\
   & Test for viewport meta tag & Ensure correct viewport settings \\
