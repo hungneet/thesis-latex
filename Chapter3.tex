@@ -150,24 +150,6 @@ On the payment page, users have the option to advertise their blog by selecting 
 \newpage
 \subsection{Back office}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Figures/wireframe_bo.png}
-    \caption{Wireframe for Back office}
-\end{figure}
-
-\subsubsection{Login}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Figures/UI/login_bo_ui.png}
-    \caption{Login page for admins}
-\end{figure}
-
-The login page requires administrators to input their username and password in the designated fields.
-Login using Google is not available; only the provided account credentials can be used. 
-Upon correct input, administrators are directed to the dashboard.
-
 \subsubsection{Dashboard}
 
 \begin{figure}[H]
@@ -195,7 +177,7 @@ The control page empowers administrators to manage specific data types, includin
 
 The conceptual design phase of the project is a pivotal stage in the development lifecycle, focused on establishing a comprehensive understanding of the system's structure and relationships.
 \\
-In \textit{Figure 3.19}, all entities and relationships are presented. Note that all attributes are excluded to enhance visualization and maintain a clear focus on the primary components shaping the system. These attributes will be shown in the physical design section.
+In \textit{Figure 3.17}, all entities and relationships are presented. Note that all attributes are excluded to enhance visualization and maintain a clear focus on the primary components shaping the system. These attributes will be shown in the physical design section.
 
 \begin{figure}[H]
     \centering
@@ -211,7 +193,7 @@ to translate the abstract concepts from the Entity-Relationship Diagram
 (ERD) into a concrete relational schema. Through the mapping process,
 each entity, along with its attributes and relationships, is
 systematically transformed into tables with defined fields and
-corresponding constraints in \emph{Figure 3.20}.
+corresponding constraints in \emph{Figure 3.18}.
 
 \begin {figure}[H]
 \centering
@@ -219,11 +201,11 @@ corresponding constraints in \emph{Figure 3.20}.
 \caption{Relational schema}
 \end{figure}
 
-\emph{Figure 3.20}, the attributes are not presented fully to ensure a clear visualization of the diagram. In the relational mapping process, we implement a simplified technique for the 3-way relationship where the mandatory entity will take the primary key of the two optional entities as its foreign key, avoiding creating another table causes the schema to become unnecessarily complicated.
+\emph{Figure 3.18}, the attributes are not presented fully to ensure a clear visualization of the diagram. In the relational mapping process, we implement a simplified technique for the 3-way relationship where the mandatory entity will take the primary key of the two optional entities as its foreign key, avoiding creating another table causes the schema to become unnecessarily complicated.
 
 \subsection{Physical Design}
 
-In this phase, the conceptual transforms into the tangible, as we build the actual blueprint that mirrors the intricacies of the adoption process in real life. The Relational Schema serves as our guidepost, detailing the tables, and relationships that will form the foundation of the physical database. \textit{Figure 3.21 and 3.22} below translates abstract entities and relationships into concrete data types and optimizes storage structures.
+In this phase, the conceptual transforms into the tangible, as we build the actual blueprint that mirrors the intricacies of the adoption process in real life. The Relational Schema serves as our guidepost, detailing the tables, and relationships that will form the foundation of the physical database. \textit{Figure 3.19 and 3.20} below translates abstract entities and relationships into concrete data types and optimizes storage structures.
 
 \begin {figure}[H]
 \centering

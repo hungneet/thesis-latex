@@ -6,13 +6,13 @@
     colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-    Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}GET - /Payment/Token & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}617ms \\*
-    & & 2. Wrong role & Status 400 with message "Forbidden" & Pass & \\
-    & & 3. Correct role & Status 200 & Pass & \\
-    \SetCell[r=2]{c}2 & \SetCell[r=2]{c}POST - /Payment & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=2]{c}648ms \\*
-    & & 2. Wrong role & Status 400 with message "Forbidden" & Pass & \\
-    \SetCell[r=3]{c}3 & \SetCell[r=3]{c}GET - /Payment/AdvertisementType & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}666ms \\*
-    & & 2. Wrong role & Status 400 with message "Forbidden" & Pass & \\
-    & & 3. Correct role & Status 200 & Pass & \\
+    Id & Api & Test-case & Expected result & Result & \SetCell[c=1]{c}Response time \\
+    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}GET - /Payment/Token & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=3]{c}617ms \\*
+    & & 2. Wrong role & Status 400 with message "Forbidden" & passed & \\
+    & & 3. Correct role & Status 200 & passed & \\
+    \SetCell[r=2]{c}2 & \SetCell[r=2]{c}POST - /Payment & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=2]{c}648ms \\*
+    & & 2. Wrong role & Status 400 with message "Forbidden" & passed & \\
+    \SetCell[r=3]{c}3 & \SetCell[r=3]{c}GET - /Payment/AdvertisementType & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=3]{c}666ms \\*
+    & & 2. Wrong role & Status 400 with message "Forbidden" & passed & \\
+    & & 3. Correct role & Status 200 & passed & \\
   \end{longtblr} 

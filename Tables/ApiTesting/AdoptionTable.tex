@@ -6,17 +6,17 @@
     colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-  Id                & Api                                          & Testcase               & Expected result                                                             & Result & \SetCell[c=1]{c}Response time \\
-  \SetCell[r=3]{c}1 & \SetCell[r=3]{c}POST - /AdoptionForm         & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & Pass   & \SetCell[r=3]{c}872ms         \\*
-                    &                                              & 2. Empty body          & Error code 401 with corresponding empty fields.                             & Pass   &                               \\
-                    &                                              & 3. Correct body        & Status 200.                                                                 & Pass                                   \\
-  \SetCell[r=3]{c}2 & \SetCell[r=3]{c}GET - /AdoptionForm/ Precheck & 1. Is adopted          & Error code 12003 with message "You have sent request for this pet already". & Pass   & \SetCell[r=3]{c}812ms        \\*
-                    &                                              & 2. Not adopted         & Success with status 200                                                     & Pass   &                               \\
-                    &                                              & 3. Adopt from yourself & Error code 12002 with message "Can not adopt your own pet"                  & Pass   &                               \\
-  \SetCell[r=2]{c}3 & \SetCell[r=2]{c}GET - /AdoptionForm/Incoming & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & Pass   & \SetCell[r=2]{c}527ms         \\*
-                    &                                              & 2. Authorized          & Success with status 200                                                     & Pass   &                               \\
-  \SetCell[r=2]{c}4 & \SetCell[r=2]{c}GET - /AdoptionForm/Sent     & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & Pass   & \SetCell[r=2]{c}644ms         \\*
-                    &                                              & 2. Authorized          & Success with status 200                                                     & Pass   &                               \\
-  \SetCell[r=2]{c}5 & \SetCell[r=2]{c}GET - /CountUnreadIncoming   & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & Pass   & \SetCell[r=2]{c}613ms         \\*
-                    &                                              & 2. Authorized          & Success with status 200                                                     & Pass   &                               \\
+  Id                & Api                                          & Test-case               & Expected result                                                             & Result & \SetCell[c=1]{c}Response time \\
+  \SetCell[r=3]{c}1 & \SetCell[r=3]{c}POST - /AdoptionForm         & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & passed   & \SetCell[r=3]{c}872ms         \\*
+                    &                                              & 2. Empty body          & Error code 401 with corresponding empty fields.                             & passed   &                               \\
+                    &                                              & 3. Correct body        & Status 200.                                                                 & passed                                   \\
+  \SetCell[r=3]{c}2 & \SetCell[r=3]{c}GET - /AdoptionForm/ Precheck & 1. Is adopted          & Error code 12003 with message "You have sent request for this pet already". & passed   & \SetCell[r=3]{c}812ms        \\*
+                    &                                              & 2. Not adopted         & Success with status 200                                                     & passed   &                               \\
+                    &                                              & 3. Adopt from yourself & Error code 12002 with message "Can not adopt your own pet"                  & passed   &                               \\
+  \SetCell[r=2]{c}3 & \SetCell[r=2]{c}GET - /AdoptionForm/Incoming & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & passed   & \SetCell[r=2]{c}527ms         \\*
+                    &                                              & 2. Authorized          & Success with status 200                                                     & passed   &                               \\
+  \SetCell[r=2]{c}4 & \SetCell[r=2]{c}GET - /AdoptionForm/Sent     & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & passed   & \SetCell[r=2]{c}644ms         \\*
+                    &                                              & 2. Authorized          & Success with status 200                                                     & passed   &                               \\
+  \SetCell[r=2]{c}5 & \SetCell[r=2]{c}GET - /CountUnreadIncoming   & 1. Unauthorized        & Error code 400 with message "Unauthorized".                                 & passed   & \SetCell[r=2]{c}613ms         \\*
+                    &                                              & 2. Authorized          & Success with status 200                                                     & passed   &                               \\
 \end{longtblr}

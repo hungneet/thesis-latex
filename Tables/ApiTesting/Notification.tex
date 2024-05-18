@@ -6,12 +6,12 @@
     colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-  Id                & Api                                                       & Testcase                 & Expected result                             & Result & \SetCell[c=1]{c}Response time \\
-  \SetCell[r=2]{c}1 & \SetCell[r=2]{c} GET - /Notification                      & 1. Unauthorized          & Error code 401 with message "Unauthorized". & Pass   & \SetCell[r=2]{c}651ms         \\*
-                    &                                                           & 2. Authorize             & Status 200 with message "true"              & Pass   &                               \\
-  \SetCell[r=2]{c}2 & \SetCell[r=2]{c}DEL - /Notification                       & 1. Unauthorized          & Error code 401 with message "Unauthorized". & Pass   & \SetCell[r=2]{c}678ms         \\*
-                    &                                                           & 2. Authorize             & Status 200 with message "true"              & Pass   &                               \\
-  \SetCell[r=3]{c}3 & \SetCell[r=3]{c}PUT - /Notification/ \{notification\_id\} & 1. Unauthorized          & Error code 401 with message "Unauthorized". & Pass   & \SetCell[r=3]{c}685ms         \\*
-                    &                                                           & 2. Update others comment & Status 200 with message "false"             & Pass   &                               \\
-                    &                                                           & 3. Update self comment   & Status 200 with message "true"              & Pass   &                               \\
+  Id                & Api                                                       & Test-case                 & Expected result                             & Result & \SetCell[c=1]{c}Response time \\
+  \SetCell[r=2]{c}1 & \SetCell[r=2]{c} GET - /Notification                      & 1. Unauthorized          & Error code 401 with message "Unauthorized". & passed   & \SetCell[r=2]{c}651ms         \\*
+                    &                                                           & 2. Authorize             & Status 200 with message "true"              & passed   &                               \\
+  \SetCell[r=2]{c}2 & \SetCell[r=2]{c}DEL - /Notification                       & 1. Unauthorized          & Error code 401 with message "Unauthorized". & passed   & \SetCell[r=2]{c}678ms         \\*
+                    &                                                           & 2. Authorize             & Status 200 with message "true"              & passed   &                               \\
+  \SetCell[r=3]{c}3 & \SetCell[r=3]{c}PUT - /Notification/ \{notification\_id\} & 1. Unauthorized          & Error code 401 with message "Unauthorized". & passed   & \SetCell[r=3]{c}685ms         \\*
+                    &                                                           & 2. Update others comment & Status 200 with message "false"             & passed   &                               \\
+                    &                                                           & 3. Update self comment   & Status 200 with message "true"              & passed   &                               \\
 \end{longtblr}

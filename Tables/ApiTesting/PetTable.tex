@@ -6,24 +6,24 @@
     colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-    Id & Api & Testcase & Expected result & Result & \SetCell[c=1]{c}Response time \\
-    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}POST - /Pet & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}620ms \\*
-    & & 3. Correct body & Status 200. & Pass & \\
-    & & 4. Empty body & Error code 400 with corresponding empty fields & Pass & \\
-    \SetCell[r=4]{c}2 & \SetCell[r=4]{c}PUT - /Pet & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=4]{c}723ms \\*
-    & & 2. Wrong field value & Error status 400 & Pass & \\
-    & & 3. Correct body & Status 200. & Pass & \\
-    & & 4. Empty body & Error code 400 with corresponding empty fields & Pass & \\
-    \SetCell[r=9]{c}3 & \SetCell[r=9]{c}POST - /Pet/Get & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=9]{c}757ms \\*
-    & & 2. Empty body & Error code 400 with corresponding empty fields & Pass & \\
-    & & 3. Test filter species & Response contains pet with correct species & Pass & \\
-    & & 4. Test filter sex & Response contains pet with correct sex & Pass & \\
-    & & 5. Test filter age & Response contains pet with correct age & Pass & \\
-    & & 6. Test filter color & Response contains pet with correct color & Pass & \\
-    & & 7. Test filter size & Response contains pet with correct size & Pass & \\
-    & & 8. Test filter isSterilized & Response contains pet with correct isSterilized & Pass & \\
-    & & 9. Test filter Vaccinated & Response contains pet with correct Vaccinated & Pass & \\
-    \SetCell[r=3]{c}4 & \SetCell[r=3]{c}DELETE - /Pet/\{pet\_id\} & 1. Unauthorized & Error code 401 with message "Unauthorized". & Pass & \SetCell[r=3]{c}719ms \\*
-    & & 2. Delete existing pet & Success with status 200 & Pass & \\
-    & & 3. Delete non-existing pet & Error code 11001 with message "The pet is not found". & Pass & \\
+    Id & Api & Test-case & Expected result & Result & \SetCell[c=1]{c}Response time \\
+    \SetCell[r=3]{c}1 & \SetCell[r=3]{c}POST - /Pet & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=3]{c}620ms \\*
+    & & 3. Correct body & Status 200. & passed & \\
+    & & 4. Empty body & Error code 400 with corresponding empty fields & passed & \\
+    \SetCell[r=4]{c}2 & \SetCell[r=4]{c}PUT - /Pet & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=4]{c}723ms \\*
+    & & 2. Wrong field value & Error status 400 & passed & \\
+    & & 3. Correct body & Status 200. & passed & \\
+    & & 4. Empty body & Error code 400 with corresponding empty fields & passed & \\
+    \SetCell[r=9]{c}3 & \SetCell[r=9]{c}POST - /Pet/Get & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=9]{c}757ms \\*
+    & & 2. Empty body & Error code 400 with corresponding empty fields & passed & \\
+    & & 3. Test filter species & Response contains pet with correct species & passed & \\
+    & & 4. Test filter sex & Response contains pet with correct sex & passed & \\
+    & & 5. Test filter age & Response contains pet with correct age & passed & \\
+    & & 6. Test filter color & Response contains pet with correct color & passed & \\
+    & & 7. Test filter size & Response contains pet with correct size & passed & \\
+    & & 8. Test filter isSterilized & Response contains pet with correct isSterilized & passed & \\
+    & & 9. Test filter Vaccinated & Response contains pet with correct Vaccinated & passed & \\
+    \SetCell[r=3]{c}4 & \SetCell[r=3]{c}DELETE - /Pet/\{pet\_id\} & 1. Unauthorized & Error code 401 with message "Unauthorized". & passed & \SetCell[r=3]{c}719ms \\*
+    & & 2. Delete existing pet & Success with status 200 & passed & \\
+    & & 3. Delete non-existing pet & Error code 11001 with message "The pet is not found". & passed & \\
   \end{longtblr}

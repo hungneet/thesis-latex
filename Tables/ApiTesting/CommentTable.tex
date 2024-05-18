@@ -6,17 +6,17 @@
     colspec = {X[0.5,l] X[3,l] X[4,l] X[5,l] X[1.5,l] X[2,l]},
     row{1} = {font=\bfseries},
   }
-  Id                & Api                                              & Testcase                 & Expected result                                               & Result & \SetCell[c=1]{c}Response time \\
-  \SetCell[r=3]{c}1 & \SetCell[r=3]{c}GET - /Comment/blog/\{blog\_id\} & 1. Correct id            & Status 200                                                    & Pass   & \SetCell[r=3]{c}708ms         \\*
-                    &                                                  & 2. Wrong blog id         & Status 400 with message "The value \{blog\_id\} id not valid" & Pass   &                               \\
-                    &                                                  & 3. Empty blog id         & Status 405                                                    & Pass   &                               \\
-  \SetCell[r=3]{c}2 & \SetCell[r=3]{c}GET - /Comment/post/\{blog\_id\} & 1. Correct id            & Status 200                                                    & Pass   & \SetCell[r=3]{c}629ms         \\*
-                    &                                                  & 2. Wrong blog id         & Status 400 with message "The value \{blog\_id\} id not valid" & Pass   &                               \\
-                    &                                                  & 3. Empty blog id         & Status 405                                                    & Pass   &                               \\
-  \SetCell[r=3]{c}3 & \SetCell[r=3]{c}POST - /Comment                  & 1. Unauthorized          & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=3]{c}779ms         \\*
-                    &                                                  & 2. Comment with text     & Status 200.                                                   & Pass   &                               \\
-                    &                                                  & 3. Empty comment         & Error code 401 with message "Can not be empty".               & Pass   &                               \\
-  \SetCell[r=3]{c}4 & \SetCell[r=3]{c}DEL - /Comment/ \{comment\_id\}   & 1. Unauthorized          & Error code 401 with message "Unauthorized".                   & Pass   & \SetCell[r=3]{c}697ms        \\*
-                    &                                                  & 2. Delete self comment   & Status 200.                                                   & Pass   &                               \\
-                    &                                                  & 3. Delete others comment & Error code 401 with message "Unauthorized".                   & Pass   &                               \\
+  Id                & Api                                              & Test-case                 & Expected result                                               & Result & \SetCell[c=1]{c}Response time \\
+  \SetCell[r=3]{c}1 & \SetCell[r=3]{c}GET - /Comment/blog/\{blog\_id\} & 1. Correct id            & Status 200                                                    & passed   & \SetCell[r=3]{c}708ms         \\*
+                    &                                                  & 2. Wrong blog id         & Status 400 with message "The value \{blog\_id\} id not valid" & passed   &                               \\
+                    &                                                  & 3. Empty blog id         & Status 405                                                    & passed   &                               \\
+  \SetCell[r=3]{c}2 & \SetCell[r=3]{c}GET - /Comment/post/\{blog\_id\} & 1. Correct id            & Status 200                                                    & passed   & \SetCell[r=3]{c}629ms         \\*
+                    &                                                  & 2. Wrong blog id         & Status 400 with message "The value \{blog\_id\} id not valid" & passed   &                               \\
+                    &                                                  & 3. Empty blog id         & Status 405                                                    & passed   &                               \\
+  \SetCell[r=3]{c}3 & \SetCell[r=3]{c}POST - /Comment                  & 1. Unauthorized          & Error code 401 with message "Unauthorized".                   & passed   & \SetCell[r=3]{c}779ms         \\*
+                    &                                                  & 2. Comment with text     & Status 200.                                                   & passed   &                               \\
+                    &                                                  & 3. Empty comment         & Error code 401 with message "Can not be empty".               & passed   &                               \\
+  \SetCell[r=3]{c}4 & \SetCell[r=3]{c}DEL - /Comment/ \{comment\_id\}   & 1. Unauthorized          & Error code 401 with message "Unauthorized".                   & passed   & \SetCell[r=3]{c}697ms        \\*
+                    &                                                  & 2. Delete self comment   & Status 200.                                                   & passed   &                               \\
+                    &                                                  & 3. Delete others comment & Error code 401 with message "Unauthorized".                   & passed   &                               \\
 \end{longtblr}

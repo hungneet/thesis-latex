@@ -1,6 +1,6 @@
 \chapter{SYSTEM TESTING}
 
-With the completion of system implementation, our focus now shifts towards ensuring the robustness and functionality of the system through testing. This section presents the systematic approach taken for system testing, including end-to-end testing and API testing, to validate the functionality and performance of the implemented system
+With the completion of system implementation, our focus now shifts towards ensuring the robustness and functionality of the system through testing. This section presents the systematic approach taken for system testing, including end-to-end testing, API testing, load testing, and performance testing to validate the functionality and performance of the implemented system
 
 \section{API testing}
 This section delves into testing the website's API for functionality using 
@@ -23,7 +23,7 @@ requests and return the expected results.
 Postman was used to test the website's API endpoints, leveraging its
 versatile features to conduct comprehensive assessments. Postman's
 user-friendly interface and powerful testing capabilities enabled us to
-create test cases, execute requests, and analyze responses efficiently.
+create test-cases, execute requests, and analyze responses efficiently.
 By defining test scripts and assertions, we could validate the API
 endpoints' functionality and performance, ensuring that they met the
 specified requirements.
@@ -49,7 +49,7 @@ To test the response data, we used this code in Postman:
 });
 \end{lstlisting}
 
-\subsection{API testing scenarios}
+\subsection{API Testing Test-cases}
 Various testing scenarios were explored to evaluate the website's API
 endpoints thoroughly. These scenarios included testing different types of
 requests, handling error conditions, and assessing the API's performance
@@ -59,8 +59,8 @@ different situations. This comprehensive testing approach helped ensure
 the reliability and robustness of the website's API, enhancing its overall
 quality and performance. 
 
-Here is all the test cases for the API endpoints. All the API endpoints
-here have average response time of 734ms. The test cases are divided into:
+Here is all the test-cases for the API endpoints. All the API endpoints
+here have average response time of 734ms. The test-cases are divided into:
 
 
 \input{Tables/ApiTesting/AdoptionTable.tex}
@@ -106,7 +106,7 @@ To automate the end-to-end testing process, we choose Cypress, which is a modern
 \end{figure}
 
 \subsection{Test Cases}
-With Cypress, we tested our system features to make sure the system ran as expected and satisfied requirements. Below are some test cases of the key features and test data for them, these test cases were tested on multiple browser and environments.
+With Cypress, we tested our system features to make sure the system ran as expected and satisfied requirements. Below are some test-cases of the key features and test data for them, these test-cases were tested on multiple browser and environments.
 
 \subsubsection*{Test data}
 
