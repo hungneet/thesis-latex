@@ -91,6 +91,8 @@ End-to-end testing is a software testing method that validates the system as a w
 
 To automate the end-to-end testing process, we choose Cypress, which is a modern JavaScript-based end-to-end testing framework designed for web applications. It provides a fast, reliable, and easy-to-use testing solution for developers and QA engineers. Cypress comes with a rich set of features such as real-time reloading, automatic waiting, and built-in assertions,  allowing for efficient and effective testing of web applications.
 
+Note that, the automation end-to-end testing process cannot be done on every function of the system due to the implementation of external UI components and email interactions. For those functions, we will do manual end-to-end testing to ensure the correct operation of the system.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/cypress_script.png}
@@ -211,7 +213,7 @@ Google Lighthouse uses a 0 to 100 scale to evaluate web page performance and oth
 
 \input{Tables/PerformanceTest.tex}
 
-From \textit{Table 6.31}, It can be said that the website passed the performance test with all measured parameters being greater than 50, especially SEO with most of the measured values being greater than 90.
+From \textit{Table 6.32}, It can be said that the website passed the performance test with all measured parameters being greater than 50, especially SEO with most of the measured values being greater than 90.
 
 \section{Load testing}
 API load testing involves simulating real-world traffic and observing API’s resulting behavior. It is conducted to evaluate how well an API meets performance expectations for response time, throughput, and availability under the simulated load.
