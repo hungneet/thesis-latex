@@ -1,0 +1,21 @@
+\chapter{Deployment Plan}
+
+\section{Deployment}
+
+With the completion of system testing and evaluation, we are now focusing on serving the system to the end users. The deployment plan is structured to ensure a secure, reliable, and efficient operation of all system components.
+
+\begin{itemize}
+    \item \textbf{Database Deployment}: The database is deployed on \textit{SQL Database Server}, a cloud database service that provides a secure and reliable solution for our system. This service ensures data integrity and availability, crucial for the system's performance. The database server is connected to the Back Office server, the management system for the application administrators, which is deployed on \textit{Azure SQL Server}. This setup facilitates efficient database management and seamless integration with the administrative backend.
+    \item \textbf{Backend Deployment}: For the backend system, we utilized an Azure Virtual Machine. This virtual machine hosts the backend component, which is responsible for providing API endpoints for the web server and interacting with other system components. The use of \textit{Azure Virtual Machine} offers scalability and flexibility, allowing us to adjust resources based on demand and ensure robust backend operations.
+    \item \textbf{Frontend Deployment}: The frontend of our system is deployed on \textit{Vercel}, a cloud server designed for fast and reliable web application deployment. Vercel handles the delivery of the web application to users' browsers, ensuring quick load times and a responsive user experience. This service is ideal for handling web traffic efficiently and maintaining the performance of the frontend interface.
+\end{itemize}
+
+By deploying the database, backend, and frontend components on these cloud services, we ensure that our system is scalable, secure, and capable of handling user interactions smoothly. This deployment strategy positions us to deliver a high-quality, reliable service to our end users.
+
+\section{Repositories}
+
+The repositories for Frontend and Backend of the system are as follows:
+
+- \textbf{Frontend}: https://github.com/AZURE231/petopia
+
+- \textbf{Backend}: https://github.com/Aaron-24DucAnh24/Petopia-Backend
