@@ -23,6 +23,9 @@ site generation for optimal website performance, intuitive file
 system-based routing, automatic code splitting, flexible styling
 approaches, and compatibility with TypeScript for improved code quality.
 
+In our application, we use Next.js to create a dynamic and responsive
+front-end experience, leveraging its server-side rendering capabilities
+to enhance performance and SEO.
 
 \subsection{Tailwind CSS}
 
@@ -37,10 +40,31 @@ optimizing performance, and its low learning curve, active community,
 and integration flexibility make it an efficient choice for building
 well-styled and maintainable web applications.
 
+With Tailwind CSS, we can easily design and style our application,
+ensuring consistency and responsiveness across different devices and
+screen sizes.
+
 \subsection{Retool}
-Retool is a rapid development platform for building internal software quickly and efficiently. It features a drag-and-drop interface for creating custom applications, supports integration with a wide range of databases and APIs, and allows for the incorporation of custom JavaScript. With Retool, users can easily combine data from multiple sources and implement complex functionalities without extensive coding. Its built-in permissions and access controls ensure data security, making Retool a valuable tool for enhancing internal workflows and productivity.
+Retool is a rapid development platform for building internal software 
+quickly and efficiently. It features a drag-and-drop interface for creating 
+custom applications, supports integration with a wide range of databases and 
+APIs, and allows for the incorporation of custom JavaScript. With Retool, 
+users can easily combine data from multiple sources and implement complex 
+functionalities without extensive coding. Its built-in permissions and access 
+controls ensure data security, making Retool a valuable tool for enhancing 
+internal workflows and productivity.
+
+We use Retool to create dashboards and internal tools that facilitate
+the management and monitoring of our application, enabling efficient
+data visualization and analysis for administrators.
 
 \section{Back-end}
+
+In this section, we will explore the ASP.NET Core platform, Entity
+Framework, MS SQL Server, Redis Cache, ML.NET, and Elastic-search. These
+technologies play a crucial role in developing robust back-end
+functionalities, ensuring efficient data management, and enhancing
+scalability and performance in web applications.
 
 \subsection{ASP.NET core platform}
 
@@ -58,6 +82,10 @@ ASP.NET Core is versatile, open-source, supports gRPC, and offers
 flexible hosting options, showcasing its adaptability and
 community-driven focus.
 
+In our application, we leverage ASP.NET Core to build a reliable and
+scalable back-end infrastructure, ensuring optimal performance and
+security.
+
 \subsection{Entity Framework}
 
 Entity Framework is an open-source Object-Relational Mapping (ORM)
@@ -71,6 +99,9 @@ saving. It adheres to conventions-over-configuration programming and
 provides migration commands for seamless database schema management,
 making Entity Framework a robust tool for efficient database development
 in .NET applications.
+
+We utilize Entity Framework to streamline database interactions and
+management, ensuring data integrity and consistency in our application.
 
 
 \subsection{MS SQL Server}
@@ -90,6 +121,10 @@ combination of robust features and integration with the widely-used SQL
 language makes Microsoft SQL Server a key player in the database
 technology landscape.
 
+We leverage Microsoft SQL Server to store and manage data in our
+application, ensuring reliability, scalability, and performance in
+database operations.
+
 
 \subsection{Redis Cache}
 
@@ -105,6 +140,10 @@ partitioning with Redis Cluster. This makes Redis a robust and flexible
 solution for handling real-time data storage, retrieval, and processing
 in a wide range of applications.
 
+We utilize Redis Cache to enhance performance and scalability in our
+application, leveraging its in-memory data storage capabilities for
+efficient caching and data processing.
+
 
 \subsection{Elastic-search}
 
@@ -117,15 +156,9 @@ scalability and flexibility. Its applications range from adding search
 functionality to apps and storing logs to employing machine learning and
 processing genetic data for various research purposes.
 
-\subsection{ImgBB}
-
-ImgBB is a user-friendly image hosting and sharing service that allows users 
-to upload and share images easily. It supports various image formats such as 
-JPEG, PNG, and GIF, making it versatile for different types of visual content. 
-ImgBB provides features like direct image links, BBCode, and HTML thumbnails, 
-which are particularly useful for embedding images in forums, websites, and 
-social media. The service also includes functionalities like image resizing and expiration settings, giving users control over how and for how long their images are displayed.
-
+We use Elasticsearch to enhance search functionality in our application,
+providing users with efficient and accurate search results across
+different data sources.
 
 \subsection{ML.NET}
 ML.NET is an open-source, cross-platform machine learning framework for .NET 
@@ -133,3 +166,50 @@ developers that enables integration of custom machine learning models into .NET
 applications. It encompasses an API, which consists of different NuGet packages, 
 a Visual Studio extension called Model Builder, and a command-line interface that's 
 installed as a .NET tool.
+
+With ML.NET, we train and deploy machine learning models in our application,
+to enhance user experience and provide intelligent breeds classification
+based on images.
+
+\section{Deployment}
+
+\subsection{ImgBB}
+ImgBB is a user-friendly image hosting and sharing service that allows users 
+to upload and share images easily. It supports various image formats such as 
+JPEG, PNG, and GIF, making it versatile for different types of visual content. 
+ImgBB provides features like direct image links, BBCode, and HTML thumbnails, 
+which are particularly useful for embedding images in forums, websites, and 
+social media. The service also includes functionalities like image resizing and 
+expiration settings, giving users control over how and for how long their images 
+are displayed.
+
+We use ImgBB to host in our application, enabling seamless
+image uploading for users.
+
+\subsection{Vercel}
+Vercel is a cloud platform for static sites and serverless functions that enables
+developers to deploy web applications with ease. It supports various frameworks
+like Next.js, Gatsby, and React, providing seamless integration and deployment
+options. Vercel offers features like automatic deployments, preview URLs, and
+custom domains, making it convenient for developers to showcase their projects
+and collaborate with team members. The platform also includes performance
+analytics, serverless functions, and environment variables, enhancing the
+development and deployment experience for modern web applications.
+
+We use Vercel to deploy our application, leveraging its features for
+efficient hosting and deployment of Next.js projects.
+
+\subsection{Azure Virtual Machine}
+Azure Virtual Machines (VMs) are scalable computing resources provided by
+Microsoft Azure for running applications and workloads in the cloud. VMs offer
+flexibility in terms of operating systems, configurations, and performance
+requirements, allowing users to customize their computing environment based on
+specific needs. Azure VMs support various use cases, including development and
+testing, production workloads, and high-performance computing. With features like
+autoscaling, load balancing, and virtual networking, Azure VMs provide a
+comprehensive cloud computing solution for deploying and managing applications
+in the cloud.
+
+We use Azure Virtual Machines to host our application, leveraging the
+scalability and flexibility of Azure cloud services for efficient
+deployment and management of our web application.
