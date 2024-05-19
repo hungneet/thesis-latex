@@ -1,13 +1,88 @@
 \chapter{SYSTEM IMPLEMENTATION}
-
 With all the system design and system analysis completed in the previous semester, we now embark on the implementation phase of our project. This chapter details the process of bringing our design to life, outlining the key features of our system and the methodologies employed to implement them. Through careful planning and execution, we aim to translate our theoretical framework into a functional and efficient system. Below are some of the critical features of our system and the approaches we used to implement them.
 
-\section{Caching Mechanism}
+\section{General Principals and Setups}
+\subsection{Frontend}
+
+\textbf{NextJs and App Router}
+
+\textbf{Folder Structure}
+
+\textbf{Handling Fetching API}
+
+\subsection{Backend}
+
+\textbf{Folder Structure}
+
+
+\textbf{Setup Development Environment with Docker}
+
+To start developing the backend, we need to setup the development environment with
+all the required components as mentioned in the system architecture, which includes a SQL database, a Redis cache and an Elastic-search database. 
+\textit{List \ref{lst:docker-code}} show how we install and build all the necessary Docker images to containers.
+
+\begin{lstlisting}[caption=Setup Development Environment with Docker, label={lst:docker-code}]
+services:
+  database:
+    image: mcr.microsoft.com/azure-sql-edge
+    container_name: PetopiaDatabase
+    ports:
+      - "1433:1433"
+    env_file:
+      - ".env"
+    environment:
+      ACCEPT_EULA: ${MSSQL_ACCEPT_EULA}
+      MSSQL_SA_PASSWORD: ${MSSQL_PASSWORD}
+  cache:
+    image: redis
+    container_name: PetopiaCache
+    ports:
+      - "6379:6379"
+    env_file:
+      - ".env"
+    command: --requirepass "${REDIS_PASSWORD}"
+  searchEngine:
+    image: elasticsearch:8.8.1
+    container_name: PetopiaSearchEngine
+    ports:
+      - "9200:9200"
+    env_file:
+      - ".env"
+    environment:
+      xpack.security.enabled: ${ELASTIC_SECURITY_ENABLED}
+      discovery.type: ${ELASTIC_DISCOVERY_TYPE}
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
+\end{lstlisting}
+
+\textbf{Database Implementation with EF Core}
+
+Regarding to implementing the SQL database, we apply the \textit{Code-First} approach following these steps:
+\begin{itemize}
+  \item Define Domain Entity Classes:
+  Start by creating entity classes. These classes represent the tables in the database.
+
+  \item Create a DbContext Class:
+  Create a class that extends class DbContext of EF Core. This class represents the database context and provides access to entity classes.
+
+  \item Configure the DbContext:
+  Use Fluent API package to configure relationships, keys, and other database-specific settings.
+
+  \item Enable and apply migrations file to create or update the database with the following Linux script:
+  \begin{lstlisting}
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+  \end{lstlisting}
+\end{itemize}
+
+\newpage
+\section{Key Feature Implementation}
+
+\subsection{Caching Mechanism}
 
 To reduce the amount of time it takes to access frequently accessed data
 and increase the general system performance, we will apply caching data
 in our system. The applied caching strategy is called \emph{aside
-    caching} \emph{(Figure 5.1).} The detailed caching process is as follows:
+    caching} \emph{(Figure \ref{fig:caching}).} The detailed caching process is as follows:
 
 - Step 1: The application will check whether the cache has the data it
 needs or not.
@@ -25,9 +100,10 @@ to the cache, then it will continue its work.
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/caching_strat.png}
     \caption{Caching Mechanism}
+    \label{fig:caching}
 \end{figure}
 
-\section{Advanced search strategy}
+\subsection{Advanced search strategy}
 
 Querying data that requires applying many filters (pet profiles, etc)
 from the SQL database is extremely time-consuming. Note that only data
@@ -35,7 +111,7 @@ that is used repeatedly and is not too large in size can be stored
 temporarily in the cache server. Therefore, applying a search strategy
 to optimize querying the above type of data is necessary.
 
-\emph{Figure 5.2} shows the steps of syncing data from the SQL database
+\emph{Figure \ref{fig:search-strategy}} shows the steps of syncing data from the SQL database
 to the Elastic-search database.
 
 \begin{itemize}
@@ -58,9 +134,10 @@ to the Elastic-search database.
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/search_strat.png}
     \caption{Search strategy}
+    \label{fig:search-strategy}
 \end{figure}
 
-\section{Online payment}
+\subsection{Online payment}
 
 In our system, we have integrated the PayPal Braintree Gateway to handle online payments securely and efficiently. Braintree is a full-stack payment platform that offers a seamless payment experience, supporting various payment methods, including credit cards, PayPal, and other digital wallets. Its robust infrastructure and comprehensive SDKs for both client and server sides make it an ideal choice for our system's payment processing needs.
 
@@ -68,9 +145,10 @@ In our system, we have integrated the PayPal Braintree Gateway to handle online 
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/payment-strat.png}
     \caption{Payment process}
+    \label{fig:payment-flow}
 \end{figure}
 
-\emph{Figure 5.3} breaks down how the payment process is implemented:
+\emph{Figure \ref{fig:payment-flow}} breaks down how the payment process is implemented:
 
 - Step 1:
 The front-end requests a client token from our server and initializes the Braintree client. This token is essential for securely communicating between the client and the Braintree server.\\
@@ -87,16 +165,17 @@ The server receives the payment method nonce and uses Braintree's tools to proce
 
 By utilizing PayPal Braintree Gateway, we ensure a secure and streamlined payment process, enhancing the user experience and maintaining high security standards in handling sensitive payment information.
 
-\section{Google Login}
+\subsection{Google Login}
 Our website provides users with the option to log in using their Google account, 
 offering a convenient and secure authentication method. By integrating Google Sign-In, 
 we simplify the login process for users and enhance the overall user experience. 
 
-The Google Login process is illustrated in \emph{Figure 5.4}:
+The Google Login process is illustrated in \emph{Figure \ref{fig:gglogin-flow}}:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/Implementation/GoogleLogin.png}
     \caption{Google Login Process}
+    \label{fig:gglogin-flow}
 \end{figure}
 
 The implementation steps are as follows:
@@ -108,7 +187,7 @@ The implementation steps are as follows:
     \item Step 5: The web server creates an access token and sends it back to the web client. The user can now access the website using this access token.
 \end{itemize}
 
-\section{Breeds Recognition}
+\subsection{Breeds Recognition}
 Breed recognition is a valuable feature for our users, who often don't know their pet's breed. To address this, we utilized ML.NET 
 to train an image classification model. This advanced technology enables our platform to accurately identify a pet's breed from a photo, 
 simplifying the process for users and enhancing their experience.
@@ -167,7 +246,7 @@ The next step involves using ML.NET Model Builder to transform our image set int
     In our case, we export the model as an API, allowing seamless integration with our platform for real-time breed recognition.
 \end{enumerate}
 
-\section{Protect System APIs with Access/Refresh Tokens}
+\subsection{Protect System APIs with Access/Refresh Tokens}
 To authenticate users and authorize requests without keeping session data on the server, we use \textit{tokens}, which are data confirming a user’s identity and are analogous to digital signatures.
 
 A careful balance between security and user experience is essential for authentication and authorization. A user may become irritated if protocols are overly strict. On the other hand, a security breach is imminent if permission systems are too loose. Access and refresh tokens provide a solution that meets both requirements.
@@ -176,16 +255,57 @@ A careful balance between security and user experience is essential for authenti
 
 \textbf{A refresh token} allow developers to manage users’ sessions across the application. Additionally, they allow users to log in and stay connected without providing their passwords for long periods. Therefore, refresh tokens can last \textit{from a few days to a few months}.
 
-Let’s now discuss how to set up the tokens in \textit{Figure 5.6}:
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.6\textwidth]{Figures/Implementation/Tokens.png}
-  \caption{Set up the tokens.}
-\end{figure}
+Let’s now discuss how to set up the tokens in \textit{Figure \ref{fig:tokens-flow}}.
 
 Let’s say a client requests an access token by authenticating with the authorization server and delivering a credential that proves the resource owner is authorized to use the resource.
 
 The API server verifies the authorization and confirms the identity of the authorized client. An access token and a refresh token are issued if it’s legitimate. The client must securely store this refresh token.
 
 The client can now request the API server for secured resource access, and the resource server validates the access token. If it’s valid, it returns the desired resource.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/Implementation/Tokens.png}
+  \caption{Set up the tokens.}
+  \label{fig:tokens-flow}
+\end{figure}
+
+\subsection{Back Office Implementation with Retool}
+To build the back office web-based application for administration functionality, we use Retool and follow these steps:
+\begin{itemize}
+  \item Connect Data Sources: Start by creating a resource in Retool, we connect our MSSQL Database Server to Retool.
+  This step ensures that our dashboard can pull in data from the database.
+  \item Design Dashboard: Retool provides a drag-and-drop interface for building custom admin dashboards. 
+  We can find components like tables, buttons, text inputs, and dropdowns. 
+  These components are essential for displaying data, triggering actions, and interacting with users.
+  \item Customize Styles and Triggers: We customize the appearance of dashboard components by adjusting styles. 
+  Additionally, we set up triggers to respond to user interactions, such as button clicks or form submissions.
+  \item Test and Iterate: We assemble our dashboard, test it thoroughly, and iterate based on testing feedback.
+\end{itemize}
+
+Retool enables rapid development process, letting us move quickly from requirements to implementation. Also, Retool provides us a free hosting cloud, eliminating the need for complex infrastructure
+management. Nevertheless, because of modifying directly the database instead of utilizing the API Server, the system cannot
+catch those database changes normally and process further actions after those database changes. Therefore, it is a need for handling this disavantages.
+A proposed solution will be discussed in the next section.
+
+\subsection{Background Task Processing}
+As for features require tasks with huge processing time or(and) running many times on the specified CRON (Linux command-line utility for scheduling tasks) schedule,
+we should perform them separately from the main process of the application or the process of each API request.
+
+In ASP.NET, for handling this problem, we use \textit{Hangfire}, an open-source framework, to create process and manage our background jobs.
+
+\textbf{Sending Emails and Synchronizing Elastic-search Records}
+
+The \textit{Fire-and-forget} technique is applied to sending emails and synchronizing Elastic-search records.
+In this technique, we create a background job, let it run only once and imediately after the creation.
+Hangfire framework helps us to check if the job is successfully terminated. In the case of failure, automatically, Hangfire will re-create and
+run a new background job. Thus, we can reduce the response time of requests from web clients, prevent bottleneck and ensure the correct operation of the system.
+
+\textbf{Scheduly Handling Update Account Requests}
+
+Hangfire framework supports us \textit{Recurring Jobs} to handle scheduling tasks.
+As mentioned before, in our system, when admins confirm a user to be upgraded to an organization or create a new admin,
+the back office will directly modify tables in the MSSQL Database Server.
+Therefore, recurring jobs are helpful to the API Server for catching those modifications in the database server
+(by checking the database scheduly) and processing any further actions such as sending notication emails to
+users.
