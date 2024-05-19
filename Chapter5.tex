@@ -1,7 +1,7 @@
 \chapter{SYSTEM IMPLEMENTATION}
 With all the system design and system analysis completed in the previous semester, we now embark on the implementation phase of our project. This chapter details the process of bringing our design to life, outlining the key features of our system and the methodologies employed to implement them. Through careful planning and execution, we aim to translate our theoretical framework into a functional and efficient system. Below are some of the critical features of our system and the approaches we used to implement them.
 
-\section{General Principals and Setups}
+\section{General structure and Setups}
 \subsection{Frontend}
 
 \subsubsection*{NextJs and App Router}
@@ -81,9 +81,19 @@ Benefits of using \textit{useQuery} and \textit{useMutation} for API requests:
 \subsection{Backend}
 
 
-\textbf{Folder Structure}
+\subsubsection*{Folder Structure}
 
-\textbf{Setup Development Environment with Docker}
+\textit{Figure \ref{fig:be-folder}} show our folder structure of backend
+source repository.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/be_folder.png}
+  \caption{Backend Folder Structure}
+  \label{fig:be-folder}
+\end{figure}
+
+\subsubsection*{Setup Development Environment with Docker}
 
 To start developing the backend, we need to setup the development environment with
 all the required components as mentioned in the system architecture, which includes a SQL database, a Redis cache and an Elastic-search database.
@@ -122,7 +132,7 @@ services:
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
 \end{lstlisting}
 
-\textbf{Database Implementation with EF Core}
+\subsubsection*{Database Implementation with EF Core}
 
 Regarding to implementing the SQL database, we apply the \textit{Code-First} approach following these steps:
 \begin{itemize}
@@ -211,7 +221,7 @@ In our system, we have integrated the PayPal Braintree Gateway to handle online 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Figures/payment-strat.png}
+    \includegraphics[width=0.9\textwidth]{Figures/payment-strat.png}
     \caption{Payment process}
     \label{fig:payment-flow}
 \end{figure}
