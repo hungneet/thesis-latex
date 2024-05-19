@@ -4,13 +4,76 @@ With all the system design and system analysis completed in the previous semeste
 \section{General Principals and Setups}
 \subsection{Frontend}
 
-\textbf{NextJs and App Router}
+\subsubsection*{NextJs and App Router}
+We created a new Next.js app using the create-next-app command. This command sets up the entire project structure, including necessary configurations and dependencies, making it easier to get started with development.
 
-\textbf{Folder Structure}
 
-\textbf{Handling Fetching API}
+\subsubsection*{Folder Structure}
+
+\subsubsection*{Handling Fetching API}
+
+To manage communication with the backend, we developed custom React hooks to handle API requests. These hooks streamline data fetching and modification processes, ensuring efficient and error-free interactions with the backend.
+
+- \textit{useQuery}:
+
+\begin{itemize}
+    \item \textbf{Purpose}: To fetch data from the backend.
+    \item \textbf{Functionality}: This hook sends a GET request to the API, retrieves data from the database, and handles the loading state and any errors that may occur during the fetch process.
+    \item \textbf{Usage Example}:
+          \begin{lstlisting}
+                const getBlogQuery = useQuery<IApiResponse<IBlogResponse>>(
+                    [QUERY_KEYS.GET_BLOG_DETAIL, { id: params.id }],
+                    () => getBlogDetail(params.id),
+                    {
+                      onSuccess: (res) => {
+                        setBlogContent(res.data.data);
+                      },
+                      onError: () => {
+                        // Handle error
+                        setError(true);
+                      },
+                      refetchOnWindowFocus: false,
+                    }
+                  );
+            \end{lstlisting}
+\end{itemize}
+
+- \textit{useMutation}:
+
+\begin{itemize}
+    \item \textbf{Purpose}: Modify data, including PUT, POST, and DELETE actions.
+    \item \textbf{Functionality}: This hook handles data mutations by sending the appropriate requests to the backend. It manages the state during the request, providing feedback on success or failure, and includes custom error handling.
+    \item \textbf{Usage Example}:
+          \begin{lstlisting}
+            const sendAdoptRequestMutation = useMutation<
+            IApiResponse<IUserInfoReponse>,
+            IAdoptPetRequest
+          >(sendAdoptRequest, {
+            onError: () => {
+              setAlertMessage('Error sending adoption request');
+              setAlertFail(true);
+              setAlertShow(true);
+            },
+            onSuccess: () => {
+              setAlertMessage('Adoption request sent successfully');
+              setAlertFail(false);
+              setAlertShow(true);
+            },
+          });
+            \end{lstlisting}
+\end{itemize}
+
+Benefits of using \textit{useQuery} and \textit{useMutation} for API requests:
+
+\begin{itemize}
+    \item \textbf{Asynchronous Handling}: Our hooks handle asynchronous operations seamlessly, allowing the frontend to know when data fetching is complete and to take appropriate actions.
+    \item \textbf{Error Handling}: Built-in custom error feedback helps identify and address errors effectively.
+    \item \textbf{Performance Improvement}: By adding state management during the fetch process, we avoid unnecessary reloads when fetching the same data multiple times.
+    \item \textbf{Code Cleanliness}: Using these hooks simplifies the codebase by eliminating repetitive fetch actions, resulting in cleaner and more maintainable code.
+\end{itemize}
 
 \subsection{Backend}
+
 
 \textbf{Folder Structure}
 
@@ -18,7 +81,7 @@ With all the system design and system analysis completed in the previous semeste
 \textbf{Setup Development Environment with Docker}
 
 To start developing the backend, we need to setup the development environment with
-all the required components as mentioned in the system architecture, which includes a SQL database, a Redis cache and an Elastic-search database. 
+all the required components as mentioned in the system architecture, which includes a SQL database, a Redis cache and an Elastic-search database.
 \textit{List \ref{lst:docker-code}} show how we install and build all the necessary Docker images to containers.
 
 \begin{lstlisting}[caption=Setup Development Environment with Docker, label={lst:docker-code}]
@@ -58,17 +121,17 @@ services:
 
 Regarding to implementing the SQL database, we apply the \textit{Code-First} approach following these steps:
 \begin{itemize}
-  \item Define Domain Entity Classes:
-  Start by creating entity classes. These classes represent the tables in the database.
+    \item Define Domain Entity Classes:
+          Start by creating entity classes. These classes represent the tables in the database.
 
-  \item Create a DbContext Class:
-  Create a class that extends class DbContext of EF Core. This class represents the database context and provides access to entity classes.
+    \item Create a DbContext Class:
+          Create a class that extends class DbContext of EF Core. This class represents the database context and provides access to entity classes.
 
-  \item Configure the DbContext:
-  Use Fluent API package to configure relationships, keys, and other database-specific settings.
+    \item Configure the DbContext:
+          Use Fluent API package to configure relationships, keys, and other database-specific settings.
 
-  \item Enable and apply migrations file to create or update the database with the following Linux script:
-  \begin{lstlisting}
+    \item Enable and apply migrations file to create or update the database with the following Linux script:
+          \begin{lstlisting}
     dotnet ef migrations add InitialCreate
     dotnet ef database update
   \end{lstlisting}
@@ -166,9 +229,9 @@ The server receives the payment method nonce and uses Braintree's tools to proce
 By utilizing PayPal Braintree Gateway, we ensure a secure and streamlined payment process, enhancing the user experience and maintaining high security standards in handling sensitive payment information.
 
 \subsection{Google Login}
-Our website provides users with the option to log in using their Google account, 
-offering a convenient and secure authentication method. By integrating Google Sign-In, 
-we simplify the login process for users and enhance the overall user experience. 
+Our website provides users with the option to log in using their Google account,
+offering a convenient and secure authentication method. By integrating Google Sign-In,
+we simplify the login process for users and enhance the overall user experience.
 
 The Google Login process is illustrated in \emph{Figure \ref{fig:gglogin-flow}}:
 \begin{figure}[H]
@@ -188,62 +251,62 @@ The implementation steps are as follows:
 \end{itemize}
 
 \subsection{Breeds Recognition}
-Breed recognition is a valuable feature for our users, who often don't know their pet's breed. To address this, we utilized ML.NET 
-to train an image classification model. This advanced technology enables our platform to accurately identify a pet's breed from a photo, 
+Breed recognition is a valuable feature for our users, who often don't know their pet's breed. To address this, we utilized ML.NET
+to train an image classification model. This advanced technology enables our platform to accurately identify a pet's breed from a photo,
 simplifying the process for users and enhancing their experience.
 
-The first step is preparing the dataset. We have chosen the Stanford Dogs dataset\footnote{Stanford Dogs dataset: \url{https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset}}, which contains images of 120 dog breeds from around 
-the world. This dataset, built using images and annotations from ImageNet, is ideal for the task of fine-grained image categorization. 
+The first step is preparing the dataset. We have chosen the Stanford Dogs dataset\footnote{Stanford Dogs dataset: \url{https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset}}, which contains images of 120 dog breeds from around
+the world. This dataset, built using images and annotations from ImageNet, is ideal for the task of fine-grained image categorization.
 The challenging nature of this problem stems from the fact that certain dog breeds have nearly identical features or differ only in color and age.
 
-For cat breed classification, we use the Cat Breeds Dataset (Cleared)\footnote{Cat Breeds Dataset (Cleared): \url{https://www.kaggle.com/datasets/denispotapov/cat-breeds-dataset-cleared}}, which contains images of 67 different cat breeds, labeled by advertisers for 
-adoption. This dataset is a refined version of the original Cat Breeds Dataset from Kaggle \footnote{Stanford Dogs dataset: \url{https://www.kaggle.com/ma7555/cat-breeds-dataset}}. 
-The cleared version has been meticulously cleaned to remove non-cat images, indistinguishable cat photos, duplicates, and very small images 
-(height or width less than 150 pixels). This ensures that the dataset is of high quality, facilitating accurate training and performance of our 
+For cat breed classification, we use the Cat Breeds Dataset (Cleared)\footnote{Cat Breeds Dataset (Cleared): \url{https://www.kaggle.com/datasets/denispotapov/cat-breeds-dataset-cleared}}, which contains images of 67 different cat breeds, labeled by advertisers for
+adoption. This dataset is a refined version of the original Cat Breeds Dataset from Kaggle \footnote{Stanford Dogs dataset: \url{https://www.kaggle.com/ma7555/cat-breeds-dataset}}.
+The cleared version has been meticulously cleaned to remove non-cat images, indistinguishable cat photos, duplicates, and very small images
+(height or width less than 150 pixels). This ensures that the dataset is of high quality, facilitating accurate training and performance of our
 machine learning model.
 
-The images in the dataset are organized into separate folders for each dog breed, simplifying the model training process. This organization 
-makes it more convenient to manage and feed the data into our machine learning model. Using this well-structured dataset, we can effectively 
+The images in the dataset are organized into separate folders for each dog breed, simplifying the model training process. This organization
+makes it more convenient to manage and feed the data into our machine learning model. Using this well-structured dataset, we can effectively
 train our image classification model with ML.NET to recognize and categorize various dog breeds accurately.
 
 The next step involves using ML.NET Model Builder to transform our image set into an image classification model. Here's how we proceed:
 \begin{enumerate}
-    \item Load the Data: Import the cleaned datasets for dog and cat breeds into the ML.NET Model Builder. These datasets include images 
-    categorized into folders based on their respective breeds.
+    \item Load the Data: Import the cleaned datasets for dog and cat breeds into the ML.NET Model Builder. These datasets include images
+          categorized into folders based on their respective breeds.
     \item Set Up the Environment: Configure the Model Builder environment on our local machine, ensuring that all necessary tools and dependencies are installed.
     \item Select the Scenario: Choose the 'Image Classification' scenario in ML.NET Model Builder, which is specifically designed for tasks like breed recognition.
     \item Train the Model:
-    \begin{itemize}
-        \item Data Preprocessing: The Model Builder automatically preprocesses the images, resizing and normalizing them as required.
-        \item Model Selection and Training: The tool selects a suitable pre-trained model and fine-tunes it using our dataset. This involves 
-        splitting the data into training and validation sets to ensure the model learns effectively and generalizes well.
-        \item Local Training: The model is trained on our local machine, leveraging available computational resources to iterate through 
-        the dataset and optimize the classification accuracy.
-    \end{itemize}
-    \item Evaluate the Model: Once training is complete, the Model Builder evaluates the model's performance, 
-    providing metrics such as accuracy, precision, recall, and F1 score. This helps in understanding how well 
-    the model distinguishes between different breeds.
+          \begin{itemize}
+              \item Data Preprocessing: The Model Builder automatically preprocesses the images, resizing and normalizing them as required.
+              \item Model Selection and Training: The tool selects a suitable pre-trained model and fine-tunes it using our dataset. This involves
+                    splitting the data into training and validation sets to ensure the model learns effectively and generalizes well.
+              \item Local Training: The model is trained on our local machine, leveraging available computational resources to iterate through
+                    the dataset and optimize the classification accuracy.
+          \end{itemize}
+    \item Evaluate the Model: Once training is complete, the Model Builder evaluates the model's performance,
+          providing metrics such as accuracy, precision, recall, and F1 score. This helps in understanding how well
+          the model distinguishes between different breeds.
 
-    After training the model for dog breed recognition, we evaluated its performance using various algorithms. 
-    The micro-accuracy algorithm identified the best model, achieving a micro-accuracy score of 0.8345. This 
-    high accuracy indicates that the model can reliably recognize and classify different dog breeds, providing 
-    users with accurate breed identification based on their pet's images.
+          After training the model for dog breed recognition, we evaluated its performance using various algorithms.
+          The micro-accuracy algorithm identified the best model, achieving a micro-accuracy score of 0.8345. This
+          high accuracy indicates that the model can reliably recognize and classify different dog breeds, providing
+          users with accurate breed identification based on their pet's images.
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth]{Figures/AI/ai_result.png}
-        \caption{Results of Dog Breed Recognition}
-    \end{figure}
+          \begin{figure}[H]
+              \centering
+              \includegraphics[width=0.7\textwidth]{Figures/AI/ai_result.png}
+              \caption{Results of Dog Breed Recognition}
+          \end{figure}
 
-    For cat breed recognition, we followed a similar process, training the model on the Cat Breeds Dataset (Cleared)
-    and evaluating its performance. The micro-accuracy algorithm identified the best model, achieving a micro-accuracy
-    score of 0.4321. This indicates that the dataset is more challenging for cat breed recognition, as the model's accuracy
-    is lower compared to dog breed recognition. Despite this, the model can still classify cat breeds with reasonable accuracy,
-    providing users with valuable insights into their pet's breed based on images. 
+          For cat breed recognition, we followed a similar process, training the model on the Cat Breeds Dataset (Cleared)
+          and evaluating its performance. The micro-accuracy algorithm identified the best model, achieving a micro-accuracy
+          score of 0.4321. This indicates that the dataset is more challenging for cat breed recognition, as the model's accuracy
+          is lower compared to dog breed recognition. Despite this, the model can still classify cat breeds with reasonable accuracy,
+          providing users with valuable insights into their pet's breed based on images.
 
-    \item Export the Model: Finally, the trained model is exported for integration into our application. 
-    The Model Builder generates the necessary code and files, making it straightforward to deploy the model.
-    In our case, we export the model as an API, allowing seamless integration with our platform for real-time breed recognition.
+    \item Export the Model: Finally, the trained model is exported for integration into our application.
+          The Model Builder generates the necessary code and files, making it straightforward to deploy the model.
+          In our case, we export the model as an API, allowing seamless integration with our platform for real-time breed recognition.
 \end{enumerate}
 
 \subsection{Protect System APIs with Access/Refresh Tokens}
@@ -264,23 +327,23 @@ The API server verifies the authorization and confirms the identity of the autho
 The client can now request the API server for secured resource access, and the resource server validates the access token. If it’s valid, it returns the desired resource.
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.6\textwidth]{Figures/Implementation/Tokens.png}
-  \caption{Set up the tokens.}
-  \label{fig:tokens-flow}
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/Implementation/Tokens.png}
+    \caption{Set up the tokens.}
+    \label{fig:tokens-flow}
 \end{figure}
 
 \subsection{Back Office Implementation with Retool}
 To build the back office web-based application for administration functionality, we use Retool and follow these steps:
 \begin{itemize}
-  \item Connect Data Sources: Start by creating a resource in Retool, we connect our MSSQL Database Server to Retool.
-  This step ensures that our dashboard can pull in data from the database.
-  \item Design Dashboard: Retool provides a drag-and-drop interface for building custom admin dashboards. 
-  We can find components like tables, buttons, text inputs, and dropdowns. 
-  These components are essential for displaying data, triggering actions, and interacting with users.
-  \item Customize Styles and Triggers: We customize the appearance of dashboard components by adjusting styles. 
-  Additionally, we set up triggers to respond to user interactions, such as button clicks or form submissions.
-  \item Test and Iterate: We assemble our dashboard, test it thoroughly, and iterate based on testing feedback.
+    \item Connect Data Sources: Start by creating a resource in Retool, we connect our MSSQL Database Server to Retool.
+          This step ensures that our dashboard can pull in data from the database.
+    \item Design Dashboard: Retool provides a drag-and-drop interface for building custom admin dashboards.
+          We can find components like tables, buttons, text inputs, and dropdowns.
+          These components are essential for displaying data, triggering actions, and interacting with users.
+    \item Customize Styles and Triggers: We customize the appearance of dashboard components by adjusting styles.
+          Additionally, we set up triggers to respond to user interactions, such as button clicks or form submissions.
+    \item Test and Iterate: We assemble our dashboard, test it thoroughly, and iterate based on testing feedback.
 \end{itemize}
 
 Retool enables rapid development process, letting us move quickly from requirements to implementation. Also, Retool provides us a free hosting cloud, eliminating the need for complex infrastructure
