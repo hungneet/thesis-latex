@@ -9,6 +9,12 @@ We created a new Next.js app using the create-next-app command. This command set
 
 
 \subsubsection*{Folder Structure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/Implementation/folder_fe.png}
+    \caption{Frontend Folder Structure}
+    \label{fig:folder-structure-fe}
+\end{figure}
 
 \subsubsection*{Handling Fetching API}
 
@@ -21,20 +27,20 @@ To manage communication with the backend, we developed custom React hooks to han
     \item \textbf{Functionality}: This hook sends a GET request to the API, retrieves data from the database, and handles the loading state and any errors that may occur during the fetch process.
     \item \textbf{Usage Example}:
           \begin{lstlisting}
-                const getBlogQuery = useQuery<IApiResponse<IBlogResponse>>(
-                    [QUERY_KEYS.GET_BLOG_DETAIL, { id: params.id }],
-                    () => getBlogDetail(params.id),
-                    {
-                      onSuccess: (res) => {
-                        setBlogContent(res.data.data);
-                      },
-                      onError: () => {
-                        // Handle error
-                        setError(true);
-                      },
-                      refetchOnWindowFocus: false,
-                    }
-                  );
+    const getBlogQuery = useQuery<IApiResponse<IBlogResponse>>(
+        [QUERY_KEYS.GET_BLOG_DETAIL, { id: params.id }],
+        () => getBlogDetail(params.id),
+        {
+            onSuccess: (res) => {
+            setBlogContent(res.data.data);
+            },
+            onError: () => {
+            // Handle error
+            setError(true);
+            },
+            refetchOnWindowFocus: false,
+        }
+    );
             \end{lstlisting}
 \end{itemize}
 
@@ -45,21 +51,21 @@ To manage communication with the backend, we developed custom React hooks to han
     \item \textbf{Functionality}: This hook handles data mutations by sending the appropriate requests to the backend. It manages the state during the request, providing feedback on success or failure, and includes custom error handling.
     \item \textbf{Usage Example}:
           \begin{lstlisting}
-            const sendAdoptRequestMutation = useMutation<
-            IApiResponse<IUserInfoReponse>,
-            IAdoptPetRequest
-          >(sendAdoptRequest, {
-            onError: () => {
-              setAlertMessage('Error sending adoption request');
-              setAlertFail(true);
-              setAlertShow(true);
-            },
-            onSuccess: () => {
-              setAlertMessage('Adoption request sent successfully');
-              setAlertFail(false);
-              setAlertShow(true);
-            },
-          });
+    const sendAdoptRequestMutation = useMutation<
+        IApiResponse<IUserInfoReponse>,
+        IAdoptPetRequest
+        >(sendAdoptRequest, {
+        onError: () => {
+            setAlertMessage('Error sending adoption request');
+            setAlertFail(true);
+            setAlertShow(true);
+        },
+        onSuccess: () => {
+            setAlertMessage('Adoption request sent successfully');
+            setAlertFail(false);
+            setAlertShow(true);
+        },
+        });
             \end{lstlisting}
 \end{itemize}
 
@@ -76,7 +82,6 @@ Benefits of using \textit{useQuery} and \textit{useMutation} for API requests:
 
 
 \textbf{Folder Structure}
-
 
 \textbf{Setup Development Environment with Docker}
 
