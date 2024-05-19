@@ -1,5 +1,39 @@
 \chapter{SYSTEM DESIGN}
 
+\section{System architecture}
+With the completion of system analysis, we are now 
+focusing on designing the system architecture, how the system is organized and served to the end users. This section will 
+discuss the detailed system architecture and services for deploying the system. As we 
+can see from \textit{Figure 3.1}, the proposed architecture contains the 
+following components:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/Deployment/architect-report.png}
+    \caption{Architecture Diagram}
+    \label{fig:deployment-architecture}
+\end{figure}
+The Frontend component contains the back office and front office website of the system. This component is served to end users through web browsers.
+\begin{itemize}
+    \item \textit{Front office} handles user events and calls restful APIs from the API Server. It is implemented using Next.js and deployed on Vercel.
+    \item \textit{Back office} is implemented using Retool. It interact directly to the MSSQL Database Server.
+\end{itemize}
+
+The backend of the system includes components as follows:
+\begin{itemize}
+    \item \textit{API Server} is the central part of the system, focusing on 
+    handling all business logics and flows, serving API for the front office, 
+    and interacting with other components of the system. It is implemented by ASP.NET Core and ML.NET and deployed by an Azure Virtual Machine.
+    \item \textit{MSSQL Database Server} is the place where the database of the system is served. 
+    This server interacts with the API Server and the back office.
+    \item \textit{Imgbb Image Server} stores all the static images of the system. Images will 
+    be uploaded directly from the front office to the Imgbb Image Server before storing the returned URLs in the SQL Database Server. This component will 
+    be served by a free Imgbb cloud service.
+    \item Furthermore, we will have two corresponding servers for caching data and optimizing 
+    data search speed using a free \textit{Elastic-search cloud} and \textit{Azure Redis Cache Database}.
+\end{itemize}
+
+Finally, third-party services for authentication (Google OAuth Service) and payment (BrainTree Gateway Service) purposes are implemented by connecting to the API Server.
+
 \section{UI/UX design}
 
 In this section, we delve into the UI/UX design for our pet adoption website. Each page has been crafted to enhance user engagement and streamline the adoption process. Begins on the homepage, where users are welcomed with an intuitive interface that serves as the gateway to the platform. The login and register pages provide a seamless onboarding experience, ensuring a secure and personalized environment. The pet search page facilitates effortless exploration, allowing users to discover potential companions with ease. Detailed pet profiles showcase comprehensive information, fostering informed decision-making. The user profile page ensures a tailored experience, while the blog homepage and pages provide valuable insights and updates. To navigate this cohesive ecosystem, a diagram illustrates the interconnectedness of each page, illuminating the user's journey from entry to adoption. To enhance clarity, we've included a comprehensive diagram illustrating the intricate connections between these pages
@@ -86,7 +120,7 @@ The pet page is a comprehensive showcase, providing detailed insights into each 
 \caption{Pet profile page}
 \end{figure}
 
-Creating a pet profile on our platform is user-friendly and efficient. Users begin by uploading a pet image (Figure 3.7), which our AI processes to autofill the breed. Clicking "Continue" leads to a detailed pet form (Figure 3.8) for additional information. Users then review the Terms and Services (Figure 3.9) before clicking "Finish" to complete the profile. This structured process, with AI assistance in the initial steps, ensures accuracy and a seamless user experience.
+Creating a pet profile on our platform is user-friendly and efficient. Users begin by uploading a pet image (Figure 3.8), which our AI processes to autofill the breed. Clicking "Continue" leads to a detailed pet form (Figure 3.9) for additional information. Users then review the Terms and Services (Figure 3.10) before clicking "Finish" to complete the profile. This structured process, with AI assistance in the initial steps, ensures accuracy and a seamless user experience.
 
 \subsubsection{User profile}
 
@@ -177,7 +211,7 @@ The control page empowers administrators to manage specific data types, includin
 
 The conceptual design phase of the project is a pivotal stage in the development lifecycle, focused on establishing a comprehensive understanding of the system's structure and relationships.
 \\
-In \textit{Figure 3.17}, all entities and relationships are presented. Note that all attributes are excluded to enhance visualization and maintain a clear focus on the primary components shaping the system. These attributes will be shown in the physical design section.
+In \textit{Figure 3.18}, all entities and relationships are presented. Note that all attributes are excluded to enhance visualization and maintain a clear focus on the primary components shaping the system. These attributes will be shown in the physical design section.
 
 \begin{figure}[H]
     \centering
@@ -193,7 +227,7 @@ to translate the abstract concepts from the Entity-Relationship Diagram
 (ERD) into a concrete relational schema. Through the mapping process,
 each entity, along with its attributes and relationships, is
 systematically transformed into tables with defined fields and
-corresponding constraints in \emph{Figure 3.18}.
+corresponding constraints in \emph{Figure 3.19}.
 
 \begin {figure}[H]
 \centering
@@ -201,11 +235,11 @@ corresponding constraints in \emph{Figure 3.18}.
 \caption{Relational schema}
 \end{figure}
 
-\emph{Figure 3.18}, the attributes are not presented fully to ensure a clear visualization of the diagram. In the relational mapping process, we implement a simplified technique for the 3-way relationship where the mandatory entity will take the primary key of the two optional entities as its foreign key, avoiding creating another table causes the schema to become unnecessarily complicated.
+\emph{Figure 3.19}, the attributes are not presented fully to ensure a clear visualization of the diagram. In the relational mapping process, we implement a simplified technique for the 3-way relationship where the mandatory entity will take the primary key of the two optional entities as its foreign key, avoiding creating another table causes the schema to become unnecessarily complicated.
 
 \subsection{Physical Design}
 
-In this phase, the conceptual transforms into the tangible, as we build the actual blueprint that mirrors the intricacies of the adoption process in real life. The Relational Schema serves as our guidepost, detailing the tables, and relationships that will form the foundation of the physical database. \textit{Figure 3.19 and 3.20} below translates abstract entities and relationships into concrete data types and optimizes storage structures.
+In this phase, the conceptual transforms into the tangible, as we build the actual blueprint that mirrors the intricacies of the adoption process in real life. The Relational Schema serves as our guidepost, detailing the tables, and relationships that will form the foundation of the physical database. \textit{Figure 3.20 and 3.21} below translates abstract entities and relationships into concrete data types and optimizes storage structures.
 
 \begin {figure}[H]
 \centering
