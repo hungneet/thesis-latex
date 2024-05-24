@@ -3,11 +3,11 @@
 With the completion of system implementation, our focus now shifts towards ensuring the robustness and functionality of the system through testing. This section presents the systematic approach taken for system testing, including end-to-end testing, API testing, load testing, and performance testing to validate the functionality and performance of the implemented system
 
 \section{API testing}
-This section delves into testing the website's API for functionality using 
-Postman. Postman's versatile features were utilized to conduct thorough 
-assessments of the API endpoints, ensuring data integrity and performance 
-across diverse scenarios. Through rigorous experimentation and analysis, 
-Postman facilitated the establishment of a robust validation framework, 
+This section delves into testing the website's API for functionality using
+Postman. Postman's versatile features were utilized to conduct thorough
+assessments of the API endpoints, ensuring data integrity and performance
+across diverse scenarios. Through rigorous experimentation and analysis,
+Postman facilitated the establishment of a robust validation framework,
 affirming the reliability of the website's API under different conditions.
 
 \subsection{API endpoints}
@@ -57,7 +57,7 @@ under load. By simulating real-world usage scenarios and edge cases, we
 could identify potential issues and validate the API's behavior in
 different situations. This comprehensive testing approach helped ensure
 the reliability and robustness of the website's API, enhancing its overall
-quality and performance. 
+quality and performance.
 
 Here is all the test-cases for the API endpoints. All the API endpoints
 here have average response time of 734ms. The test-cases are divided into:
@@ -94,17 +94,17 @@ To automate the end-to-end testing process, we choose Cypress, which is a modern
 Note that, the automation end-to-end testing process cannot be done on every function of the system due to the implementation of external UI components and email interactions. For those functions, we will do manual end-to-end testing to ensure the correct operation of the system.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Figures/cypress_script.png}
-    \caption{Automation Script}
-    \label{fig:cypress-script}
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/cypress_script.png}
+  \caption{Automation Script}
+  \label{fig:cypress-script}
 \end{figure}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Figures/cypress_auto.png}
-    \caption{Automation tests done by Cypress}
-    \label{fig:cypress-test}
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/cypress_auto.png}
+  \caption{Automation tests done by Cypress}
+  \label{fig:cypress-test}
 \end{figure}
 
 \subsection{Test Cases}
@@ -197,11 +197,11 @@ The testing environment used for responsive testing is as follows:
 \input{Tables/ResponsiveTesting/ResponsiveEnviroment.tex}
 
 \section{Performance testing}
-For performance testing, we use Google Lighthouse to help us evaluate general performance, accessibility, best practice and SEO parameters of our website:
+For performance testing, we use Google Lighthouse to help us evaluate the general performance, accessibility, best practice, and SEO parameters of our website:
 \begin{itemize}
   \item Performance: Measures how quickly a page loads and becomes interactive.
   \item Accessibility: Assesses how well a page can be used by people with disabilities.
-  \item Best Practices: Checks adherence to best practices for web development.
+  \item Best Practices: Check adherence to best practices for web development.
   \item SEO: Evaluates how well a page is optimized for search engines.
 \end{itemize}
 Google Lighthouse uses a 0 to 100 scale to evaluate web page performance and other metrics. Here’s a breakdown:
@@ -222,17 +222,17 @@ For this type of testing, we use Postman with the pre-conditions:
 \begin{itemize}
   \item Set of APIs: \textit{ Create a pet -> Get pets -> Update a pet -> Get pets again}
   \item Duration: \textit{30 seconds}
-  \item Number of vitual users: \textit{50}
-  \item Ramp up: \textit{from 5 users at the begining to 50 users at the end of the duration}
+  \item Number of virtual users: \textit{50}
+  \item Ramp up: \textit{from 5 users at the beginning to 50 users at the end of the duration}
 \end{itemize}
 
-Base on the non-functional requirements of the system, the expected outputs are:
+Based on the non-functional requirements of the system, the expected outputs are:
 \begin{itemize}
   \item Error rate: \textit{less than 5\% for at least 1000 requests}
   \item Average response time: \textit{less than 1000ms for 1000 requests}
 \end{itemize}
 
-After doing the test, the final result is shown in \textit{Figure 6.3}. All the expected outputs are passed with the the outputs are:
+After doing the test, the final result is shown in \textit{Figure 6.3}. All the expected outputs are passed with the outputs are:
 \begin{itemize}
   \item Error rate: \textit{0\% for 1704 requests}
   \item Average response time: \textit{17ms for 1704 requests}
