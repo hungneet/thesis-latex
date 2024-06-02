@@ -277,8 +277,10 @@ The challenging nature of this problem stems from the fact that certain dog bree
 For cat breed classification, we use the Cat Breeds Dataset (Cleared)\footnote{Cat Breeds Dataset (Cleared): \url{https://www.kaggle.com/datasets/denispotapov/cat-breeds-dataset-cleared}}, which contains images of 67 different cat breeds, labeled by advertisers for
 adoption. This dataset is a refined version of the original Cat Breeds Dataset from Kaggle \footnote{Stanford Dogs dataset: \url{https://www.kaggle.com/ma7555/cat-breeds-dataset}}.
 The cleared version has been meticulously cleaned to remove non-cat images, indistinguishable cat photos, duplicates, and very small images
-(height or width less than 150 pixels). This ensures that the dataset is of high quality, facilitating accurate training and performance of our
-machine learning model.
+(height or width less than 150 pixels). For cats and dogs classification, we use Dogs vs. Cats dataset \footnote{Dogs vs. Cats dataset: \url{https://www.kaggle.com/c/dogs-vs-cats/data}} This ensures that the dataset is of high quality, facilitating accurate training and performance of our
+machine learning model. Use can see the comparison of these datasets in \emph{Table \ref{table:animal_datasets}}.
+
+\input{Tables/DatasetTable.tex}
 
 The images in the dataset are organized into separate folders for each dog breed, simplifying the model training process. This organization
 makes it more convenient to manage and feed the data into our machine learning model. Using this well-structured dataset, we can effectively
@@ -299,13 +301,21 @@ The next step involves using ML.NET Model Builder to transform our image set int
                     the dataset and optimize the classification accuracy.
           \end{itemize}
     \item Evaluate the Model: Once training is complete, the Model Builder evaluates the model's performance,
-          providing metrics such as accuracy, precision, recall, and F1 score. This helps in understanding how well
+          providing metrics such as MicroAccuracy, Macro-Accuracy, Log-loss and Log-Loss Reduction score. This helps in understanding how well
           the model distinguishes between different breeds.
+
+          We use MicroAccuracy to compare the performance of different models on the animal image datasets. The results are shown in \emph{Table \ref{table:model_accuracy}}.
+          Micro-average Accuracy aggregates the contributions of all classes to compute the average metric. It is the fraction of instances predicted correctly. 
+          The micro-average does not take class membership into account. Basically, every sample-class pair contributes equally to the accuracy metric. In the case of multi-class classification, micro-averaged precision, recall, and accuracy are the same. 
+
+
+
+          \input{Tables/ModelAccuracyTable.tex}
 
           After training the model for dog breed recognition, we evaluated its performance using various algorithms.
           The micro-accuracy algorithm identified the best model, achieving a micro-accuracy score of 0.8345. This
           high accuracy indicates that the model can reliably recognize and classify different dog breeds, providing
-          users with accurate breed identification based on their pet's images.
+          users with accurate breed identification based on their pet's images. 
 
           \begin{figure}[H]
               \centering
@@ -318,6 +328,8 @@ The next step involves using ML.NET Model Builder to transform our image set int
           score of 0.4321. This indicates that the dataset is more challenging for cat breed recognition, as the model's accuracy
           is lower compared to dog breed recognition. Despite this, the model can still classify cat breeds with reasonable accuracy,
           providing users with valuable insights into their pet's breed based on images.
+
+
 
     \item Export the Model: Finally, the trained model is exported for integration into our application.
           The Model Builder generates the necessary code and files, making it straightforward to deploy the model.
